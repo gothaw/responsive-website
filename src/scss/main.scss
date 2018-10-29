@@ -5,14 +5,29 @@
 /*==================================== General ====================================*/
 
 .inner{
-  width: 600px;
+  max-width: 1080px;
   margin: 0 auto;
 
 }
-
 body{
-  color: blue;
-  background-color: coral;
-  font-weight: bold;
-  text-align: center;
+  background-color: #e9e6ed;
+
+}
+.menu{
+  display: flex;
+  justify-content: space-around;
+  //border: black solid 1px;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  align-items: center;
+  .menu-item{
+    //border: black solid 1px;
+    text-align: center;
+    .logo img{
+        width: 75%;
+        height: auto;
+    }
+
+  }
 }

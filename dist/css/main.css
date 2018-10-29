@@ -52,11 +52,21 @@ table {
 
 /*==================================== General ====================================*/
 .inner {
-  width: 600px;
+  max-width: 1080px;
   margin: 0 auto; }
 
 body {
-  color: blue;
-  background-color: coral;
-  font-weight: bold;
-  text-align: center; }
+  background-color: #e9e6ed; }
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  align-items: center; }
+  .menu .menu-item {
+    text-align: center; }
+    .menu .menu-item .logo img {
+      width: 75%;
+      height: auto; }
