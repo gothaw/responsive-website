@@ -58,15 +58,31 @@ table {
 body {
   background-color: #e9e6ed; }
 
+a {
+  text-decoration: none; }
+
+/*==================================== Header ====================================*/
+.header__menu {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 20px 0;
+  position: sticky;
+  top: 0; }
+
 .menu {
+  align-items: center;
   display: flex;
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 1.1em;
   justify-content: space-around;
-  font-family: 'Merriweather Sans', sans-serif;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  align-items: center; }
-  .menu .menu-item {
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+  .menu__item {
     text-align: center; }
-    .menu .menu-item .logo img {
-      width: 75%;
-      height: auto; }
+  .menu__link {
+    color: #fff; }
+
+.carousel__item {
+  margin-top: -120px; }
+  .carousel__item img {
+    width: 100%;
+    height: auto; }
