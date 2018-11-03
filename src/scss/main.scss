@@ -21,6 +21,7 @@ a{
   padding: 20px 0;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 .menu{
   align-items: center;
@@ -39,10 +40,16 @@ a{
   &__logo{
   }
 }
-.carousel__item{
-  margin-top: -120px;
-  img{
-    width: 100%;
-    height: auto;
+.carousel{
+  &__item{
+    margin-top: -115px;
+    &:nth-child(2){
+      display: none;
+    }
+  }
+  &__img{
+    width: 100vw;
+    max-height: 700px;
+    object-fit: cover;
   }
 }

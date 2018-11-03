@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"Hello world\");\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("(function () {\r\n    if ($('#index-main').length) {\r\n\r\n    function eventHandler() {\r\n\r\n    }\r\n\r\n    function init() {\r\n        eventHandler();\r\n    }\r\n\r\n    window.addEventListener(\"load\", init);\r\n}\r\n})();\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
