@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("(function () {\r\n    if ($('#index-main').length) {\r\n\r\n    function eventHandler() {\r\n\r\n    }\r\n\r\n    function init() {\r\n        eventHandler();\r\n    }\r\n\r\n    window.addEventListener(\"load\", init);\r\n}\r\n})();\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("(function () {\r\n    if ($('#index-main').length) {\r\n    const carouselItems = $('.carousel__item');\r\n    const carouselArrows = $('.carousel__arrow');\r\n\r\n    let indexCarouselImage = 0;\r\n\r\n\r\n    function showNextImage() {\r\n        if(indexCarouselImage===0){\r\n            //$(carouselItems[0]).fadeIn();\r\n            //$(carouselItems[1]).fadeOut();\r\n            indexCarouselImage=1;\r\n        }\r\n        else if(indexCarouselImage===1){\r\n            //$(carouselItems[1]).fadeIn();\r\n            //$(carouselItems[0]).fadeOut();\r\n            indexCarouselImage=0;\r\n        }\r\n        (carouselItems).toggleClass(\"carousel__item--shown\").toggleClass(\"carousel__item--hidden\");\r\n    }\r\n\r\n\r\n    function eventHandler() {\r\n        carouselArrows[0].addEventListener(\"click\", showNextImage);\r\n        carouselArrows[1].addEventListener(\"click\", showNextImage);\r\n    }\r\n\r\n    function init() {\r\n        eventHandler();\r\n    }\r\n\r\n    window.addEventListener(\"load\", init);\r\n}\r\n})();\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 

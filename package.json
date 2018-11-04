@@ -29,5 +29,7 @@
     "express": "~4.16.4",
     "handlebars": "~4.0.12"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "~3.3.1"
+  }
 }
