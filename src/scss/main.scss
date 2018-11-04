@@ -2,6 +2,13 @@
 
 @import 'partials/reset';
 
+/*==================================== Variables ====================================*/
+
+$menu__item-font-size: 1.1em;
+$carousel__arrow-font-size: 2.7em;
+$bg-color: #e9e6ed;
+$carousel__arrow-color: #c00004;
+
 /*==================================== General ====================================*/
 
 .inner{
@@ -10,11 +17,13 @@
 
 }
 body{
-  background-color: #e9e6ed;
+  background-color: $bg-color;
 }
 a{
   text-decoration: none;
 }
+
+
 /*==================================== Header ====================================*/
 .header__menu{
   background-color: rgba(0,0,0,0.65);
@@ -27,7 +36,7 @@ a{
   align-items: center;
   display: flex;
   font-family: 'Ropa Sans', sans-serif;
-  font-size: 1.1em;
+  font-size: $menu__item-font-size;
   justify-content: space-around;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -41,15 +50,41 @@ a{
   }
 }
 .carousel{
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   &__item{
     margin-top: -115px;
-    &:nth-child(2){
+    &:nth-child(1){
       display: none;
     }
   }
   &__img{
-    width: 100vw;
     max-height: 700px;
     object-fit: cover;
+    width: 100vw;
+  }
+  &__arrow{
+    color: $carousel__arrow-color;
+    cursor: pointer;
+    font-size: $carousel__arrow-font-size;
+    font-weight: bold;
+    position: absolute;
+    //text-shadow: 2px 1px darken($carousel__arrow-color,20%);
+    top: 50%;
+    &:active{
+      //text-shadow: 1px 1px #000;
+    }
+    &:hover{
+
+    }
+    &--left{
+      left: 25px;
+    }
+    &--right{
+      right: 25px;
+    }
   }
 }

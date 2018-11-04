@@ -50,6 +50,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/*==================================== Variables ====================================*/
 /*==================================== General ====================================*/
 .inner {
   max-width: 1080px;
@@ -82,12 +83,28 @@ a {
   .menu__link {
     color: #fff; }
 
-.carousel__item {
-  margin-top: -115px; }
-  .carousel__item:nth-child(2) {
-    display: none; }
-
-.carousel__img {
-  width: 100vw;
-  max-height: 700px;
-  object-fit: cover; }
+.carousel {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .carousel__item {
+    margin-top: -115px; }
+    .carousel__item:nth-child(1) {
+      display: none; }
+  .carousel__img {
+    max-height: 700px;
+    object-fit: cover;
+    width: 100vw; }
+  .carousel__arrow {
+    color: #c00004;
+    cursor: pointer;
+    font-size: 2.7em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%; }
+    .carousel__arrow--left {
+      left: 25px; }
+    .carousel__arrow--right {
+      right: 25px; }
