@@ -1,35 +1,26 @@
 (function () {
     if ($('#index-main').length) {
-    const carouselItems = $('.carousel__item');
-    const carouselArrows = $('.carousel__arrow');
 
-    let indexCarouselImage = 0;
+        const carouselItems = document.querySelectorAll('.carousel__item');
+        const carouselArrows = document.querySelectorAll('.carousel__arrow');
 
-
-    function showNextImage() {
-        if(indexCarouselImage===0){
-            //$(carouselItems[0]).fadeIn();
-            //$(carouselItems[1]).fadeOut();
-            indexCarouselImage=1;
+        function showNextImage() {
+            $(carouselItems[0]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
+            $(carouselItems[1]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
         }
-        else if(indexCarouselImage===1){
-            //$(carouselItems[1]).fadeIn();
-            //$(carouselItems[0]).fadeOut();
-            indexCarouselImage=0;
+
+
+        function eventHandler() {
+            carouselArrows[0].addEventListener("click", showNextImage);
+            carouselArrows[1].addEventListener("click", showNextImage);
+            carouselItems[0].addEventListener("touchstart",showNextImage);
+            carouselItems[1].addEventListener("touchstart",showNextImage);
         }
-        (carouselItems).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
+
+        function init() {
+            eventHandler();
+        }
+
+        window.addEventListener("load", init);
     }
-
-
-    function eventHandler() {
-        carouselArrows[0].addEventListener("click", showNextImage);
-        carouselArrows[1].addEventListener("click", showNextImage);
-    }
-
-    function init() {
-        eventHandler();
-    }
-
-    window.addEventListener("load", init);
-}
 })();
