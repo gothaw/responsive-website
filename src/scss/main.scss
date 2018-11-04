@@ -5,9 +5,13 @@
 /*==================================== Variables ====================================*/
 
 $menu__item-font-size: 1.1em;
-$carousel__arrow-font-size: 2.7em;
+$carousel__arrow-font-size: 3.2em;
+$carousel__title-font-size: 4.0em;
+$carousel__title-color: #E31D3B;
+$carousel__subtitle-font-size: 2.5em;
+$carousel__subtitle-color: white;
 $bg-color: #e9e6ed;
-$carousel__arrow-color: #c00004;
+$carousel__arrow-color: #fff;
 
 /*==================================== General ====================================*/
 
@@ -55,8 +59,35 @@ a{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  &__arrow{
+    color: $carousel__arrow-color;
+    opacity: 0.65;
+    cursor: pointer;
+    font-size: $carousel__arrow-font-size;
+    font-weight: bold;
+    position: absolute;
+    text-shadow: 2px 1px darken($carousel__arrow-color,75%);
+    top: 50%;
+    transition: all .2s;
+    &:hover{
+      opacity: 1;
+    }
+    &--left{
+      left: 25px;
+      &:active{
+        left: 20px
+      }
+    }
+    &--right{
+      right: 25px;
+      &:active{
+        right: 20px
+      }
+    }
+  }
   &__item{
     margin-top: -115px;
+    position: relative;
     &:nth-child(1){
       display: none;
     }
@@ -66,25 +97,29 @@ a{
     object-fit: cover;
     width: 100vw;
   }
-  &__arrow{
-    color: $carousel__arrow-color;
-    cursor: pointer;
-    font-size: $carousel__arrow-font-size;
-    font-weight: bold;
+  &__text{
+    border: black solid 1px;
+    font-family: 'Ropa Sans', sans-serif;
+    left: 0;
+    letter-spacing: 1px;
     position: absolute;
-    //text-shadow: 2px 1px darken($carousel__arrow-color,20%);
+    right: 0;
+    text-align: center;
     top: 50%;
-    &:active{
-      //text-shadow: 1px 1px #000;
-    }
-    &:hover{
-
-    }
-    &--left{
-      left: 25px;
-    }
-    &--right{
-      right: 25px;
-    }
   }
+  &__title{
+    color: $carousel__title-color;
+    font-size: $carousel__title-font-size;
+    text-shadow: 2px 1px darken($carousel__title-color,65%);
+  }
+  &__subtitle{
+    color: $carousel__subtitle-color;
+    margin-top: 10px;
+    font-size: $carousel__subtitle-font-size;
+    text-shadow: 2px 1px darken($carousel__subtitle-color,100%);
+  }
+}
+
+#index-main{
+  position: relative;
 }

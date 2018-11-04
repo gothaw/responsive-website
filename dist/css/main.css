@@ -89,22 +89,53 @@ a {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+  .carousel__arrow {
+    color: #fff;
+    opacity: 0.65;
+    cursor: pointer;
+    font-size: 3.2em;
+    font-weight: bold;
+    position: absolute;
+    text-shadow: 2px 1px #404040;
+    top: 50%;
+    transition: all .2s; }
+    .carousel__arrow:hover {
+      opacity: 1; }
+    .carousel__arrow--left {
+      left: 25px; }
+      .carousel__arrow--left:active {
+        left: 20px; }
+    .carousel__arrow--right {
+      right: 25px; }
+      .carousel__arrow--right:active {
+        right: 20px; }
   .carousel__item {
-    margin-top: -115px; }
+    margin-top: -115px;
+    position: relative; }
     .carousel__item:nth-child(1) {
       display: none; }
   .carousel__img {
     max-height: 700px;
     object-fit: cover;
     width: 100vw; }
-  .carousel__arrow {
-    color: #c00004;
-    cursor: pointer;
-    font-size: 2.7em;
-    font-weight: bold;
+  .carousel__text {
+    border: black solid 1px;
+    font-family: 'Ropa Sans', sans-serif;
+    left: 0;
+    letter-spacing: 1px;
     position: absolute;
+    right: 0;
+    text-align: center;
     top: 50%; }
-    .carousel__arrow--left {
-      left: 25px; }
-    .carousel__arrow--right {
-      right: 25px; }
+  .carousel__title {
+    color: #E31D3B;
+    font-size: 4em;
+    text-shadow: 2px 1px black; }
+  .carousel__subtitle {
+    color: white;
+    margin-top: 10px;
+    font-size: 2.5em;
+    text-shadow: 2px 1px black; }
+
+#index-main {
+  position: relative; }
