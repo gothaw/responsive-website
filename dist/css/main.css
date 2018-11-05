@@ -53,7 +53,7 @@ table {
 /*==================================== Variables ====================================*/
 /*==================================== General ====================================*/
 .inner {
-  max-width: 1080px;
+  max-width: 1140px;
   margin: 0 auto; }
 
 html {
@@ -76,12 +76,17 @@ a {
 
 /*==================================== Header ====================================*/
 .menu__wrapper {
-  background-color: rgba(0, 0, 0, 0.65);
-  padding: 20px 0;
   position: sticky;
   top: 0;
+  transition: all 0.5s;
   width: 100%;
   z-index: 20; }
+  .menu__wrapper--top {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 20px 0; }
+  .menu__wrapper--scroll {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0; }
 
 .menu {
   align-items: center;
@@ -173,5 +178,9 @@ a {
     font-size: 2.5em;
     text-shadow: 2px 1px black; }
 
+/* ----------------------------------------------------------
+                        <767px   SECTION
+------------------------------------------------------------- */
+/*==================================== Home ====================================*/
 .test {
   margin-top: 150px; }

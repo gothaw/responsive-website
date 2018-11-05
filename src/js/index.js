@@ -3,11 +3,14 @@
 
         const carouselItems = document.querySelectorAll('.carousel__item');
         const carouselArrows = document.querySelectorAll('.carousel__arrow');
+        const $menuBar = $('.menu__wrapper');
+
 
         function showNextImage() {
             $(carouselItems[0]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
             $(carouselItems[1]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
         }
+
 
 
         function eventHandler() {
@@ -22,5 +25,14 @@
         }
 
         window.addEventListener("load", init);
+        $(document).scroll(function () {
+            const scrollTop = $(window).scrollTop();
+            if(scrollTop>0){
+                $menuBar.removeClass("menu__wrapper--top").addClass("menu__wrapper--scroll");
+            }
+            else{
+                $menuBar.removeClass("menu__wrapper--scroll").addClass("menu__wrapper--top");
+            }
+        });
     }
 })();

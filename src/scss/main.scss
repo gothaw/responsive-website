@@ -17,7 +17,7 @@ $carousel__arrow-color: #fff;
 /*==================================== General ====================================*/
 
 .inner{
-  max-width: 1080px;
+  max-width: 1140px;
   margin: 0 auto;
 
 }
@@ -41,12 +41,19 @@ a{
 
 /*==================================== Header ====================================*/
 .menu__wrapper{
-  background-color: rgba(0,0,0,0.65);
-  padding: 20px 0;
   position: sticky;
   top: 0;
+  transition: all 0.5s;
   width: 100%;
   z-index: 20;
+  &--top{
+    background-color: rgba(0,0,0,0.55);
+    padding: 20px 0;
+  }
+  &--scroll{
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px 0;
+  }
 }
 .menu{
   align-items: center;
@@ -156,6 +163,16 @@ a{
     text-shadow: 2px 1px darken($carousel__subtitle-color,100%);
   }
 }
+/* ----------------------------------------------------------
+                        <767px   SECTION
+------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+
+
+}
+
+
+/*==================================== Home ====================================*/
 
 
 
