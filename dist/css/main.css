@@ -76,7 +76,7 @@ a {
 
 /*==================================== Header ====================================*/
 .menu__wrapper {
-  position: sticky;
+  position: relative;
   top: 0;
   transition: all 0.5s;
   width: 100%;
@@ -86,7 +86,7 @@ a {
     padding: 20px 0; }
   .menu__wrapper--scroll {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 0; }
+    padding: 7px 0; }
 
 .menu {
   align-items: center;
@@ -178,9 +178,24 @@ a {
     font-size: 2.5em;
     text-shadow: 2px 1px black; }
 
-/* ----------------------------------------------------------
-                        <767px   SECTION
-------------------------------------------------------------- */
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .menu__wrapper--top {
+    background-color: black; }
+  .menu {
+    display: block; }
+    .menu__item {
+      padding: 10px; } }
+
+/* ------------------- <767px ------------------ */
+/* ---------------- >768px && <1024px  SECTION -------------- */
+/* -------------- >768px && <1024px -------------- */
+/* --------------------- >1025px   SECTION ------------------ */
+@media only screen and (min-width: 1025px) {
+  .menu__wrapper {
+    position: sticky; } }
+
+/* ------------------- >1025px ------------------ */
 /*==================================== Home ====================================*/
 .test {
   margin-top: 150px; }

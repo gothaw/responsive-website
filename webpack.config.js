@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
     entry: {
         'bundle.js': [
+            './src/js/lib/enquire.js',
             './src/js/index.js',
         ]
     },
