@@ -46,64 +46,35 @@ a{
   transition: all 0.5s;
   width: 100%;
   z-index: 20;
-  &--top{
-    background-color: rgba(0,0,0,0.55);
-    padding: 20px 0;
-  }
-  &--scroll{
-    background-color: rgba(0,0,0,0.7);
-    padding: 7px 0;
-  }
 }
 .menu{
   align-items: center;
-  display: flex;
   font-family: 'Ropa Sans', sans-serif;
   font-size: $menu__item-font-size;
-  justify-content: space-around;
   letter-spacing: 1px;
   text-transform: uppercase;
   &__item{
     text-align: center;
   }
   &__link{
-    padding: 25px 10px;
     position: relative;
     color: #fff;
     transition: all 0.2s;
-    &:hover::before{
-      transform: scaleX(1);
-      visibility: visible;
-    }
     &:active{
       color: $menu__link--active-color;
-    }
-    &::before{
-      background: $menu__link--active-color;
-      border-radius: 1px;
-      bottom: 15px;
-      content: "";
-      height: 2px;
-      left: 0;
-      position: absolute;
-      width: 100%;
-      transform: scaleX(0);
-      transition: all 0.2s;
-      visibility: hidden;
     }
   }
 }
 .carousel{
   position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   &__arrow{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     color: $carousel__arrow-color;
     opacity: 0.65;
     cursor: pointer;
-    font-size: $carousel__arrow-font-size;
     font-weight: bold;
     position: absolute;
     text-shadow: 2px 1px darken($carousel__arrow-color,75%);
@@ -113,21 +84,8 @@ a{
     &:hover{
       opacity: 1;
     }
-    &--left{
-      left: 25px;
-      &:active{
-        left: 20px
-      }
-    }
-    &--right{
-      right: 25px;
-      &:active{
-        right: 20px
-      }
-    }
   }
   &__item{
-    margin-top: -115px;
     position: relative;
     &--shown{
       animation-name: fade;
@@ -138,7 +96,6 @@ a{
     }
   }
   &__img{
-    max-height: 700px;
     object-fit: cover;
     width: 100%;
   }
@@ -149,17 +106,14 @@ a{
     position: absolute;
     right: 0;
     text-align: center;
-    top: 50%;
   }
   &__title{
     color: $carousel__title-color;
-    font-size: $carousel__title-font-size;
     text-shadow: 2px 1px darken($carousel__title-color,65%);
   }
   &__subtitle{
     color: $carousel__subtitle-color;
     margin-top: 10px;
-    font-size: $carousel__subtitle-font-size;
     text-shadow: 2px 1px darken($carousel__subtitle-color,100%);
   }
 }
@@ -173,20 +127,127 @@ a{
   .menu{
     display: block;
     &__item{
+    }
+    &__link{
+      border-top: 1px solid white;
+      display: block;
+      margin: 0 auto;
       padding: 10px;
+      width: 95%;
+      &:hover{
+        background-color: $menu__link--active-color;
+      }
     }
   }
-
+  .carousel {
+    &__arrow{
+      font-size: 2.5em;
+      &--left{
+        left: 15px;
+        &:active{
+          left: 10px
+        }
+      }
+      &--right{
+        right: 15px;
+        &:active{
+          right: 10px
+        }
+      }
+    }
+    &__item{
+      margin-top: 0;
+    }
+    &__img{
+      max-height: 350px;
+    }
+    &__text {
+      margin: 0 auto;
+      width: 80%;
+      top: 38%;
+    }
+    &__title{
+      font-size: 3.0em;
+    }
+    &__subtitle{
+      font-size: 1.7em;
+    }
+  }
 
 } /* ------------------- <767px ------------------ */
 
 
-/* ---------------- >768px && <1024px  SECTION -------------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px) {
   .menu__wrapper {
+    &--top{
+      background-color: rgba(0,0,0,0.55);
+      padding: 20px 0;
+    }
+    &--scroll{
+      background-color: rgba(0,0,0,0.7);
+      padding: 7px 0;
+    }
   }
-
-} /* -------------- >768px && <1024px -------------- */
+  .menu{
+    display: flex;
+    justify-content: space-around;
+    &__item{
+    }
+    &__link{
+      padding: 25px 10px;
+      &:hover::before{
+        transform: scaleX(1);
+        visibility: visible;
+      }
+      &::before{
+        background: $menu__link--active-color;
+        border-radius: 1px;
+        bottom: 15px;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        transition: all 0.2s;
+        visibility: hidden;
+      }
+    }
+  }
+  .carousel {
+    &__arrow{
+      font-size: 3.2em;
+      &--left{
+        left: 25px;
+        &:active{
+          left: 20px
+        }
+      }
+      &--right{
+        right: 25px;
+        &:active{
+          right: 20px
+        }
+      }
+    }
+    &__item{
+      margin-top: -115px;
+    }
+    &__img{
+      max-height: 550px;
+    }
+    &__text {
+      top: 45%;
+    }
+    &__title{
+      font-size: 4em;
+    }
+    &__subtitle{
+      font-size: 2.5em;
+    }
+  }
+} /* -------------- >768px -------------- */
 
 
 /* --------------------- >1025px   SECTION ------------------ */
@@ -194,8 +255,20 @@ a{
   .menu__wrapper{
     position: sticky;
   }
-
-
+  .carousel {
+    &__img{
+      max-height: 700px;
+    }
+    &__text {
+      top: 50%;
+    }
+    &__title{
+      font-size: 4.5em;
+    }
+    &__subtitle{
+      font-size: 3em;
+    }
+  }
 } /* ------------------- >1025px ------------------ */
 
 

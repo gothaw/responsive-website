@@ -7,9 +7,9 @@ if ($('#index-main').length) {
             const carouselArrows = document.querySelectorAll('.carousel__arrow');
             const menuItems = document.querySelectorAll('.menu__item');
             const $menuBar = $('.menu__wrapper');
-            const $menuLogo = $('.menu__item')[2];
+            const menuLogo = menuItems[2];
 
-            console.log($menuLogo);
+            console.log(menuLogo);
             console.log(menuItems);
 
             function showNextImage() {
@@ -37,10 +37,10 @@ if ($('#index-main').length) {
             function toggleNavBar() {
                 enquire.register("screen and (max-width: 767px)", {
                     match: function () {
-                        $($menuLogo).prependTo($menuBar);
+                        $(menuLogo).prependTo($menuBar);
                     },
                     unmatch: function () {
-                        $(menuItems[1]).after($menuLogo);
+                        $(menuItems[1]).after(menuLogo);
                     }
                 });
             }
