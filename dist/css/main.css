@@ -154,6 +154,11 @@ a {
       width: 95%; }
       .menu__link:hover {
         background-color: #E31D3B; }
+    .menu__toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px; }
   .carousel__arrow {
     font-size: 2.5em; }
     .carousel__arrow--left {
@@ -175,7 +180,11 @@ a {
   .carousel__title {
     font-size: 3.0em; }
   .carousel__subtitle {
-    font-size: 1.7em; } }
+    font-size: 1.7em; }
+  .toggle__icon {
+    padding: 5px; }
+    .toggle__icon:hover {
+      cursor: pointer; } }
 
 /* ------------------- <767px ------------------ */
 /* ---------------- >768px SECTION -------------- */
@@ -206,6 +215,8 @@ a {
         transform: scaleX(0);
         transition: all 0.2s;
         visibility: hidden; }
+    .menu__toggle {
+      display: none; }
   .carousel__arrow {
     font-size: 3.2em; }
     .carousel__arrow--left {

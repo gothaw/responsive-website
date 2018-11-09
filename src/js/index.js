@@ -3,41 +3,42 @@ import enquire from './lib/enquire.js'
 if ($('#index-main').length) {
     (function () {
 
-            const carouselItems = document.querySelectorAll('.carousel__item');
-            const carouselArrows = document.querySelectorAll('.carousel__arrow');
-            const menuItems = document.querySelectorAll('.menu__item');
-            const $menuBar = $('.menu__wrapper');
-            const menuLogo = menuItems[2];
+            const menuItems             = document.querySelectorAll('.menu__item');
+            const menuLogo              = menuItems[2];
 
-            console.log(menuLogo);
-            console.log(menuItems);
+            const $carouselItems        = $('.carousel__item');
+            const $carouselArrows       = $('.carousel__arrow');
+            const $menu                 = $('.menu__wrapper');
+            const $toggleMenu           = $('.menu__toggle');
+            const $toggleMenuIcon       = $('.toggle__icon');
+
 
             function showNextImage() {
-                $(carouselItems[0]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
-                $(carouselItems[1]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
+                $($carouselItems[0]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
+                $($carouselItems[1]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
             }
 
-            function toggleNavBarAnimation() {
+            function toggleAnimationMenu() {
                 enquire.register("screen and (min-width: 1025px)", {
                     match: function () {
                         let scrollTop = $(window).scrollTop();
                         if (scrollTop > 0) {
-                            $menuBar.removeClass("menu__wrapper--top").addClass("menu__wrapper--scroll");
+                            $menu.removeClass("menu__wrapper--top").addClass("menu__wrapper--scroll");
                         }
                         else {
-                            $menuBar.removeClass("menu__wrapper--scroll").addClass("menu__wrapper--top");
+                            $menu.removeClass("menu__wrapper--scroll").addClass("menu__wrapper--top");
                         }
                     },
                     unmatch: function () {
-                        $menuBar.removeClass("menu__wrapper--scroll").addClass("menu__wrapper--top");
+                        $menu.removeClass("menu__wrapper--scroll").addClass("menu__wrapper--top");
                     }
                 });
             }
 
-            function toggleNavBar() {
+            function moveLogoToggleMenu() {
                 enquire.register("screen and (max-width: 767px)", {
                     match: function () {
-                        $(menuLogo).prependTo($menuBar);
+                        $(menuLogo).prependTo($toggleMenu);
                     },
                     unmatch: function () {
                         $(menuItems[1]).after(menuLogo);
@@ -45,17 +46,21 @@ if ($('#index-main').length) {
                 });
             }
 
+            function toggleMenu() {
+
+            }
+
+
             function eventHandler() {
-                carouselArrows[0].addEventListener("click", showNextImage);
-                carouselArrows[1].addEventListener("click", showNextImage);
-                carouselItems[0].addEventListener("touchstart",showNextImage);
-                carouselItems[1].addEventListener("touchstart",showNextImage);
+                $carouselArrows.on("click", showNextImage);
+                $carouselItems.on("touchstart",showNextImage);
+                $toggleMenuIcon.on("click",toggleMenu);
             }
 
             function init() {
                 eventHandler();
-                $(document).scroll(toggleNavBarAnimation);
-                toggleNavBar()
+                moveLogoToggleMenu();
+                $(document).scroll(toggleAnimationMenu);
             }
 
             window.addEventListener("load", init);

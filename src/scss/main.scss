@@ -138,6 +138,12 @@ a{
         background-color: $menu__link--active-color;
       }
     }
+    &__toggle{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
   }
   .carousel {
     &__arrow{
@@ -173,7 +179,12 @@ a{
       font-size: 1.7em;
     }
   }
-
+  .toggle__icon{
+    padding: 5px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
 } /* ------------------- <767px ------------------ */
 
 
@@ -213,6 +224,9 @@ a{
         transition: all 0.2s;
         visibility: hidden;
       }
+    }
+    &__toggle{
+      display: none;
     }
   }
   .carousel {
