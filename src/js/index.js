@@ -8,7 +8,8 @@ if ($('#index-main').length) {
 
             const $carouselItems        = $('.carousel__item');
             const $carouselArrows       = $('.carousel__arrow');
-            const $menu                 = $('.menu__wrapper');
+            const $menu                 = $('.menu');
+            const $menuBar              = $('.menu__wrapper');
             const $toggleMenu           = $('.menu__toggle');
             const $toggleMenuIcon       = $('.toggle__icon');
 
@@ -23,14 +24,14 @@ if ($('#index-main').length) {
                     match: function () {
                         let scrollTop = $(window).scrollTop();
                         if (scrollTop > 0) {
-                            $menu.removeClass("menu__wrapper--top").addClass("menu__wrapper--scroll");
+                            $menuBar.removeClass("menu__wrapper--top").addClass("menu__wrapper--scroll");
                         }
                         else {
-                            $menu.removeClass("menu__wrapper--scroll").addClass("menu__wrapper--top");
+                            $menuBar.removeClass("menu__wrapper--scroll").addClass("menu__wrapper--top");
                         }
                     },
                     unmatch: function () {
-                        $menu.removeClass("menu__wrapper--scroll").addClass("menu__wrapper--top");
+                        $menuBar.removeClass("menu__wrapper--scroll").addClass("menu__wrapper--top");
                     }
                 });
             }
@@ -47,19 +48,32 @@ if ($('#index-main').length) {
             }
 
             function toggleMenu() {
-
+                $menu.slideToggle();
             }
 
+            function registerMenu() {
+                enquire.register("screen and (max-width: 767px)", {
+                    match: function () {
+                        $menu.hide();
+                    },
+                    unmatch: function () {
+                        $menu.show();
+                    }
+                });
+            }
+
+            // console.log($().jquery);
 
             function eventHandler() {
                 $carouselArrows.on("click", showNextImage);
-                $carouselItems.on("touchstart",showNextImage);
+                $carouselItems.on("swipe",showNextImage);
                 $toggleMenuIcon.on("click",toggleMenu);
             }
 
             function init() {
                 eventHandler();
                 moveLogoToggleMenu();
+                registerMenu();
                 $(document).scroll(toggleAnimationMenu);
             }
 
