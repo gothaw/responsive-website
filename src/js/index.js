@@ -15,8 +15,7 @@ if ($('#index-main').length) {
 
 
             function showNextImage() {
-                $($carouselItems[0]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
-                $($carouselItems[1]).toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
+                $carouselItems.toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
             }
 
             function toggleAnimationMenu() {
@@ -61,8 +60,6 @@ if ($('#index-main').length) {
                     }
                 });
             }
-
-            // console.log($().jquery);
 
             function eventHandler() {
                 $carouselArrows.on("click", showNextImage);
