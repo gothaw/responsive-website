@@ -51,30 +51,7 @@ table {
   border-spacing: 0; }
 
 /*==================================== Variables ====================================*/
-/*==================================== General ====================================*/
-.inner {
-  max-width: 1140px;
-  margin: 0 auto; }
-
-html {
-  box-sizing: border-box; }
-
-*, *:before, *:after {
-  box-sizing: inherit; }
-
-body {
-  background-color: #e9e6ed; }
-
-a {
-  text-decoration: none; }
-
-@keyframes fade {
-  from {
-    opacity: 0.5; }
-  to {
-    opacity: 1; } }
-
-/*==================================== Header ====================================*/
+/*==================================== Header ======================================*/
 .menu__wrapper {
   position: relative;
   top: 0;
@@ -136,7 +113,7 @@ a {
     color: #E31D3B;
     text-shadow: 2px 1px black; }
   .carousel__subtitle {
-    color: white;
+    color: #fff;
     margin-top: 10px;
     text-shadow: 2px 1px black; }
 
@@ -253,6 +230,46 @@ a {
     font-size: 3em; } }
 
 /* ------------------- >1025px ------------------ */
+/*==================================== Variables ====================================*/
+/*==================================== General ====================================*/
+.inner {
+  max-width: 1140px;
+  margin: 0 auto; }
+
+.img-responsive {
+  width: 100%;
+  height: auto; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  background-color: #e9e6ed; }
+
+a {
+  text-decoration: none; }
+
+@keyframes fade {
+  from {
+    opacity: 0.5; }
+  to {
+    opacity: 1; } }
+
 /*==================================== Home ====================================*/
+/*==================================== About Us ====================================*/
+.about-us {
+  border: black solid 1px;
+  margin-top: 15px; }
+  .about-us__img {
+    grid-column: 1/3; }
+  .about-us__text {
+    grid-column: 3/4; }
+  .about-us__wrapper {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr; }
+
 .test {
   margin-top: 150px; }

@@ -1,25 +1,23 @@
 /*==================================== Imports ====================================*/
 
 @import 'partials/reset';
+@import 'partials/_header';
 
 /*==================================== Variables ====================================*/
 
-$menu__item-font-size: 1.1em;
-$menu__link--active-color: #E31D3B;
-$carousel__arrow-font-size: 3.2em;
-$carousel__title-font-size: 4.0em;
-$carousel__title-color: #E31D3B;
-$carousel__subtitle-font-size: 2.5em;
-$carousel__subtitle-color: white;
 $bg-color: #e9e6ed;
-$carousel__arrow-color: #fff;
 
 /*==================================== General ====================================*/
-
 .inner{
   max-width: 1140px;
   margin: 0 auto;
+  &--to-the-side{
 
+  }
+}
+.img-responsive{
+  width: 100%;
+  height: auto;
 }
 html{
   box-sizing: border-box;
@@ -37,261 +35,22 @@ a{
   from {opacity: 0.5}
   to {opacity: 1}
 }
-
-
-/*==================================== Header ====================================*/
-.menu__wrapper{
-  position: relative;
-  top: 0;
-  transition: all 0.5s;
-  width: 100%;
-  z-index: 20;
-}
-.menu{
-  align-items: center;
-  font-family: 'Ropa Sans', sans-serif;
-  font-size: $menu__item-font-size;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  &__item{
-    text-align: center;
-  }
-  &__link{
-    position: relative;
-    color: #fff;
-    transition: all 0.2s;
-    &:active{
-      color: $menu__link--active-color;
-    }
-  }
-}
-.carousel{
-  position: relative;
-  &__arrow{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    color: $carousel__arrow-color;
-    opacity: 0.65;
-    cursor: pointer;
-    font-weight: bold;
-    position: absolute;
-    text-shadow: 2px 1px darken($carousel__arrow-color,75%);
-    top: 50%;
-    transition: all .2s;
-    z-index: 10;
-    &:hover{
-      opacity: 1;
-    }
-  }
-  &__item{
-    position: relative;
-    &--shown{
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-    &--hidden{
-      display: none;
-    }
-  }
+/*==================================== Home ====================================*/
+/*==================================== About Us ====================================*/
+.about-us{
+  border: black solid 1px;
+  margin-top: 15px;
   &__img{
-    object-fit: cover;
-    width: 100%;
+    grid-column: 1/3;
   }
   &__text{
-    font-family: 'Ropa Sans', sans-serif;
-    left: 0;
-    letter-spacing: 1px;
-    position: absolute;
-    right: 0;
-    text-align: center;
+    grid-column: 3/4;
   }
-  &__title{
-    color: $carousel__title-color;
-    text-shadow: 2px 1px darken($carousel__title-color,65%);
-  }
-  &__subtitle{
-    color: $carousel__subtitle-color;
-    margin-top: 10px;
-    text-shadow: 2px 1px darken($carousel__subtitle-color,100%);
+  &__wrapper{
+    display: grid;
+    grid-template-columns: 1fr minmax(auto,570px) minmax(auto,570px) 1fr;
   }
 }
-/* ------------------- <767px   SECTION ------------------- */
-@media only screen and (max-width: 767px) {
-  .menu__wrapper {
-    &--top{
-      background-color: rgba(0,0,0,1);
-    }
-  }
-  .menu{
-    display: block;
-    &__item{
-    }
-    &__link{
-      border-top: 1px solid white;
-      display: block;
-      margin: 0 auto;
-      padding: 10px;
-      width: 95%;
-      &:hover{
-        background-color: $menu__link--active-color;
-      }
-    }
-    &__toggle{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-    }
-  }
-  .carousel {
-    &__arrow{
-      font-size: 2.5em;
-      &--left{
-        left: 15px;
-        &:active{
-          left: 10px
-        }
-      }
-      &--right{
-        right: 15px;
-        &:active{
-          right: 10px
-        }
-      }
-    }
-    &__item{
-      margin-top: 0;
-    }
-    &__img{
-      min-height: 350px;
-    }
-    &__text {
-      margin: 0 auto;
-      width: 80%;
-      top: 38%;
-    }
-    &__title{
-      font-size: 3.0em;
-    }
-    &__subtitle{
-      font-size: 1.7em;
-    }
-  }
-  .toggle__icon{
-    padding: 5px;
-    &:hover{
-      cursor: pointer;
-    }
-  }
-} /* ------------------- <767px ------------------ */
-
-
-/* ---------------- >768px SECTION -------------- */
-@media only screen and (min-width: 768px) {
-  .menu__wrapper {
-    &--top{
-      background-color: rgba(0,0,0,0.55);
-      padding: 20px 0;
-    }
-    &--scroll{
-      background-color: rgba(0,0,0,0.7);
-      padding: 7px 0;
-    }
-  }
-  .menu{
-    display: flex;
-    justify-content: space-around;
-    &__item{
-    }
-    &__link{
-      padding: 25px 10px;
-      &:hover::before{
-        transform: scaleX(1);
-        visibility: visible;
-      }
-      &::before{
-        background: $menu__link--active-color;
-        border-radius: 1px;
-        bottom: 15px;
-        content: "";
-        height: 2px;
-        left: 0;
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        transition: all 0.2s;
-        visibility: hidden;
-      }
-    }
-    &__toggle{
-      display: none;
-    }
-  }
-  .carousel {
-    &__arrow{
-      font-size: 3.2em;
-      &--left{
-        left: 25px;
-        &:active{
-          left: 20px
-        }
-      }
-      &--right{
-        right: 25px;
-        &:active{
-          right: 20px
-        }
-      }
-    }
-    &__item{
-      margin-top: -115px;
-    }
-    &__img{
-      max-height: 550px;
-    }
-    &__text {
-      top: 45%;
-    }
-    &__title{
-      font-size: 4em;
-    }
-    &__subtitle{
-      font-size: 2.5em;
-    }
-  }
-} /* -------------- >768px -------------- */
-
-
-/* --------------------- >1025px   SECTION ------------------ */
-@media only screen and (min-width: 1025px) {
-  .menu__wrapper{
-    position: sticky;
-  }
-  .carousel {
-    &__img{
-      max-height: 700px;
-    }
-    &__text {
-      top: 50%;
-    }
-    &__title{
-      font-size: 4.5em;
-    }
-    &__subtitle{
-      font-size: 3em;
-    }
-  }
-} /* ------------------- >1025px ------------------ */
-
-
-
-
-
-
-/*==================================== Home ====================================*/
-
 
 
 .test{
