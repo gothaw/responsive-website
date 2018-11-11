@@ -1,5 +1,4 @@
 /*==================================== Variables ====================================*/
-$menu__item-font-size: 1.1em;
 $menu__link--active-color: #E31D3B;
 $carousel__title-color: #E31D3B;
 $carousel__subtitle-color: #fff;
@@ -15,7 +14,7 @@ $carousel__arrow-color: #fff;
 .menu{
   align-items: center;
   font-family: 'Ropa Sans', sans-serif;
-  font-size: $menu__item-font-size;
+  font-size: 1.1em;
   letter-spacing: 1px;
   text-transform: uppercase;
   &__item{

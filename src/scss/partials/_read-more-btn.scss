@@ -1,0 +1,16 @@
+/*==================================== Variables ====================================*/
+  $btn-color-font: #fff;
+  $btn-bg-color: #E31D3B;
+/*=============================== Read More Button =================================*/
+.button-read-more{
+  &__link{
+    background-color: $btn-bg-color;
+    color: $btn-color-font;
+  }
+  &:active{
+
+  }
+  &:hover{
+
+  }
+}
