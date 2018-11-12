@@ -1,35 +1,31 @@
 /*==================================== Variables ====================================*/
-  $btn-color-font: #fff;
-  $btn-bg-color: #E31D3B;
+  $btn-color-1: #fff;
+  $btn-color-2: #E31D3B;
 /*=============================== Read More Button =================================*/
 .button-read-more{
-  //background-color: $btn-bg-color;
-  border: solid $btn-bg-color 3px;
+  border: solid $btn-color-2 3px;
   border-radius: 30px;
-  box-shadow: 3px 3px 2px lighten($btn-bg-color, 20%);
+  box-shadow: 3px 3px 2px lighten($btn-color-2, 20%);
   font-family: 'Ropa Sans', sans-serif;
-  font-size: 1.4em;
   font-weight: bold;
   margin: 0 auto;
   overflow: hidden;
   text-align: center;
-  width: 160px;
   &__link{
+    color: $btn-color-2;
     display: block;
-    padding: 20px;
     position: relative;
-    color: $btn-bg-color;
     text-transform: uppercase;
-    transition: color 0.3s;
+    transition: all 0.3s;
     &:active{
       color: #000 !important;
-      text-decoration: underline;
     }
     &:hover{
-      color: $btn-color-font;
+      color: $btn-color-1;
+      text-shadow: 2px 1px darken($btn-color-2,30%);
     }
     &::before,&::after{
-      background: #E31D3B;
+      background: $btn-color-2;
       content: '';
       height: 100%;
       opacity: 0.75;
@@ -52,13 +48,21 @@
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-
+  .button-read-more{
+    font-size: 1.2em;
+    width: 140px;
+    &__link {
+      padding: 15px;
+    }
+  }
 } /* ------------------- <767px ------------------ */
-/* ---------------- >768px && <1024px SECTION -------------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-} /* ---------------- >768px && <1024px -------------- */
-/* ---------------- >1025px SECTION -------------- */
-@media only screen and (min-width: 1025px) {
-
-} /* ---------------- <1025px -------------- */
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .button-read-more{
+    font-size: 1.4em;
+    width: 160px;
+    &__link {
+      padding: 20px;
+    }
+  }
+} /* ---------------- >768px -------------- */

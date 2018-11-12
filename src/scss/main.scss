@@ -3,27 +3,12 @@
 @import 'partials/reset';
 @import 'partials/_header';
 @import 'partials/_read-more-btn';
-
-/*==================================== Variables ====================================*/
-
-$bg-color: #e9e6ed;
-$main-color: #E31D3B;
-$h3-font-size-lg: 3.2em;
-$h3-font-size-md: 2.0em;
-$h3-font-size-sm: 2.0em;
-$p-font-size-lg: 1.4em;
-$p-font-size-md: 1.2em;
-$p-font-size-sm: 1.2em;
-$section-space-lg: 30px;
-$section-space-md: 20px;
+@import 'partials/_utilities';
 
 /*==================================== General ====================================*/
 .inner{
   max-width: 1140px;
   margin: 0 auto;
-  &--to-the-side{
-
-  }
 }
 .img{
   &-responsive{
@@ -33,14 +18,20 @@ $section-space-md: 20px;
   &__number{
     color: #e9e6ed;
     font-family: 'Ropa Sans', sans-serif;
-    font-size: 15em;
     position: absolute;
-    right: -18.5px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     top:0;
+    @media only screen and (max-width: 767px) {
+      font-size: 10em;
+      right: -12px;
+    }
+    @media only screen and (min-width: 768px) {
+      font-size: 15em;
+      right: -19px;
+    }
   }
 }
 html{
@@ -59,57 +50,98 @@ a{
   from {opacity: 0.5}
   to {opacity: 1}
 }
-/*==================================== Home ====================================*/
-/*==================================== About Us ====================================*/
+/*========================================================================================================*/
+/*=============================================== About Us ===============================================*/
+/*========================================================================================================*/
 .about-us{
-  margin-top: $section-space-lg;
   &__img{
     object-fit: cover;
-    max-height: 500px;
   }
   &__img-wrapper{
     position: relative;
-    grid-column: 1/3;
   }
   &__text{
     border: black solid 3px;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: $p-font-size-lg;
-    line-height: 1.5em;
     margin: 15px 0;
-    padding: 25px;
-    text-align: left;
+    padding: 15px 25px;
+    text-align: center;
   }
   &__title{
     font-weight: bold;
     font-family: 'Ropa Sans', sans-serif;
-    font-size: $h3-font-size-lg;
     text-transform: uppercase;
+    text-align: center;
     .title__slash{
       color: $main-color;
     }
   }
-  &__section{
-    grid-column: 3/4;
-    padding: 50px 0 50px 25px;
-  }
-  &__wrapper{
-    display: grid;
-    grid-template-columns: 1fr minmax(auto,570px) minmax(auto,570px) 1fr;
-  }
 }
-
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-
+  .about-us {
+    &__img{
+      height: 300px;
+    }
+    &__text{
+      font-size: $p-font-size-sm;
+      line-height: $p-line-h-sm;
+      padding: 15px;
+    }
+    &__title{
+      font-size: $h3-font-size-sm;
+    }
+    &__section{
+      padding: 15px;
+    }
+  }
 } /* ------------------- <767px ------------------ */
-/* ---------------- >768px && <1024px SECTION -------------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-} /* ---------------- >768px && <1024px -------------- */
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px){
+  .about-us {
+    &__img{
+      height: 500px;
+    }
+    &__text{
+      font-size: $p-font-size-md;
+      line-height: $p-line-h-md;
+    }
+    &__title{
+      font-size: $h3-font-size-md;
+    }
+    &__section{
+      padding: 25px;
+    }
+  }
+} /* ---------------- >768px -------------- */
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
-
+  .about-us {
+    margin-top: $section-space-lg;
+    &__text{
+      font-size: $p-font-size-lg;
+      line-height: $p-line-h-lg;
+      text-align: left;
+    }
+    &__title{
+      font-size: $h3-font-size-lg;
+      text-align: left;
+    }
+    &__img-wrapper{
+      grid-column: 1/3;
+      grid-row: 1;
+    }
+    &__section{
+      grid-column: 3/4;
+    }
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr;
+    }
+    &__section{
+      padding: 50px 10px 50px 25px;
+    }
+  }
 } /* ---------------- <1025px -------------- */
 
 

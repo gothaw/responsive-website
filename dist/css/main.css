@@ -100,6 +100,7 @@ table {
     .carousel__item--hidden {
       display: none; }
   .carousel__img {
+    border-bottom: black solid 3px;
     object-fit: cover;
     width: 100%; }
   .carousel__text {
@@ -237,24 +238,21 @@ table {
   border-radius: 30px;
   box-shadow: 3px 3px 2px #ee788a;
   font-family: 'Ropa Sans', sans-serif;
-  font-size: 1.4em;
   font-weight: bold;
   margin: 0 auto;
   overflow: hidden;
-  text-align: center;
-  width: 160px; }
+  text-align: center; }
   .button-read-more__link {
-    display: block;
-    padding: 20px;
-    position: relative;
     color: #E31D3B;
+    display: block;
+    position: relative;
     text-transform: uppercase;
-    transition: color 0.3s; }
+    transition: all 0.3s; }
     .button-read-more__link:active {
-      color: #000 !important;
-      text-decoration: underline; }
+      color: #000 !important; }
     .button-read-more__link:hover {
-      color: #fff; }
+      color: #fff;
+      text-shadow: 2px 1px #5c0b18; }
     .button-read-more__link::before, .button-read-more__link::after {
       background: #E31D3B;
       content: '';
@@ -273,11 +271,23 @@ table {
       width: 100%; }
 
 /* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .button-read-more {
+    font-size: 1.2em;
+    width: 140px; }
+    .button-read-more__link {
+      padding: 15px; } }
+
 /* ------------------- <767px ------------------ */
-/* ---------------- >768px && <1024px SECTION -------------- */
-/* ---------------- >768px && <1024px -------------- */
-/* ---------------- >1025px SECTION -------------- */
-/* ---------------- <1025px -------------- */
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .button-read-more {
+    font-size: 1.4em;
+    width: 160px; }
+    .button-read-more__link {
+      padding: 20px; } }
+
+/* ---------------- >768px -------------- */
 /*==================================== Variables ====================================*/
 /*==================================== General ====================================*/
 .inner {
@@ -291,14 +301,20 @@ table {
 .img__number {
   color: #e9e6ed;
   font-family: 'Ropa Sans', sans-serif;
-  font-size: 15em;
   position: absolute;
-  right: -18.5px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   top: 0; }
+  @media only screen and (max-width: 767px) {
+    .img__number {
+      font-size: 10em;
+      right: -12px; } }
+  @media only screen and (min-width: 768px) {
+    .img__number {
+      font-size: 15em;
+      right: -19px; } }
 
 html {
   box-sizing: border-box; }
@@ -318,43 +334,79 @@ a {
   to {
     opacity: 1; } }
 
-/*==================================== Home ====================================*/
-/*==================================== About Us ====================================*/
-.about-us {
-  margin-top: 30px; }
-  .about-us__img {
-    object-fit: cover;
-    max-height: 500px; }
-  .about-us__img-wrapper {
-    position: relative;
-    grid-column: 1/3; }
-  .about-us__text {
-    border: black solid 3px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.4em;
-    line-height: 1.5em;
-    margin: 15px 0;
-    padding: 25px;
-    text-align: left; }
-  .about-us__title {
-    font-weight: bold;
-    font-family: 'Ropa Sans', sans-serif;
-    font-size: 3.2em;
-    text-transform: uppercase; }
-    .about-us__title .title__slash {
-      color: #E31D3B; }
-  .about-us__section {
-    grid-column: 3/4;
-    padding: 50px 0 50px 25px; }
-  .about-us__wrapper {
-    display: grid;
-    grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr; }
+/*========================================================================================================*/
+/*=============================================== About Us ===============================================*/
+/*========================================================================================================*/
+.about-us__img {
+  object-fit: cover; }
+
+.about-us__img-wrapper {
+  position: relative; }
+
+.about-us__text {
+  border: black solid 3px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 15px 0;
+  padding: 15px 25px;
+  text-align: center; }
+
+.about-us__title {
+  font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
+  text-transform: uppercase;
+  text-align: center; }
+  .about-us__title .title__slash {
+    color: #E31D3B; }
 
 /* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .about-us__img {
+    height: 300px; }
+  .about-us__text {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    padding: 15px; }
+  .about-us__title {
+    font-size: 2em; }
+  .about-us__section {
+    padding: 15px; } }
+
 /* ------------------- <767px ------------------ */
-/* ---------------- >768px && <1024px SECTION -------------- */
-/* ---------------- >768px && <1024px -------------- */
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .about-us__img {
+    height: 500px; }
+  .about-us__text {
+    font-size: 1.4em;
+    line-height: 1.5em; }
+  .about-us__title {
+    font-size: 2.5em; }
+  .about-us__section {
+    padding: 25px; } }
+
+/* ---------------- >768px -------------- */
 /* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+  .about-us {
+    margin-top: 30px; }
+    .about-us__text {
+      font-size: 1.4em;
+      line-height: 1.5em;
+      text-align: left; }
+    .about-us__title {
+      font-size: 3.2em;
+      text-align: left; }
+    .about-us__img-wrapper {
+      grid-column: 1/3;
+      grid-row: 1; }
+    .about-us__section {
+      grid-column: 3/4; }
+    .about-us__wrapper {
+      display: grid;
+      grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr; }
+    .about-us__section {
+      padding: 50px 10px 50px 25px; } }
+
 /* ---------------- <1025px -------------- */
 .test {
   margin-top: 150px; }

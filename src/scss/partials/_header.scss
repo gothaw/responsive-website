@@ -60,6 +60,7 @@ $carousel__arrow-color: #fff;
     }
   }
   &__img{
+    border-bottom: black solid 3px;
     object-fit: cover;
     width: 100%;
   }
