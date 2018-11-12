@@ -3,14 +3,62 @@
   $btn-bg-color: #E31D3B;
 /*=============================== Read More Button =================================*/
 .button-read-more{
+  //background-color: $btn-bg-color;
+  border: solid $btn-bg-color 3px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 2px lighten($btn-bg-color, 20%);
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  width: 160px;
   &__link{
-    background-color: $btn-bg-color;
-    color: $btn-color-font;
-  }
-  &:active{
-
-  }
-  &:hover{
-
+    display: block;
+    padding: 20px;
+    position: relative;
+    color: $btn-bg-color;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    &:active{
+      color: #000 !important;
+      text-decoration: underline;
+    }
+    &:hover{
+      color: $btn-color-font;
+    }
+    &::before,&::after{
+      background: #E31D3B;
+      content: '';
+      height: 100%;
+      opacity: 0.75;
+      position: absolute;
+      transition: all .5s;
+      top: 0;
+      width: 0;
+      z-index: -1;
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+    &:hover::before,&:hover::after {
+      width: 100%;
+    }
   }
 }
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+
+} /* ------------------- <767px ------------------ */
+/* ---------------- >768px && <1024px SECTION -------------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+} /* ---------------- >768px && <1024px -------------- */
+/* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+
+} /* ---------------- <1025px -------------- */

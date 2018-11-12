@@ -232,10 +232,52 @@ table {
 /* ------------------- >1025px ------------------ */
 /*==================================== Variables ====================================*/
 /*=============================== Read More Button =================================*/
-.button-read-more__link {
-  background-color: #E31D3B;
-  color: #fff; }
+.button-read-more {
+  border: solid #E31D3B 3px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 2px #ee788a;
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  width: 160px; }
+  .button-read-more__link {
+    display: block;
+    padding: 20px;
+    position: relative;
+    color: #E31D3B;
+    text-transform: uppercase;
+    transition: color 0.3s; }
+    .button-read-more__link:active {
+      color: #000 !important;
+      text-decoration: underline; }
+    .button-read-more__link:hover {
+      color: #fff; }
+    .button-read-more__link::before, .button-read-more__link::after {
+      background: #E31D3B;
+      content: '';
+      height: 100%;
+      opacity: 0.75;
+      position: absolute;
+      transition: all .5s;
+      top: 0;
+      width: 0;
+      z-index: -1; }
+    .button-read-more__link::before {
+      left: 0; }
+    .button-read-more__link::after {
+      right: 0; }
+    .button-read-more__link:hover::before, .button-read-more__link:hover::after {
+      width: 100%; }
 
+/* ------------------- <767px   SECTION ------------------- */
+/* ------------------- <767px ------------------ */
+/* ---------------- >768px && <1024px SECTION -------------- */
+/* ---------------- >768px && <1024px -------------- */
+/* ---------------- >1025px SECTION -------------- */
+/* ---------------- <1025px -------------- */
 /*==================================== Variables ====================================*/
 /*==================================== General ====================================*/
 .inner {
