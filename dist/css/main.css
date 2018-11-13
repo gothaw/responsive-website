@@ -358,9 +358,15 @@ a {
   .about-us__title .title__slash {
     color: #E31D3B; }
 
+.about-us__CEO-quote {
+  background-color: #E31D3B;
+  color: #e9e6ed;
+  padding: 35px;
+  font-family: 'Source Sans Pro', sans-serif; }
+
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .about-us__img {
+  .about-us__img-wrapper, .about-us__img {
     height: 300px; }
   .about-us__text {
     font-size: 1.2em;
@@ -374,7 +380,7 @@ a {
 /* ------------------- <767px ------------------ */
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
-  .about-us__img {
+  .about-us__img-wrapper, .about-us__img {
     height: 500px; }
   .about-us__text {
     font-size: 1.4em;
@@ -405,7 +411,12 @@ a {
       display: grid;
       grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr; }
     .about-us__section {
-      padding: 50px 10px 50px 25px; } }
+      padding: 30px 10px 30px 25px; }
+    .about-us__CEO-quote {
+      grid-column: 3/4; }
+    .about-us__values {
+      grid-column: 1/3;
+      grid-row: 2; } }
 
 /* ---------------- <1025px -------------- */
 .test {
