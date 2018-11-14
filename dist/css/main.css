@@ -364,8 +364,25 @@ p {
   align-items: center;
   background-color: #E31D3B;
   color: #e9e6ed;
-  padding: 35px;
+  padding: 25px;
   text-align: center; }
+  .about-us__CEO-quote .CEO-quote__text p:nth-child(2) {
+    font-weight: bold; }
+
+.about-us__values .values__tab-wrapper {
+  border-bottom: #E31D3B solid 1px;
+  border-top: #E31D3B solid 1px;
+  display: flex;
+  font-family: 'Ropa Sans', sans-serif;
+  justify-content: space-around; }
+
+.about-us__values .values__tab {
+  cursor: pointer;
+  width: 100%;
+  text-align: center; }
+  .about-us__values .values__tab--selected {
+    background-color: #eb6176;
+    color: #FFFFFF; }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -375,12 +392,17 @@ p {
     font-size: 1.2em;
     line-height: 1.2em;
     padding: 15px; }
+    .about-us__text .CEO-quote__img, .about-us__CEO-quote .CEO-quote__img {
+      display: none; }
   .about-us__title {
     font-size: 2em; }
   .about-us__section {
     padding: 15px; }
-  .CEO-quote__img {
-    display: none; } }
+  .about-us__values .values__tab-wrapper {
+    margin: 15px 0; }
+  .about-us__values .values__tab {
+    font-size: 1.2em;
+    padding: 15px 15px; } }
 
 /* ------------------- <767px ------------------ */
 /* ---------------- >768px SECTION -------------- */
@@ -395,11 +417,17 @@ p {
   .about-us__section {
     padding: 25px; }
   .about-us__CEO-quote {
-    display: flex; }
-  .CEO-quote__text {
-    padding-left: 25px; }
-  .CEO-quote__img {
-    border-radius: 50%; } }
+    display: flex;
+    justify-content: space-between; }
+    .about-us__CEO-quote .CEO-quote__text {
+      padding-left: 25px; }
+    .about-us__CEO-quote .CEO-quote__img {
+      border-radius: 50%; }
+  .about-us__values .values__tab-wrapper {
+    margin: 25px 0; }
+  .about-us__values .values__tab {
+    font-size: 1.5em;
+    padding: 15px 25px; } }
 
 /* ---------------- >768px -------------- */
 /* ---------------- >1025px SECTION -------------- */

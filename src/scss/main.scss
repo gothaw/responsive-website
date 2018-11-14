@@ -66,7 +66,7 @@ p{
   &__text{
     border: black solid 3px;
     margin: 15px 0;
-    padding: 15px 25px;
+    padding: 15px $offset-md;
     text-align: center;
   }
   &__title{
@@ -82,11 +82,31 @@ p{
     align-items: center;
     background-color: $main-color;
     color: $bg-color;
-    padding: 35px;
+    padding: $offset-md;
     text-align: center;
+    .CEO-quote__text p:nth-child(2){
+      font-weight: bold;
+    }
   }
   &__values{
-
+    .values{
+     &__tab-wrapper{
+       border-bottom: $main-color solid 1px;
+       border-top: $main-color solid 1px;
+       display: flex;
+       font-family: 'Ropa Sans', sans-serif;
+       justify-content: space-around;
+     }
+     &__tab{
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        &--selected{
+          background-color: lighten($main-color,15%);
+          color: $secondary-color;
+        }
+     }
+    }
   }
 }
 
@@ -100,7 +120,10 @@ p{
     &__text, &__CEO-quote{
       font-size: $p-font-size-sm;
       line-height: $p-line-h-sm;
-      padding: 15px;
+      padding: $offset-sm;
+      .CEO-quote__img{
+        display: none;
+      }
     }
     &__title{
       font-size: $h3-font-size-sm;
@@ -109,11 +132,16 @@ p{
       padding: 15px;
     }
     &__values{
-
-    }
-  }
-  .CEO-quote__img{
-    display: none;
+       .values{
+         &__tab-wrapper{
+           margin: $offset-sm 0;
+         }
+         &__tab{
+           font-size: $h4-font-size-sm;
+           padding: 15px $offset-sm;
+         }
+       }
+     }
   }
 } /* ------------------- <767px ------------------ */
 /* ---------------- >768px SECTION -------------- */
@@ -134,22 +162,31 @@ p{
     }
     &__CEO-quote{
       display: flex;
+      justify-content: space-between;
+      .CEO-quote__text{
+        padding-left: 25px;
+      }
+      .CEO-quote__img{
+        border-radius: 50%;
+      }
     }
     &__values{
-
+      .values{
+        &__tab-wrapper{
+          margin: $offset-md 0;
+        }
+        &__tab{
+          font-size: $h4-font-size-md;
+          padding: 15px $offset-md;
+        }
+      }
     }
-  }
-  .CEO-quote__text{
-    padding-left: 25px;
-  }
-  .CEO-quote__img{
-    border-radius: 50%;
   }
 } /* ---------------- >768px -------------- */
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
   .about-us {
-    margin-top: $section-space-lg;
+    margin-top: $offset-lg;
     &__text, &__CEO-quote{
       font-size: $p-font-size-lg;
       line-height: $p-line-h-lg;
