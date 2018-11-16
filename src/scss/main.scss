@@ -91,20 +91,24 @@ p{
   &__values{
     .values{
      &__tab-wrapper{
-       border-bottom: $main-color solid 1px;
        border-top: $main-color solid 1px;
+       border-bottom: $main-color solid 1px;
        display: flex;
        font-family: 'Ropa Sans', sans-serif;
        justify-content: space-around;
+       margin: 30px 0 20px;
      }
      &__tab{
         cursor: pointer;
         width: 100%;
         text-align: center;
         &--selected{
-          background-color: lighten($main-color,15%);
+          background-color: $main-color;
           color: $secondary-color;
         }
+     }
+     &__description{
+
      }
     }
   }
@@ -118,8 +122,8 @@ p{
       height: 300px;
     }
     &__text, &__CEO-quote{
-      font-size: $p-font-size-sm;
-      line-height: $p-line-h-sm;
+      font-size: $div-font-size-sm;
+      line-height: $div-line-h-sm;
       padding: $offset-sm;
       .CEO-quote__img{
         display: none;
@@ -132,15 +136,13 @@ p{
       padding: 15px;
     }
     &__values{
-       .values{
-         &__tab-wrapper{
-           margin: $offset-sm 0;
-         }
-         &__tab{
-           font-size: $h4-font-size-sm;
+       .values__tab{
+           font-size: $div-font-size-sm;
            padding: 15px $offset-sm;
-         }
        }
+      .values__description{
+
+      }
      }
   }
 } /* ------------------- <767px ------------------ */
@@ -151,8 +153,8 @@ p{
       height: 500px;
     }
     &__text, &__CEO-quote{
-      font-size: $p-font-size-md;
-      line-height: $p-line-h-md;
+      font-size: $div-font-size-md;
+      line-height: $div-line-h-md;
     }
     &__title{
       font-size: $h3-font-size-md;
@@ -171,14 +173,12 @@ p{
       }
     }
     &__values{
-      .values{
-        &__tab-wrapper{
-          margin: $offset-md 0;
-        }
-        &__tab{
-          font-size: $h4-font-size-md;
+      .values__tab{
+          font-size: $div-font-size-md;
           padding: 15px $offset-md;
-        }
+      }
+      .values__description{
+
       }
     }
   }
@@ -188,8 +188,8 @@ p{
   .about-us {
     margin-top: $offset-lg;
     &__text, &__CEO-quote{
-      font-size: $p-font-size-lg;
-      line-height: $p-line-h-lg;
+      font-size: $div-font-size-lg;
+      line-height: $div-line-h-lg;
       text-align: left;
     }
     &__title{
@@ -216,6 +216,13 @@ p{
     &__values{
       grid-column: 1/3;
       grid-row: 2;
+      .values__tab-wrapper{
+        border-top: none;
+        margin-top: 0;
+      }
+      .values__description{
+
+      }
     }
   }
 } /* ---------------- <1025px -------------- */
