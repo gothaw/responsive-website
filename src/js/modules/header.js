@@ -1,22 +1,27 @@
 import enquire from '../lib/enquire.js'
 
 (function () {
-
+    // Variables
     const menuItems             = document.querySelectorAll('.menu__item');
     const menuLogo              = menuItems[2];
-
+    // jQuery variables
     const $carouselItems        = $('.carousel__item');
     const $carouselArrows       = $('.carousel__arrow');
     const $menu                 = $('.menu');
     const $menuBar              = $('.menu__wrapper');
     const $toggleMenu           = $('.menu__toggle');
     const $toggleMenuIcon       = $('.toggle__icon');
-
-
+    /**
+     * @name    showNextImage
+     * @desc    Function toggles between carousel images in header.
+     */
     function showNextImage() {
         $carouselItems.toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
     }
-
+    /**
+     * @name    toggleAnimationMenu
+     * @desc    Function adds sticky behavior for the menu bar is width is greater than 1025px.
+     */
     function toggleAnimationMenu() {
         enquire.register("screen and (min-width: 1025px)", {
             match: function () {
@@ -33,7 +38,11 @@ import enquire from '../lib/enquire.js'
             }
         });
     }
-
+    /**
+     * @name    moveLogoToggleMenu
+     * @desc    Function prepends logo image before menu links if width is less than 767px.
+     *          If width is greater than 767px, logo is appended after second menu link.
+     */
     function moveLogoToggleMenu() {
         enquire.register("screen and (max-width: 767px)", {
             match: function () {
@@ -44,11 +53,18 @@ import enquire from '../lib/enquire.js'
             }
         });
     }
-
+    /**
+     * @name    toggleMenu
+     * @desc    Slide toggle animation for hamburger menu.
+     */
     function toggleMenu() {
         $menu.slideToggle();
     }
-
+    /**
+     * @name    registerMenu
+     * @desc    Function hides the menu bar links when width is less than 767px and shows when it is greater than 767px.
+     *          Uses enquire.js module.
+     */
     function registerMenu() {
         enquire.register("screen and (max-width: 767px)", {
             match: function () {
