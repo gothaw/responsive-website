@@ -15,3 +15,81 @@ $p-font-size-md: 1.2em;
 $offset-sm: 15px;
 $offset-md: 25px;
 $offset-lg: 30px;
+/*==================================== Mixins ====================================*/
+@mixin responsive-div-text{
+  @media only screen and (max-width: 767px) {
+    font-size: $div-font-size-sm;
+    line-height: $div-line-h-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $div-font-size-md;
+    line-height: $div-line-h-md;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: $div-font-size-lg;
+    line-height: $div-line-h-lg;
+  }
+}
+@mixin div-section-text-in-border{
+  border: black solid 3px;
+  margin: 15px 0;
+  padding: 15px;
+  text-align: center;
+}
+@mixin section-title{
+  font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  @media only screen and (max-width: 767px) {
+    font-size: $h3-font-size-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $h3-font-size-md;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: $h3-font-size-lg;
+    text-align: left;
+  }
+}
+@mixin div-section-text-on-bg{
+  align-items: center;
+  background-color: $main-color;
+  color: $bg-color;
+  padding: $offset-md;
+  text-align: center;
+}
+@mixin inner-grid{
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr;
+}
+@mixin number-font-size-and-position ($right-sm, $right-md){
+  top:0;
+  @media only screen and (max-width: 767px) {
+    font-size: 10em;
+    right: $right-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 15em;
+    right: $right-md;
+  }
+}
+@mixin section-padding{
+  @media only screen and (max-width: 767px) {
+    padding: 15px;
+  }
+  @media only screen and (min-width: 768px) {
+    padding: 25px;
+  }
+  @media only screen and (min-width: 1025px) {
+    padding: 30px 10px 30px 25px;
+  }
+}
+@mixin section-img-size{
+  @media only screen and (max-width: 767px) {
+    height: 300px;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 500px;
+  }
+}
