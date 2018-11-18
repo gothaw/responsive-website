@@ -370,20 +370,35 @@ p {
     font-weight: bold; }
 
 .about-us__values .values__tab-wrapper {
-  border-top: #E31D3B solid 1px;
-  border-bottom: #E31D3B solid 1px;
+  border-top: #E31D3B solid 3px;
+  border-bottom: #E31D3B solid 3px;
   display: flex;
   font-family: 'Ropa Sans', sans-serif;
   justify-content: space-around;
-  margin: 30px 0 20px; }
+  margin-top: 30px; }
 
 .about-us__values .values__tab {
   cursor: pointer;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  transition: all 0.2s; }
   .about-us__values .values__tab--selected {
     background-color: #E31D3B;
     color: #FFFFFF; }
+  .about-us__values .values__tab--unselected:hover {
+    color: #E31D3B; }
+
+.about-us__values .values__description {
+  border: #9b8dad solid 1px;
+  margin: 15px 15px 0 15px;
+  padding: 15px; }
+  .about-us__values .values__description--hidden {
+    display: none; }
+  .about-us__values .values__description .values__title, .about-us__values .values__description p {
+    margin-bottom: 15px; }
+  .about-us__values .values__description .values__title {
+    font-family: 'Ropa Sans', sans-serif;
+    font-weight: bold; }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -393,8 +408,8 @@ p {
     font-size: 1.2em;
     line-height: 1.2em;
     padding: 15px; }
-    .about-us__text .CEO-quote__img, .about-us__CEO-quote .CEO-quote__img {
-      display: none; }
+  .about-us .CEO-quote__img {
+    display: none; }
   .about-us__title {
     font-size: 2em; }
   .about-us__section {
@@ -424,7 +439,10 @@ p {
       border-radius: 50%; }
   .about-us__values .values__tab {
     font-size: 1.4em;
-    padding: 15px 25px; } }
+    padding: 15px 25px; }
+  .about-us__values .values__description {
+    font-size: 1.2em;
+    line-height: 1.2em; } }
 
 /* ---------------- >768px -------------- */
 /* ---------------- >1025px SECTION -------------- */
