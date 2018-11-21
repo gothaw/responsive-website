@@ -107,7 +107,7 @@ p{
      }
      &__description{
        border: darken($bg-color,30%) solid 1px;
-       margin: 15px 15px 0 15px;
+       margin: 15px 25px 0 25px;
        padding: 15px;
        &--hidden{
          display: none;
@@ -189,6 +189,9 @@ p{
         border-top: none;
         margin-top: 0;
       }
+      .values__description{
+        margin: 15px 15px 0 15px;
+      }
     }
   }
 }
@@ -218,32 +221,44 @@ p{
   &__title{
     @include section-title;
   }
-  &-cards__wrapper{
-
+  &__card-wrapper{
+    padding: 0 15px;
   }
-  &-cards__card{
+  &__card{
+    text-align: center;
     .card__description{
-      background-color: $main-color;
-      color: $bg-color;
       font-family: 'Source Sans Pro', sans-serif;
       margin: 10px;
-      padding: 10px;
-      min-height: 235px;
+      padding: 5px;
+      position: relative;
+      &::before{
+        background: $main-color;
+        border-radius: 50%;
+        content:"";
+        height: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
     }
     .card__title{
       font-family: 'Ropa Sans', sans-serif;
       font-weight: bold;
       margin-bottom: 10px;
     }
+    .card__img{
+      margin: 10px;
+    }
   }
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .services{
-    &-cards__wrapper{
+    &__card-wrapper{
       margin-top: $offset-sm;
     }
-    &-cards__card{
+    &__card{
       .card__title{
         font-size: $div-font-size-sm;
       }
@@ -253,14 +268,14 @@ p{
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
   .services{
-    &-cards__wrapper{
+    &__card-wrapper{
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       margin-top: $offset-md;
     }
-    &-cards__card{
-      text-align: center;
-      width: 25%;
+    &__card{
+      width: 50%;
       .card__description{
         font-size: $p-font-size-md;
         line-height: $p-font-size-md;
@@ -288,10 +303,11 @@ p{
     &__section{
       grid-column: 3/4;
     }
-    &-cards__wrapper{
-
+    &__card-wrapper{
+      padding: 0;
     }
-    &-cards__card{
+    &__card{
+      width: 25%;
       .card__title{
         font-size: $div-font-size-lg;
       }

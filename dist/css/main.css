@@ -448,7 +448,7 @@ p {
 
 .about-us__values .values__description {
   border: #9b8dad solid 1px;
-  margin: 15px 15px 0 15px;
+  margin: 15px 25px 0 25px;
   padding: 15px; }
   .about-us__values .values__description--hidden {
     display: none; }
@@ -503,7 +503,9 @@ p {
       grid-row: 2; }
       .about-us__values .values__tab-wrapper {
         border-top: none;
-        margin-top: 0; } }
+        margin-top: 0; }
+      .about-us__values .values__description {
+        margin: 15px 15px 0 15px; } }
 
 /*========================================================================================================*/
 /*=============================================== Services ===============================================*/
@@ -579,39 +581,52 @@ p {
       font-size: 3.2em;
       text-align: left; } }
 
-.services-cards__card .card__description {
-  background-color: #E31D3B;
-  color: #e9e6ed;
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 10px;
-  padding: 10px;
-  min-height: 235px; }
+.services__card-wrapper {
+  padding: 0 15px; }
 
-.services-cards__card .card__title {
-  font-family: 'Ropa Sans', sans-serif;
-  font-weight: bold;
-  margin-bottom: 10px; }
+.services__card {
+  text-align: center; }
+  .services__card .card__description {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 10px;
+    padding: 5px;
+    position: relative; }
+    .services__card .card__description::before {
+      background: #E31D3B;
+      border-radius: 50%;
+      content: "";
+      height: 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; }
+  .services__card .card__title {
+    font-family: 'Ropa Sans', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .services__card .card__img {
+    margin: 10px; }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .services-cards__wrapper {
+  .services__card-wrapper {
     margin-top: 15px; }
-  .services-cards__card .card__title {
+  .services__card .card__title {
     font-size: 1.2em; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
-  .services-cards__wrapper {
+  .services__card-wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 25px; }
-  .services-cards__card {
-    text-align: center;
-    width: 25%; }
-    .services-cards__card .card__description {
+  .services__card {
+    width: 50%; }
+    .services__card .card__description {
       font-size: 1.2em;
       line-height: 1.2em; }
-    .services-cards__card .card__title {
+    .services__card .card__title {
       font-size: 1.4em; } }
 
 /* ---------------- >1025px SECTION -------------- */
@@ -628,8 +643,12 @@ p {
       grid-row: 1; }
     .services__section {
       grid-column: 3/4; }
-    .services-cards__card .card__title {
-      font-size: 1.4em; } }
+    .services__card-wrapper {
+      padding: 0; }
+    .services__card {
+      width: 25%; }
+      .services__card .card__title {
+        font-size: 1.4em; } }
 
 .test {
   margin-top: 150px; }
