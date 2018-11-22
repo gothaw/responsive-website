@@ -52,7 +52,7 @@ p{
 /*========================================================================================================*/
 .about-us{
   &__number--position{
-    @include number-font-size-and-position(-12px,-19px);
+    @include home-section-number-position(-12px,-19px);
   }
   &__img{
     object-fit: cover;
@@ -61,21 +61,21 @@ p{
     position: relative;
   }
   &__img-wrapper,&__img{
-    @include section-img-size;
+    @include home-section-img-size;
   }
   &__section{
-    @include section-padding;
+    @include home-section-outer-padding;
   }
   &__text{
-    @include div-section-text-in-border;
-    @include responsive-div-text;
+    @include home-text-black-border;
+    @include home-section-text-font;
   }
   &__title{
-    @include section-title;
+    @include home-section-title;
   }
   &__CEO-quote{
-    @include responsive-div-text;
-    @include div-section-text-on-bg;
+    @include home-section-text-font;
+    @include home-section-text-on-background;
     .CEO-quote__text p:nth-child(2){
       font-weight: bold;
     }
@@ -107,7 +107,6 @@ p{
      }
      &__description{
        border: darken($bg-color,30%) solid 1px;
-       margin: 15px 25px 0 25px;
        padding: 15px;
        &--hidden{
          display: none;
@@ -126,8 +125,12 @@ p{
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .about-us {
+    margin-top: $offset-sm;
     .CEO-quote__img{
       display: none;
+    }
+    .CEO-quote__text{
+      padding: $offset-sm;
     }
     &__values{
        .values__tab{
@@ -140,9 +143,11 @@ p{
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
   .about-us {
+    margin-top: $offset-md;
     &__CEO-quote{
       display: flex;
       justify-content: space-between;
+      padding: 15px $offset-md;
       .CEO-quote__text{
         padding-left: 25px;
       }
@@ -158,6 +163,7 @@ p{
       .values__description{
           font-size: $p-font-size-md;
           line-height: $p-font-size-md;
+          margin: $offset-md;
       }
     }
   }
@@ -181,6 +187,7 @@ p{
     }
     &__CEO-quote{
       grid-column: 3/4;
+      padding: 15px $offset-lg;
     }
     &__values{
       grid-column: 1/3;
@@ -190,7 +197,7 @@ p{
         margin-top: 0;
       }
       .values__description{
-        margin: 15px 15px 0 15px;
+        margin: 15px $offset-lg 0 $offset-lg;
       }
     }
   }
@@ -200,7 +207,7 @@ p{
 /*========================================================================================================*/
 .services{
   &__number--position{
-    @include number-font-size-and-position(-8px,-12px);
+    @include home-section-number-position(-8px,-12px);
   }
   &__img{
     object-fit: cover;
@@ -209,17 +216,17 @@ p{
     position: relative;
   }
   &__img-wrapper,&__img{
-    @include section-img-size;
+    @include home-section-img-size;
   }
   &__section{
-    @include section-padding;
+    @include home-section-outer-padding;
   }
   &__text{
-    @include div-section-text-in-border;
-    @include responsive-div-text;
+    @include home-text-black-border;
+    @include home-section-text-font;
   }
   &__title{
-    @include section-title;
+    @include home-section-title;
   }
   &__card-wrapper{
     padding: 0 15px;

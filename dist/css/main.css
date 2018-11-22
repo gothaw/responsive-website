@@ -352,13 +352,14 @@ p {
 .about-us__img-wrapper {
   position: relative; }
 
-@media only screen and (max-width: 767px) {
-  .about-us__img-wrapper, .about-us__img {
-    height: 300px; } }
-
-@media only screen and (min-width: 768px) {
-  .about-us__img-wrapper, .about-us__img {
-    height: 500px; } }
+.about-us__img-wrapper, .about-us__img {
+  overflow: hidden; }
+  @media only screen and (max-width: 767px) {
+    .about-us__img-wrapper, .about-us__img {
+      height: 300px; } }
+  @media only screen and (min-width: 768px) {
+    .about-us__img-wrapper, .about-us__img {
+      height: 500px; } }
 
 @media only screen and (max-width: 767px) {
   .about-us__section {
@@ -370,7 +371,7 @@ p {
 
 @media only screen and (min-width: 1025px) {
   .about-us__section {
-    padding: 30px 10px 30px 25px; } }
+    padding: 30px 0 30px 25px; } }
 
 .about-us__text {
   border: black solid 3px;
@@ -410,7 +411,6 @@ p {
   align-items: center;
   background-color: #E31D3B;
   color: #e9e6ed;
-  padding: 25px;
   text-align: center; }
   @media only screen and (max-width: 767px) {
     .about-us__CEO-quote {
@@ -448,7 +448,6 @@ p {
 
 .about-us__values .values__description {
   border: #9b8dad solid 1px;
-  margin: 15px 25px 0 25px;
   padding: 15px; }
   .about-us__values .values__description--hidden {
     display: none; }
@@ -460,27 +459,35 @@ p {
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .about-us .CEO-quote__img {
-    display: none; }
-  .about-us__values .values__tab {
-    font-size: 1.2em;
-    padding: 15px 15px; } }
+  .about-us {
+    margin-top: 15px; }
+    .about-us .CEO-quote__img {
+      display: none; }
+    .about-us .CEO-quote__text {
+      padding: 15px; }
+    .about-us__values .values__tab {
+      font-size: 1.2em;
+      padding: 15px 15px; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
-  .about-us__CEO-quote {
-    display: flex;
-    justify-content: space-between; }
-    .about-us__CEO-quote .CEO-quote__text {
-      padding-left: 25px; }
-    .about-us__CEO-quote .CEO-quote__img {
-      border-radius: 50%; }
-  .about-us__values .values__tab {
-    font-size: 1.4em;
-    padding: 15px 25px; }
-  .about-us__values .values__description {
-    font-size: 1.2em;
-    line-height: 1.2em; } }
+  .about-us {
+    margin-top: 25px; }
+    .about-us__CEO-quote {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 25px; }
+      .about-us__CEO-quote .CEO-quote__text {
+        padding-left: 25px; }
+      .about-us__CEO-quote .CEO-quote__img {
+        border-radius: 50%; }
+    .about-us__values .values__tab {
+      font-size: 1.4em;
+      padding: 15px 25px; }
+    .about-us__values .values__description {
+      font-size: 1.2em;
+      line-height: 1.2em;
+      margin: 25px; } }
 
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
@@ -497,7 +504,8 @@ p {
       display: grid;
       grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr; }
     .about-us__CEO-quote {
-      grid-column: 3/4; }
+      grid-column: 3/4;
+      padding: 15px 30px; }
     .about-us__values {
       grid-column: 1/3;
       grid-row: 2; }
@@ -505,7 +513,7 @@ p {
         border-top: none;
         margin-top: 0; }
       .about-us__values .values__description {
-        margin: 15px 15px 0 15px; } }
+        margin: 15px 30px 0 30px; } }
 
 /*========================================================================================================*/
 /*=============================================== Services ===============================================*/
@@ -527,13 +535,14 @@ p {
 .services__img-wrapper {
   position: relative; }
 
-@media only screen and (max-width: 767px) {
-  .services__img-wrapper, .services__img {
-    height: 300px; } }
-
-@media only screen and (min-width: 768px) {
-  .services__img-wrapper, .services__img {
-    height: 500px; } }
+.services__img-wrapper, .services__img {
+  overflow: hidden; }
+  @media only screen and (max-width: 767px) {
+    .services__img-wrapper, .services__img {
+      height: 300px; } }
+  @media only screen and (min-width: 768px) {
+    .services__img-wrapper, .services__img {
+      height: 500px; } }
 
 @media only screen and (max-width: 767px) {
   .services__section {
@@ -545,7 +554,7 @@ p {
 
 @media only screen and (min-width: 1025px) {
   .services__section {
-    padding: 30px 10px 30px 25px; } }
+    padding: 30px 0 30px 25px; } }
 
 .services__text {
   border: black solid 3px;

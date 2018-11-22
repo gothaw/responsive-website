@@ -16,7 +16,7 @@ $offset-sm: 15px;
 $offset-md: 25px;
 $offset-lg: 30px;
 /*==================================== Mixins ====================================*/
-@mixin responsive-div-text{
+@mixin home-section-text-font{
   @media only screen and (max-width: 767px) {
     font-size: $div-font-size-sm;
     line-height: $div-line-h-sm;
@@ -30,13 +30,13 @@ $offset-lg: 30px;
     line-height: $div-line-h-lg;
   }
 }
-@mixin div-section-text-in-border{
+@mixin home-text-black-border{
   border: black solid 3px;
   margin: 15px 0;
   padding: 15px;
   text-align: center;
 }
-@mixin section-title{
+@mixin home-section-title{
   font-weight: bold;
   font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
@@ -52,18 +52,17 @@ $offset-lg: 30px;
     text-align: left;
   }
 }
-@mixin div-section-text-on-bg{
+@mixin home-section-text-on-background{
   align-items: center;
   background-color: $main-color;
   color: $bg-color;
-  padding: $offset-md;
   text-align: center;
 }
 @mixin inner-grid{
   display: grid;
   grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr;
 }
-@mixin number-font-size-and-position ($right-sm, $right-md){
+@mixin home-section-number-position ($right-sm, $right-md){
   top:0;
   @media only screen and (max-width: 767px) {
     font-size: 10em;
@@ -74,7 +73,7 @@ $offset-lg: 30px;
     right: $right-md;
   }
 }
-@mixin section-padding{
+@mixin home-section-outer-padding{
   @media only screen and (max-width: 767px) {
     padding: 15px;
   }
@@ -82,10 +81,11 @@ $offset-lg: 30px;
     padding: 25px;
   }
   @media only screen and (min-width: 1025px) {
-    padding: 30px 10px 30px 25px;
+    padding: 30px 0 30px 25px;
   }
 }
-@mixin section-img-size{
+@mixin home-section-img-size{
+  overflow: hidden;
   @media only screen and (max-width: 767px) {
     height: 300px;
   }
