@@ -83,8 +83,8 @@ p{
   &__values{
     .values{
      &__tab-wrapper{
-       border-top: $main-color solid 3px;
-       border-bottom: $main-color solid 3px;
+       border-top: $main-color solid 1px;
+       border-bottom: $main-color solid 1px;
        display: flex;
        font-family: 'Ropa Sans', sans-serif;
        justify-content: space-around;
@@ -228,14 +228,10 @@ p{
   &__title{
     @include home-section-title;
   }
-  &__card-wrapper{
-    padding: 0 15px;
-  }
   &__card{
     text-align: center;
     .card__description{
       font-family: 'Source Sans Pro', sans-serif;
-      margin: 10px;
       padding: 5px;
       position: relative;
       &::before{
@@ -252,22 +248,25 @@ p{
     .card__title{
       font-family: 'Ropa Sans', sans-serif;
       font-weight: bold;
-      margin-bottom: 10px;
     }
     .card__img{
-      margin: 10px;
+      margin: 10px 0;
     }
   }
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .services{
+    margin-top: $offset-sm;
     &__card-wrapper{
       margin-top: $offset-sm;
+      max-width: 500px;
+      padding: $offset-sm;
     }
     &__card{
       .card__title{
         font-size: $div-font-size-sm;
+        margin-top: 25px;
       }
     }
   }
@@ -275,20 +274,22 @@ p{
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
   .services{
+    margin-top: $offset-md;
     &__card-wrapper{
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin-top: $offset-md;
+      padding: $offset-md;
     }
     &__card{
-      width: 50%;
+      width: 49%;
       .card__description{
         font-size: $p-font-size-md;
         line-height: $p-font-size-md;
       }
       .card__title{
         font-size: $div-font-size-md;
+        margin-top: 25px;
       }
     }
   }
@@ -302,6 +303,7 @@ p{
     }
     &__wrapper{
       @include inner-grid;
+      padding: 0;
     }
     &__img-wrapper{
       grid-column: 1/3;
@@ -314,7 +316,7 @@ p{
       padding: 0;
     }
     &__card{
-      width: 25%;
+      width: 24%;
       .card__title{
         font-size: $div-font-size-lg;
       }
