@@ -15,6 +15,7 @@ $p-font-size-md: 1.2em;
 $offset-sm: 15px;
 $offset-md: 25px;
 $offset-lg: 30px;
+$offset-xlg: 100px;
 /*==================================== Mixins ====================================*/
 @mixin home-section-text-font{
   @media only screen and (max-width: 767px) {
