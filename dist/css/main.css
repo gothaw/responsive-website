@@ -607,8 +607,10 @@ p {
       width: 100%; }
   .services__card .card__title {
     font-family: 'Ropa Sans', sans-serif;
-    font-weight: bold; }
+    font-weight: bold;
+    margin-top: 25px; }
   .services__card .card__img {
+    overflow: hidden;
     margin: 10px 0; }
 
 /* ------------------- <767px   SECTION ------------------- */
@@ -620,8 +622,7 @@ p {
       max-width: 500px;
       padding: 15px; }
     .services__card .card__title {
-      font-size: 1.2em;
-      margin-top: 25px; } }
+      font-size: 1.2em; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
@@ -638,8 +639,7 @@ p {
         font-size: 1.2em;
         line-height: 1.2em; }
       .services__card .card__title {
-        font-size: 1.4em;
-        margin-top: 25px; } }
+        font-size: 1.4em; } }
 
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
@@ -663,5 +663,8 @@ p {
       .services__card .card__title {
         font-size: 1.4em; } }
 
+/*========================================================================================================*/
+/*=============================================== Projects ===============================================*/
+/*========================================================================================================*/
 .test {
   margin-top: 150px; }
