@@ -3,15 +3,16 @@ import enquire from '../lib/enquire.js'
 (function () {
     // Variables
     const menuItems             = document.querySelectorAll('.menu__item');
-    const menuLogo              = menuItems[2];
+    const menuLogo              = document.getElementById('logo');
     // jQuery variables
     const $carouselItems        = $('.carousel__item');
     const $carouselArrows       = $('.carousel__arrow');
     const $menu                 = $('.menu');
     const $menuBar              = $('.menu__wrapper');
-    const $menuItem             = $('.menu__item');
+    const $menuItem             = $('.menu__item').not('#logo');
     const $toggleMenu           = $('.menu__toggle');
     const $toggleMenuIcon       = $('.toggle__icon');
+
     /**
      * @name    showNextImage
      * @desc    Function toggles between carousel images in header.
@@ -19,6 +20,7 @@ import enquire from '../lib/enquire.js'
     function showNextImage() {
         $carouselItems.toggleClass("carousel__item--shown").toggleClass("carousel__item--hidden");
     }
+
     /**
      * @name    toggleAnimationMenu
      * @desc    Function adds sticky behavior for the menu bar is width is greater than 1025px.
@@ -39,6 +41,7 @@ import enquire from '../lib/enquire.js'
             }
         });
     }
+
     /**
      * @name    moveLogoToggleMenu
      * @desc    Function prepends logo image before menu links if width is less than 767px.
@@ -54,6 +57,7 @@ import enquire from '../lib/enquire.js'
             }
         });
     }
+
     /**
      * @name    registerMenu
      * @desc    Function hides the menu bar links when width is less than 767px and shows when it is greater than 767px.
@@ -69,6 +73,7 @@ import enquire from '../lib/enquire.js'
             }
         });
     }
+
     /**
      * @name    toggleMenu
      * @desc    Slide toggle animation for hamburger menu.
@@ -79,29 +84,51 @@ import enquire from '../lib/enquire.js'
 
     /**
      * @name    menuScroll
-     * @desc    scrolls down to relevant section of the page after clicking a menu item
+     * @param   e - menu item click event
+     * @desc    Scrolls down to relevant section of the page after clicking on a menu item.
      */
     function menuScroll(e) {
+        let offset=0;
         e.preventDefault();
         const targetDiv = $(e.target).attr("href");
-        console.log(targetDiv);
+        enquire.register("screen and (min-width: 1025px)", {
+            match: function () {
+                offset=100;
+                return offset
+            },
+            unmatch: function () {
+                offset=0;
+                return offset
+            }
+        });
         $("html, body").animate(
             {
-                "scrollTop" : $(targetDiv).offset().top
-            }
+                "scrollTop" : $(targetDiv).offset().top - offset
+            },
+            1000
         );
     }
 
+    /**
+     * @name    homeScroll
+     * @desc    Scrolls to the top of the page when logo is clicked (works only on home page).
+     */
+    function homeScroll() {
+        $("html, body").animate(
+            {
+                "scrollTop" : 0
+            },
+            1000
+        );
+    }
     function eventHandler() {
         $carouselArrows.on("click", showNextImage);
         $carouselItems.on("touchmove",showNextImage);
         $toggleMenuIcon.on("click",toggleMenu);
         $menuItem.on("click",function (e) {
-            enquire.register("screen and (max-width: 767px)", {
-                match: menuScroll(e),
-                unmatch: menuScroll(e),
-            });
+          menuScroll(e)
         });
+        $(menuLogo).on("click",homeScroll);
     }
 
     function init() {
