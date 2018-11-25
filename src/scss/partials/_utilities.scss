@@ -2,9 +2,9 @@
 $bg-color: #e9e6ed;
 $main-color: #E31D3B;
 $secondary-color: #FFFFFF;
-$h3-font-size-lg: 3.2em;
-$h3-font-size-md: 2.5em;
-$h3-font-size-sm: 2.0em;
+$h-font-size-lg: 3.2em;
+$h-font-size-md: 2.5em;
+$h-font-size-sm: 2.0em;
 $div-font-size-lg: 1.4em;
 $div-font-size-md: 1.4em;
 $div-font-size-sm: 1.2em;
@@ -43,13 +43,13 @@ $offset-xlg: 100px;
   text-transform: uppercase;
   text-align: center;
   @media only screen and (max-width: 767px) {
-    font-size: $h3-font-size-sm;
+    font-size: $h-font-size-sm;
   }
   @media only screen and (min-width: 768px) {
-    font-size: $h3-font-size-md;
+    font-size: $h-font-size-md;
   }
   @media only screen and (min-width: 1025px) {
-    font-size: $h3-font-size-lg;
+    font-size: $h-font-size-lg;
     text-align: left;
   }
 }

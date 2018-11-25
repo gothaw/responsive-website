@@ -622,7 +622,7 @@ p {
       max-width: 500px;
       padding: 15px; }
     .services__card .card__title {
-      font-size: 1.2em; } }
+      font-size: 1.4em; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
@@ -639,7 +639,7 @@ p {
         font-size: 1.2em;
         line-height: 1.2em; }
       .services__card .card__title {
-        font-size: 1.4em; } }
+        font-size: 2em; } }
 
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
@@ -658,9 +658,7 @@ p {
     .services__card-wrapper {
       padding: 0; }
     .services__card {
-      width: 24%; }
-      .services__card .card__title {
-        font-size: 1.4em; } }
+      width: 24%; } }
 
 /*========================================================================================================*/
 /*=============================================== Projects ===============================================*/
@@ -727,15 +725,44 @@ p {
       font-size: 3.2em;
       text-align: left; } }
 
+.projects__projects-menu {
+  position: absolute;
+  color: #e9e6ed;
+  font-family: 'Ropa Sans', sans-serif; }
+  .projects__projects-menu .projects-menu__item {
+    cursor: pointer;
+    padding: 5px;
+    border-top: #e9e6ed solid 1px;
+    transition: all 0.2s; }
+    .projects__projects-menu .projects-menu__item:last-child {
+      border-bottom: #e9e6ed solid 1px; }
+    .projects__projects-menu .projects-menu__item--selected {
+      background-color: #e9e6ed;
+      color: #E31D3B; }
+
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .projects {
-    margin-top: 15px; } }
+    margin-top: 15px; }
+    .projects__menu-wrapper {
+      height: 300px; }
+    .projects__projects-menu {
+      font-size: 1.4em;
+      text-align: right;
+      top: 100px;
+      left: 25px; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
   .projects {
-    margin-top: 25px; } }
+    margin-top: 25px; }
+    .projects__menu-wrapper {
+      height: 500px; }
+    .projects__projects-menu {
+      font-size: 2em;
+      text-align: right;
+      top: 250px;
+      right: 25px; } }
 
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {

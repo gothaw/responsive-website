@@ -267,7 +267,7 @@ p{
     }
     &__card{
       .card__title{
-        font-size: $div-font-size-sm;
+        font-size: $div-font-size-lg;
       }
     }
   }
@@ -289,7 +289,7 @@ p{
         line-height: $p-font-size-md;
       }
       .card__title{
-        font-size: $div-font-size-md;
+        font-size: $h-font-size-sm;
       }
     }
   }
@@ -316,9 +316,6 @@ p{
     }
     &__card{
       width: 24%;
-      .card__title{
-        font-size: $div-font-size-lg;
-      }
     }
   }
 }
@@ -344,19 +341,53 @@ p{
   &__title{
     @include home-section-title;
   }
+  &__projects-menu{
+    position: absolute;
+    color: $bg-color;
+    font-family: 'Ropa Sans', sans-serif;
+    .projects-menu__item{
+      cursor: pointer;
+      padding: 5px;
+      border-top: $bg-color solid 1px;
+      transition: all 0.2s;
+      &:last-child{
+        border-bottom: $bg-color solid 1px;
+      }
+      &--selected{
+        background-color: $bg-color;
+        color: $main-color;
+      }
+    }
+  }
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .projects{
     margin-top: $offset-sm;
-
+    &__menu-wrapper{
+      height: 300px;
+    }
+    &__projects-menu{
+      font-size: $div-font-size-lg;
+      text-align: right;
+      top: 100px;
+      left: 25px;
+    }
   }
 }
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
   .projects{
     margin-top: $offset-md;
-
+    &__menu-wrapper{
+      height: 500px;
+    }
+    &__projects-menu{
+      font-size: $h-font-size-sm;
+      text-align: right;
+      top: 250px;
+      right: 25px;
+    }
   }
 }
 /* ---------------- >1025px SECTION -------------- */
