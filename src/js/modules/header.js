@@ -9,6 +9,7 @@ import enquire from '../lib/enquire.js'
     const $carouselArrows       = $('.carousel__arrow');
     const $menu                 = $('.menu');
     const $menuBar              = $('.menu__wrapper');
+    const $menuItem             = $('.menu__item');
     const $toggleMenu           = $('.menu__toggle');
     const $toggleMenuIcon       = $('.toggle__icon');
     /**
@@ -54,13 +55,6 @@ import enquire from '../lib/enquire.js'
         });
     }
     /**
-     * @name    toggleMenu
-     * @desc    Slide toggle animation for hamburger menu.
-     */
-    function toggleMenu() {
-        $menu.slideToggle();
-    }
-    /**
      * @name    registerMenu
      * @desc    Function hides the menu bar links when width is less than 767px and shows when it is greater than 767px.
      *          Uses enquire.js module.
@@ -75,11 +69,39 @@ import enquire from '../lib/enquire.js'
             }
         });
     }
+    /**
+     * @name    toggleMenu
+     * @desc    Slide toggle animation for hamburger menu.
+     */
+    function toggleMenu() {
+        $menu.slideToggle();
+    }
+
+    /**
+     * @name    menuScroll
+     * @desc    scrolls down to relevant section of the page after clicking a menu item
+     */
+    function menuScroll(e) {
+        e.preventDefault();
+        const targetDiv = $(e.target).attr("href");
+        console.log(targetDiv);
+        $("html, body").animate(
+            {
+                "scrollTop" : $(targetDiv).offset().top
+            }
+        );
+    }
 
     function eventHandler() {
         $carouselArrows.on("click", showNextImage);
         $carouselItems.on("touchmove",showNextImage);
         $toggleMenuIcon.on("click",toggleMenu);
+        $menuItem.on("click",function (e) {
+            enquire.register("screen and (max-width: 767px)", {
+                match: menuScroll(e),
+                unmatch: menuScroll(e),
+            });
+        });
     }
 
     function init() {

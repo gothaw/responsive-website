@@ -359,6 +359,14 @@ p{
       }
     }
   }
+  &__recent-projects{
+    margin-top: $offset-lg;
+    display: flex;
+    justify-content: space-between;
+    .recent-projects__hidden{
+      display: none;
+    }
+  }
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -371,7 +379,7 @@ p{
       font-size: $div-font-size-lg;
       text-align: right;
       top: 100px;
-      left: 25px;
+      left: 15px;
     }
   }
 }
@@ -412,9 +420,85 @@ p{
     }
   }
 }
-
-
-
+/*========================================================================================================*/
+/*=============================================== Contact ===============================================*/
+/*========================================================================================================*/
+.contact{
+  &__number--position{
+    @include home-section-number-position(-8px,-12px);
+  }
+  &__img{
+    object-fit: cover;
+  }
+  &__img-wrapper{
+    position: relative;
+  }
+  &__img-wrapper,&__img{
+    @include home-section-img-size;
+  }
+  &__section{
+    @include home-section-outer-padding;
+  }
+  &__text{
+    @include home-text-black-border;
+    @include home-section-text-font;
+  }
+  &__title{
+    @include home-section-title;
+  }
+}
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .contact{
+    margin-top: $offset-sm;
+    &__menu-wrapper{
+      height: 300px;
+    }
+    &__projects-menu{
+      font-size: $div-font-size-lg;
+      text-align: right;
+      top: 100px;
+      left: 15px;
+    }
+  }
+}
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px){
+  .contact{
+    margin-top: $offset-md;
+    &__img-wrapper{
+      height: 500px;
+    }
+    &__projects-menu{
+      font-size: $h-font-size-sm;
+      text-align: right;
+      top: 250px;
+      right: 25px;
+    }
+  }
+}
+/* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+  .contact{
+    margin-top: $offset-xlg;
+    &__text{
+      text-align: left;
+    }
+    &__wrapper{
+      @include inner-grid;
+    }
+    &__wrapper{
+      @include inner-grid;
+    }
+    &__img-wrapper{
+      grid-column: 1/3;
+      grid-row: 1;
+    }
+    &__section{
+      grid-column: 3/4;
+    }
+  }
+}
 
 
 

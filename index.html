@@ -38,21 +38,21 @@
             </div> <!--/menu_toggle-->
             <nav class="menu inner">
                 <div class="menu__item">
-                    <a class="menu__link" href="#">About Us</a> <!--/menu__link-->
+                    <a class="menu__link" href="#about-us">About Us</a> <!--/menu__link-->
                 </div> <!--/menu__item-->
                 <div class="menu__item">
-                    <a class="menu__link" href="#">Services</a> <!--/menu__link-->
+                    <a class="menu__link" href="#services">Services</a> <!--/menu__link-->
                 </div> <!--/menu__item-->
                 <div class="menu__item">
-                    <a class="menu__logo" href="#">
+                    <a class="menu__logo" href="#home">
                         <img class="logo__img" src="dist/img/logo-white.png" alt="logo" width="120" height="71"> <!--/logo__img-->
                     </a>
                 </div> <!--/menu__logo-->
                 <div class="menu__item">
-                    <a class="menu__link" href="#">Projects</a> <!--/menu__link-->
+                    <a class="menu__link" href="#projects">Projects</a> <!--/menu__link-->
                 </div> <!--/menu__item-->
                 <div class="menu__item">
-                    <a class="menu__link" href="#">Contact</a> <!--/menu__link-->
+                    <a class="menu__link" href="#contact">Contact</a> <!--/menu__link-->
                 </div> <!--/menu__item-->
             </nav> <!--/menu inner-->
         </div> <!--/menu__wrapper-->
@@ -90,8 +90,8 @@
                 <div class="carousel__arrow carousel__arrow--right">&#187;</div> <!--/carousel__arrow carousel__arrow--right-->
             </div> <!--/carousel-->
         </header>
-        <main id="index-main">
-            <div class="about-us">
+        <main id="home">
+            <div id="about-us" class="about-us">
                 <div class="about-us__wrapper">
                     <section class="about-us__section">
                         <h3 class="about-us__title"><span class="title__slash">/ </span>About Us</h3> <!--/about-us__title-->
@@ -104,12 +104,10 @@
                     </section> <!--/about-us__section-->
                     <div class="about-us__img-wrapper">
                         <picture>
-                            <source media="print" srcset="dist/img/about-us/about-us-img.jpg">
+                            <source media="print" srcset="dist/img/about-us/about-us-img-1025.jpg">
                             <source media="(max-width: 540px)" srcset="dist/img/about-us/about-us-img-540.jpg">
                             <source media="(max-width: 768px)" srcset="dist/img/about-us/about-us-img-768.jpg">
-                            <source media="(max-width: 1025px)" srcset="dist/img/about-us/about-us-img-1025.jpg">
-                            <source media="(max-width: 1440px)" srcset="dist/img/about-us/about-us-img-1440.jpg">
-                            <img class="about-us__img img-responsive" src="dist/img/about-us/about-us-img.jpg" alt="engineers looking at drawings"> <!--/about-us__img img-responsive-->
+                            <img class="about-us__img img-responsive" src="dist/img/about-us/about-us-img-1025.jpg" alt="engineers looking at drawings"> <!--/about-us__img img-responsive-->
                         </picture>
                         <div class="img__number about-us__number--position">01</div> <!--/img__number about-us__number--position-->
                     </div> <!--about-us__img-wrapper-->
@@ -147,7 +145,7 @@
                     </div> <!--/about-us__values-->
                 </div> <!--/about-us__wrapper-->
             </div> <!--/about-us-->
-            <div class="services">
+            <div id="services" class="services">
                 <div class="services__wrapper">
                     <section class="services__section">
                         <h3 class="services__title"><span class="title__slash">/ </span>Services</h3> <!--/services__title-->
@@ -160,12 +158,10 @@
                     </section> <!--/services__section-->
                     <div class="services__img-wrapper">
                         <picture>
-                            <source media="print" srcset="dist/img/services/services-img.jpg">
+                            <source media="print" srcset="dist/img/services/services-img-1025.jpg">
                             <source media="(max-width: 540px)" srcset="dist/img/services/services-img-540.jpg">
                             <source media="(max-width: 768px)" srcset="dist/img/services/services-img-768.jpg">
-                            <source media="(max-width: 1025px)" srcset="dist/img/services/services-img-1025.jpg">
-                            <source media="(max-width: 1440px)" srcset="dist/img/services/services-img-1440.jpg">
-                            <img class="services__img img-responsive" src="dist/img/services/services-img.jpg" alt="construction site with cranes"> <!--/services__img img-responsive-->
+                            <img class="services__img img-responsive" src="dist/img/services/services-img-1025.jpg" alt="construction site with cranes"> <!--/services__img img-responsive-->
                         </picture>
                         <div class="img__number services__number--position">02</div> <!--/img__number services__number--position-->
                     </div> <!--/services__img-wrapper-->
@@ -217,7 +213,7 @@
                     </div> <!--/services__card-->
                 </div> <!--/services__wrapper inner-->
             </div> <!--/services-->
-            <div class="projects">
+            <div id="projects" class="projects">
                 <div class="projects__wrapper">
                     <section class="projects__section">
                         <h3 class="projects__title"><span class="title__slash">/ </span>projects</h3> <!--/projects__title-->
@@ -239,8 +235,61 @@
                         <div class="img__number projects__number--position">03</div> <!--/img__number projects__number--position-->
                     </div> <!--/projects__img-wrapper-->
                 </div> <!--/projects__wrapper-->
+                <div class="projects__recent-projects">
+                    <div class="recent-projects__project-img-wrapper civil mechanical">
+                        <img class="img-responsive" src="dist/img/construction-site-build-construction-work-159306.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper civil mechanical-->
+                    <div class="recent-projects__project-img-wrapper architecture landscape">
+                        <img class="img-responsive" src="dist/img/hd-img-1.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper architecture landscape-->
+                    <div class="recent-projects__project-img-wrapper architecture landscape">
+                        <img class="img-responsive" src="dist/img/hd-img-3.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper architecture landscape-->
+                    <div class="recent-projects__project-img-wrapper mechanical structural">
+                        <img class="img-responsive" src="dist/img/hd-img-4.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper mechanical structural-->
+                    <div class="recent-projects__project-img-wrapper mechanical structural recent-projects__hidden">
+                        <img class="img-responsive" src="dist/img/construction-site-build-construction-work-159306.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper mechanical structural-->
+                    <div class="recent-projects__project-img-wrapper civil structural landscape recent-projects__hidden">
+                        <img class="img-responsive" src="dist/img/construction-site-build-construction-work-159306.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper civil structural landscape-->
+                    <div class="recent-projects__project-img-wrapper civil mechanical recent-projects__hidden">
+                        <img class="img-responsive" src="dist/img/construction-site-build-construction-work-159306.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper civil mechanical-->
+                    <div class="recent-projects__project-img-wrapper civil structural landscape recent-projects__hidden">
+                        <img class="img-responsive" src="dist/img/construction-site-build-construction-work-159306.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper civil structural landscape-->
+                    <div class="recent-projects__project-img-wrapper architecture recent-projects__hidden">
+                        <img class="img-responsive" src="dist/img/construction-site-build-construction-work-159306.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper architecture-->
+                    <div class="recent-projects__project-img-wrapper architecture recent-projects__hidden">
+                        <img class="img-responsive" src="dist/img/construction-site-build-construction-work-159306.jpeg" alt="">
+                    </div> <!--recent-projects__project-img-wrapper architecture-->
+                </div> <!--/projects__recent-projects-->
+                <div class="projects__counters">
+                    Hello World!
+                </div> <!--/projects__counters-->
             </div> <!--/projects-->
-
+            <div id="contact" class="contact">
+                <div class="contact__wrapper">
+                    <section class="contact__section">
+                        <h3 class="contact__title"><span class="title__slash">/ </span>Contact</h3> <!--/contact__title-->
+                        <div class="contact__text">
+                            <p>Magni necessitatibus pariatur possimus quidem rem tenetur voluptas. Animi aspernatur commodi cupiditate dolorem doloribus, excepturi, facere fuga inventore ipsum labore modi molestias perferendis praesentium qui reprehenderit sed ut velit? Accusamus asperiores cum in iure quis sint!</p>
+                        </div> <!--/contact__text-->
+                    </section> <!--/contact__section-->
+                    <div class="contact__img-wrapper">
+                        <picture>
+                            <source media="print" srcset="dist/img/contact/contact-img-1025.jpg">
+                            <source media="(max-width: 540px)" srcset="dist/img/contact/contact-img-540.jpg">
+                            <source media="(max-width: 768px)" srcset="dist/img/contact/contact-img-768.jpg">
+                            <img class="contact__img img-responsive" src="dist/img/contact/contact-img-1025.jpg" alt="construction site with cranes"> <!--/contact__img img-responsive-->
+                        </picture>
+                        <div class="img__number contact__number--position">04</div> <!--/img__number contact__number--position-->
+                    </div> <!--/contact__img-wrapper-->
+                </div> <!--/contact__wrapper-->
+            </div> <!--/contact-->
 
 
             <div class="inner">
