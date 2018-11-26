@@ -61,7 +61,6 @@ table {
 
 .menu {
   align-items: center;
-  font-family: 'Ropa Sans', sans-serif;
   font-size: 1.1em;
   letter-spacing: 1px;
   text-transform: uppercase; }
@@ -85,6 +84,7 @@ table {
     opacity: 0.65;
     cursor: pointer;
     font-weight: bold;
+    font-family: serif;
     position: absolute;
     text-shadow: 2px 1px #404040;
     top: 50%;
@@ -104,7 +104,6 @@ table {
     object-fit: cover;
     width: 100%; }
   .carousel__text {
-    font-family: 'Ropa Sans', sans-serif;
     left: 0;
     letter-spacing: 1px;
     position: absolute;
@@ -237,7 +236,6 @@ table {
   border: solid #E31D3B 3px;
   border-radius: 30px;
   box-shadow: 3px 3px 2px #ee788a;
-  font-family: 'Ropa Sans', sans-serif;
   font-weight: bold;
   margin: 0 auto;
   overflow: hidden;
@@ -318,13 +316,13 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-color: #e9e6ed; }
+  background-color: #e9e6ed;
+  font-family: 'Ropa Sans', sans-serif; }
+  body p {
+    font-family: 'Source Sans Pro', sans-serif; }
 
 a {
   text-decoration: none; }
-
-p {
-  font-family: 'Source Sans Pro', sans-serif; }
 
 @keyframes fade {
   from {
@@ -393,7 +391,6 @@ p {
 
 .about-us__title {
   font-weight: bold;
-  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center; }
   @media only screen and (max-width: 767px) {
@@ -431,7 +428,6 @@ p {
   border-top: #E31D3B solid 1px;
   border-bottom: #E31D3B solid 1px;
   display: flex;
-  font-family: 'Ropa Sans', sans-serif;
   justify-content: space-around;
   margin-top: 30px; }
 
@@ -454,7 +450,6 @@ p {
   .about-us__values .values__description .values__title, .about-us__values .values__description p {
     margin-bottom: 15px; }
   .about-us__values .values__description .values__title {
-    font-family: 'Ropa Sans', sans-serif;
     font-weight: bold; }
 
 /* ------------------- <767px   SECTION ------------------- */
@@ -576,7 +571,6 @@ p {
 
 .services__title {
   font-weight: bold;
-  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center; }
   @media only screen and (max-width: 767px) {
@@ -593,7 +587,6 @@ p {
 .services__card {
   text-align: center; }
   .services__card .card__description {
-    font-family: 'Source Sans Pro', sans-serif;
     padding: 5px;
     position: relative; }
     .services__card .card__description::before {
@@ -606,7 +599,6 @@ p {
       left: 0;
       width: 100%; }
   .services__card .card__title {
-    font-family: 'Ropa Sans', sans-serif;
     font-weight: bold;
     margin-top: 25px; }
   .services__card .card__img {
@@ -711,7 +703,6 @@ p {
 
 .projects__title {
   font-weight: bold;
-  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center; }
   @media only screen and (max-width: 767px) {
@@ -727,8 +718,7 @@ p {
 
 .projects__projects-menu {
   position: absolute;
-  color: #e9e6ed;
-  font-family: 'Ropa Sans', sans-serif; }
+  color: #e9e6ed; }
   .projects__projects-menu .projects-menu__item {
     cursor: pointer;
     padding: 5px;
@@ -850,7 +840,6 @@ p {
 
 .contact__title {
   font-weight: bold;
-  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center; }
   @media only screen and (max-width: 767px) {

@@ -9,7 +9,7 @@ import enquire from '../lib/enquire.js'
     const $carouselArrows       = $('.carousel__arrow');
     const $menu                 = $('.menu');
     const $menuBar              = $('.menu__wrapper');
-    const $menuItem             = $('.menu__item').not('#logo');
+    const $menuItem             = $('.menu__item').not('.menu__home');
     const $toggleMenu           = $('.menu__toggle');
     const $toggleMenuIcon       = $('.toggle__icon');
 
@@ -90,20 +90,20 @@ import enquire from '../lib/enquire.js'
     function menuScroll(e) {
         let offset=0;
         e.preventDefault();
-        const targetDiv = $(e.target).attr("href");
+        const menuItemHref = $(e.target).attr("href");
         enquire.register("screen and (min-width: 1025px)", {
             match: function () {
                 offset=100;
-                return offset
+                return offset;
             },
             unmatch: function () {
                 offset=0;
-                return offset
+                return offset;
             }
         });
         $("html, body").animate(
             {
-                "scrollTop" : $(targetDiv).offset().top - offset
+                "scrollTop" : $(menuItemHref).offset().top - offset
             },
             1000
         );
@@ -121,6 +121,7 @@ import enquire from '../lib/enquire.js'
             1000
         );
     }
+
     function eventHandler() {
         $carouselArrows.on("click", showNextImage);
         $carouselItems.on("touchmove",showNextImage);
@@ -128,7 +129,9 @@ import enquire from '../lib/enquire.js'
         $menuItem.on("click",function (e) {
           menuScroll(e)
         });
-        $(menuLogo).on("click",homeScroll);
+        if($('#home').length){
+            $(menuLogo).on("click",homeScroll);
+        }
     }
 
     function init() {

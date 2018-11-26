@@ -1,4 +1,4 @@
-if ($('home').length) {
+if ($('#home').length) {
     (function () {
         // Variables
         const valuesDescription = document.querySelectorAll('.values__description');
