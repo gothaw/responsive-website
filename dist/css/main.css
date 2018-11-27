@@ -435,7 +435,7 @@ a {
   cursor: pointer;
   width: 100%;
   text-align: center;
-  transition: all 0.2s; }
+  transition: all 0.3s; }
   .about-us__values .values__tab--selected {
     background-color: #E31D3B;
     color: #FFFFFF; }
@@ -611,8 +611,7 @@ a {
     margin-top: 15px; }
     .services__card-wrapper {
       margin-top: 15px;
-      max-width: 500px;
-      padding: 15px; }
+      max-width: 500px; }
     .services__card .card__title {
       font-size: 1.4em; } }
 
@@ -623,8 +622,7 @@ a {
     .services__card-wrapper {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 25px; }
+      flex-wrap: wrap; }
     .services__card {
       width: 49%; }
       .services__card .card__description {
@@ -723,7 +721,7 @@ a {
     cursor: pointer;
     padding: 5px;
     border-top: #e9e6ed solid 1px;
-    transition: all 0.2s; }
+    transition: all 0.3s; }
     .projects__projects-menu .projects-menu__item:last-child {
       border-bottom: #e9e6ed solid 1px; }
     .projects__projects-menu .projects-menu__item--selected {

@@ -94,7 +94,7 @@ a{
         cursor: pointer;
         width: 100%;
         text-align: center;
-        transition: all 0.2s;
+        transition: all 0.3s;
         &--selected{
           background-color: $main-color;
           color: $secondary-color;
@@ -260,7 +260,6 @@ a{
     &__card-wrapper{
       margin-top: $offset-sm;
       max-width: 500px;
-      padding: $offset-sm;
     }
     &__card{
       .card__title{
@@ -277,7 +276,6 @@ a{
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      padding: $offset-md;
     }
     &__card{
       width: 49%;
@@ -345,7 +343,7 @@ a{
       cursor: pointer;
       padding: 5px;
       border-top: $bg-color solid 1px;
-      transition: all 0.2s;
+      transition: all 0.3s;
       &:last-child{
         border-bottom: $bg-color solid 1px;
       }
