@@ -1,9 +1,15 @@
 if ($('#home').length) {
     (function () {
         // Variables
-        const valuesDescription = document.querySelectorAll('.values__description');
-        const valuesTab = document.querySelectorAll('.values__tab');
-        const projectsMenuItems = document.querySelectorAll('.projects-menu__item');
+        const valuesDescription             = document.querySelectorAll('.values__description');
+        const valuesTab                     = document.querySelectorAll('.values__tab');
+        const projectsMenuItems             = document.querySelectorAll('.projects-menu__item');
+        const recentProjects                = document.querySelectorAll('.recent-projects__project-img-wrapper');
+        // jQuery variables
+        const $recentProjectsArchitecture   = $('.architecture');
+        const $recentProjectsStructural     = $('.structural');
+        const $recentProjectsMechanical     = $('.mechanical');
+        const $recentProjectsLandscape      = $('.landscape');
         /**
          * @name        switchBetweenTabs
          * @param       e - tab click event
@@ -31,21 +37,33 @@ if ($('#home').length) {
             const category=$targetItem.html();
             switch (category) {
                 case "Architecture":
-                    console.log("1");
+                    $(recentProjects).hide();
+                    $recentProjectsArchitecture.fadeIn();
                     break;
                 case "Structural":
-                    console.log("2");
+                    $(recentProjects).hide();
+                    $recentProjectsStructural.fadeIn();
                     break;
                 case "Mechanical":
-                    console.log("3");
+                    $(recentProjects).hide();
+                    $recentProjectsMechanical.fadeIn();
                     break;
                 case "Landscape":
-                    console.log("4");
+                    $(recentProjects).hide();
+                    $recentProjectsLandscape.fadeIn();
                     break;
                 default:
-                    console.log("All");
+                    loadRecentProjects();
             }
         }
+
+        function loadRecentProjects() {
+            $(recentProjects).hide();
+            for (let i=0;i<4;i++){
+                $(recentProjects[i]).slideDown();
+            }
+        }
+
         function eventHandler() {
             for (let i=0;i<3;i++){
                 valuesTab[i].addEventListener("click",function (e) {
@@ -59,6 +77,7 @@ if ($('#home').length) {
 
         function init() {
             eventHandler();
+            loadRecentProjects();
         }
         window.addEventListener("load", init);
     })();

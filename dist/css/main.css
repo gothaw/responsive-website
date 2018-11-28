@@ -731,9 +731,10 @@ a {
 .projects__recent-projects {
   margin-top: 30px;
   display: flex;
-  justify-content: space-between; }
-  .projects__recent-projects .recent-projects__hidden {
-    display: none; }
+  justify-content: space-between;
+  /*    .recent-projects__hidden{
+      display: none;
+    }*/ }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
