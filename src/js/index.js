@@ -10,6 +10,7 @@ if ($('#home').length) {
         const $recentProjectsStructural     = $('.structural');
         const $recentProjectsMechanical     = $('.mechanical');
         const $recentProjectsLandscape      = $('.landscape');
+
         /**
          * @name        switchBetweenTabs
          * @param       e - tab click event
@@ -27,7 +28,8 @@ if ($('#home').length) {
 
         /**
          * @name        selectProjectCategory
-         * @desc        Function controls switching between categories and
+         * @desc        Function controls switching between categories on the recent projects menu.
+         *              It also displays selected projects using jQuery fadeIn function.
          * @param       e - item click event
          */
         function selectProjectCategory(e) {
@@ -35,33 +37,36 @@ if ($('#home').length) {
             $targetItem.addClass("projects-menu__item--selected");
             $targetItem.siblings().removeClass("projects-menu__item--selected");
             const category=$targetItem.html();
+            $(recentProjects).hide();
             switch (category) {
                 case "Architecture":
-                    $(recentProjects).hide();
                     $recentProjectsArchitecture.fadeIn();
                     break;
                 case "Structural":
-                    $(recentProjects).hide();
                     $recentProjectsStructural.fadeIn();
                     break;
                 case "Mechanical":
-                    $(recentProjects).hide();
                     $recentProjectsMechanical.fadeIn();
                     break;
                 case "Landscape":
-                    $(recentProjects).hide();
                     $recentProjectsLandscape.fadeIn();
                     break;
                 default:
-                    loadRecentProjects();
+                    loadFourLatestProjects();
             }
         }
 
-        function loadRecentProjects() {
+        /**
+         * @name        loadFourRecentProjects
+         * @desc        Displays four latest project irrespective of their category.
+         */
+        function loadFourLatestProjects() {
+            let fourLatestProjects=[];
             $(recentProjects).hide();
             for (let i=0;i<4;i++){
-                $(recentProjects[i]).slideDown();
+                fourLatestProjects.push(recentProjects[i]);
             }
+            $(fourLatestProjects).fadeIn();
         }
 
         function eventHandler() {
@@ -77,7 +82,7 @@ if ($('#home').length) {
 
         function init() {
             eventHandler();
-            loadRecentProjects();
+            loadFourLatestProjects();
         }
         window.addEventListener("load", init);
     })();
