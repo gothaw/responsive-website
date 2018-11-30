@@ -729,36 +729,62 @@ a {
       color: #E31D3B; }
 
 .projects__recent-projects {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  /*    .recent-projects__hidden{
-      display: none;
-    }*/ }
+  width: 90%;
+  overflow: hidden;
+  height: auto; }
+  .projects__recent-projects .recent-projects__project-wrapper {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; }
+    .projects__recent-projects .recent-projects__project-wrapper:hover .recent-projects__overlay {
+      opacity: 1; }
+  .projects__recent-projects .recent-projects__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #e9e6ed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0; }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .projects {
     margin-top: 15px; }
     .projects__menu-wrapper {
-      height: 300px; }
+      height: 300px;
+      margin-bottom: 5px; }
     .projects__projects-menu {
       font-size: 1.4em;
       text-align: right;
       top: 100px;
-      left: 15px; } }
+      left: 15px; }
+    .projects__recent-projects {
+      max-width: 500px;
+      margin: 0 auto; }
+      .projects__recent-projects .recent-projects__project-wrapper {
+        margin-top: 15px; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
   .projects {
     margin-top: 25px; }
     .projects__menu-wrapper {
-      height: 500px; }
+      height: 500px;
+      margin-bottom: 5px; }
     .projects__projects-menu {
       font-size: 2em;
       text-align: right;
       top: 250px;
-      right: 25px; } }
+      right: 25px; }
+    .projects__recent-projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .projects__recent-projects .recent-projects__project-wrapper {
+        margin-top: 25px;
+        width: 50%; } }
 
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
@@ -776,7 +802,10 @@ a {
       grid-column: 1/3;
       grid-row: 1; }
     .projects__section {
-      grid-column: 3/4; } }
+      grid-column: 3/4; }
+    .projects__recent-projects .recent-projects__project-wrapper {
+      margin-top: 30px;
+      width: 25%; } }
 
 /*========================================================================================================*/
 /*=============================================== Contact ===============================================*/

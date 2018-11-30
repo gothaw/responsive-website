@@ -4,7 +4,7 @@ if ($('#home').length) {
         const valuesDescription             = document.querySelectorAll('.values__description');
         const valuesTab                     = document.querySelectorAll('.values__tab');
         const projectsMenuItems             = document.querySelectorAll('.projects-menu__item');
-        const recentProjects                = document.querySelectorAll('.recent-projects__project-img-wrapper');
+        const recentProjects                = document.querySelectorAll('.recent-projects__project-wrapper');
         // jQuery variables
         const $recentProjectsArchitecture   = $('.architecture');
         const $recentProjectsStructural     = $('.structural');
