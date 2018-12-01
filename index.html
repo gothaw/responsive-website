@@ -152,9 +152,6 @@
                         <div class="services__text">
                             <p>Ab culpa debitis facilis, necessitatibus officia repudiandae totam. Aliquam amet autem consectetur corporis doloremque earum eos error et eveniet fugiat illum impedit maxime minus, molestiae, molestias nam natus, nesciunt non quas quisquam sequi totam voluptatibus voluptatum! Adipisci at atque dolore hic mollitia nihil nostrum provident totam veritatis.</p>
                         </div> <!--/services__text-->
-                        <div class="button-read-more">
-                            <a class="button-read-more__link" href="#">Read More</a>
-                        </div> <!--/button-read-more-->
                     </section> <!--/services__section-->
                     <div class="services__img-wrapper">
                         <picture>
@@ -235,12 +232,12 @@
                         <div class="img__number projects__number--position">03</div> <!--/img__number projects__number--position-->
                     </div> <!--/projects__img-wrapper-->
                 </div> <!--/projects__wrapper-->
-                <div class="projects__recent-projects">
+                <div class="projects__recent-projects inner">
                     <div class="recent-projects__project-wrapper civil mechanical">
                         <img class="img-responsive" src="dist/img/construction-site-build-construction-work-159306.jpeg" width="1920" height="1280" alt="">
                         <div class="recent-projects__overlay">
                             <div class="recent-projects__description-wrapper">
-                                <div class="recent-projects__description">Consectetur adipisicing elit. Eligendi eos id, libero magnam.</div> <!--/recent-projects__description-->
+                                <p class="recent-projects__description">Consectetur adipisicing elit. Eligendi eos id, libero magnam.</p> <!--/recent-projects__description-->
                             </div> <!--/recent-projects__description-wrapper-->
                         </div> <!--/recent-projects__overlay-->
                     </div> <!--recent-projects__project-wrapper civil mechanical-->
@@ -272,11 +269,24 @@
                         <img class="img-responsive" src="dist/img/construction-site-build-construction-work-159306.jpeg" alt="">
                     </div> <!--recent-projects__project-wrapper architecture-->
                 </div> <!--/projects__recent-projects-->
-                <div class="projects__counters">
-                    Hello World!
+                <div class="projects__stats inner">
+                    <div class="stats__wrapper">
+                        <div class="stats__counter">12</div> <!--/stats__counter-->
+                        <div class="stats__description">Projects Completed</div> <!--/stats__description-->
+                    </div> <!--counters__wrapper-->
+                    <div class="stats__wrapper">
+                        <div class="stats__counter">21</div> <!--/stats__counter-->
+                        <div class="stats__description">Happy Clients</div> <!--/stats__description-->
+                    </div> <!--counters__wrapper-->
+                    <div class="stats__wrapper">
+                        <div class="stats__counter">14</div> <!--/stats__counter-->
+                        <div class="stats__description">Awards Won</div> <!--/stats__description-->
+                    </div> <!--counters__wrapper-->
+                    <div class="stats__wrapper">
+                        <div class="stats__counter">15</div> <!--/stats__counter-->
+                        <div class="stats__description">Charted Engineers</div> <!--/stats__description-->
+                    </div> <!--counters__wrapper-->
                 </div> <!--/projects__counters-->
-
-
             </div> <!--/projects-->
             <div id="contact" class="contact">
                 <div class="contact__wrapper">
@@ -295,20 +305,37 @@
                         </picture>
                         <div class="img__number contact__number--position">04</div> <!--/img__number contact__number--position-->
                     </div> <!--/contact__img-wrapper-->
+                    <div class="contact__details">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores assumenda ducimus eaque eligendi facere minus molestias nemo nostrum perferendis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, consequatur dicta dolor doloremque eligendi eum fuga illum ipsam iure minima molestias nisi obcaecati quasi quisquam quos repellat reprehenderit voluptate voluptatem.</p>
+                    </div> <!--contact__details-->
+                    <div class="contact__form-wrapper">
+                        <form class="contact__form" name="contactForm" action="action_page.php" method="post">
+                            <fieldset>
+                                <label for="fullName">Full Name</label>
+                                <input class="contact__input" type="text" id="fullName" name="fullName">
+                                <label for="email">Email Address</label>
+                                <input class="contact__input" type="email" id="email" name="email">
+                                <label for="subject">Subject</label>
+                                <input class="contact__input" type="text" id="subject" name="subject">
+                                <label for="interest">What are you interested in?</label>
+                                <select class="contact__select" id="interest" name="interest">
+                                    <option value="architecture">Architecture</option>
+                                    <option value="structural">Structural Engineering</option>
+                                    <option value="mechanical">Mechanical Engineering</option>
+                                    <option value="landscape">Landscape Design</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <textarea class="contact__text-area" name="message" id="message"></textarea>
+                            </fieldset>
+                        </form> <!--/contact__form-->
+                    </div> <!--contact__details-->
                 </div> <!--/contact__wrapper-->
             </div> <!--/contact-->
-
-
-            <div class="inner">
-                <p class="test">Hello World</p>
-                <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aut autem, commodi, dignissimos est fuga nisi numquam odit pariatur provident tempore voluptates! At delectus deserunt magni porro quaerat saepe voluptatum.</p>
-                <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aut autem, commodi, dignissimos est fuga nisi numquam odit pariatur provident tempore voluptates! At delectus deserunt magni porro quaerat saepe voluptatum.</p>
-                <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aut autem, commodi, dignissimos est fuga nisi numquam odit pariatur provident tempore voluptates! At delectus deserunt magni porro quaerat saepe voluptatum.</p>
-                <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aut autem, commodi, dignissimos est fuga nisi numquam odit pariatur provident tempore voluptates! At delectus deserunt magni porro quaerat saepe voluptatum.</p>
-                <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aut autem, commodi, dignissimos est fuga nisi numquam odit pariatur provident tempore voluptates! At delectus deserunt magni porro quaerat saepe voluptatum.</p>
-            </div> <!--inner-->
         </main>
         <footer>
+            <div class="footer__wrapper">
+                Lorem ipsum dolor sit amet.
+            </div> <!--footer__wrapper-->
         </footer>
     </div> <!--/wrapper-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

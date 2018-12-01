@@ -14,6 +14,7 @@
   &-responsive{
     width: 100%;
     height: auto;
+    display: block;
   }
   &__number{
     color: #e9e6ed;
@@ -353,35 +354,53 @@ a{
       }
     }
   }
-  &__recent-projects{
-    width: 90%;
-    overflow: hidden;
-    height: auto;
-    .recent-projects{
-      &__project-wrapper {
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        &:hover .recent-projects__overlay{
-          opacity: 1;
-        }
+  .recent-projects{
+    &__project-wrapper {
+      cursor: pointer;
+      position: relative;
+      &:hover .recent-projects__overlay{
+        opacity: 1;
       }
-      &__overlay{
-          background-color: rgba(0,0,0,0.5);
-          color: $bg-color;
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          opacity: 0;
-      }
-      &__description{
+    }
+    &__overlay{
+      background-color: rgba(0,0,0,0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+    }
+    &__description-wrapper{
 
-      }
+    }
+    &__description{
+      color: $bg-color;
+      position: absolute;
+      border: $bg-color solid 1px;
+      height: calc(100% - 40px);
+      width: calc(100% - 40px);
+      margin: 20px;
+    }
+  }
+  &__stats{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-weight: bold;
+    .stats__wrapper{
+      width: 24.5%;
+    }
+    .stats__counter{
+      color: $main-color;
+    }
+    .stats__description{
+      @include home-section-text-font;
+      font-weight: bold;
     }
   }
 }
+
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -389,7 +408,6 @@ a{
     margin-top: $offset-sm;
     &__menu-wrapper{
       height: 300px;
-      margin-bottom: 5px;
     }
     &__projects-menu{
       font-size: $div-font-size-lg;
@@ -404,6 +422,14 @@ a{
         margin-top: $offset-sm;
        }
     }
+    &__stats {
+      padding-left: $offset-sm;
+      padding-right: $offset-sm;
+      margin-top: $offset-sm;
+      .stats__counter{
+        font-size: $h-font-size-md;
+      }
+    }
   }
 }
 /* ---------------- >768px SECTION -------------- */
@@ -412,7 +438,6 @@ a{
     margin-top: $offset-md;
     &__menu-wrapper{
       height: 500px;
-      margin-bottom: 5px;
     }
     &__projects-menu{
       font-size: $h-font-size-sm;
@@ -421,12 +446,17 @@ a{
       right: 25px;
     }
     &__recent-projects{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      .recent-projects__project-wrapper{
-        margin-top: $offset-md;
-        width: 50%;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-gap: 20px;
+      margin-top: $offset-md;
+    }
+    &__stats {
+      padding-left: $offset-md;
+      padding-right: $offset-md;
+      margin-top: $offset-md;
+      .stats__counter{
+        font-size: $h-font-size-md;
       }
     }
   }
@@ -452,9 +482,13 @@ a{
       grid-column: 3/4;
     }
     &__recent-projects{
-      .recent-projects__project-wrapper{
-        margin-top: $offset-lg;
-        width: 25%;
+      margin-top: $offset-lg;
+    }
+    &__stats {
+      margin-top: $offset-lg;
+      padding: 0;
+      .stats__counter{
+        font-size: $h-font-size-lg;
       }
     }
   }
@@ -485,6 +519,19 @@ a{
   &__title{
     @include home-section-title;
   }
+  &__form-wrapper{
+    margin: 0 auto;
+    .contact__input, .contact__select, .contact__text-area{
+      display: block;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+    .contact__text-area{
+      resize: none;
+      height: 200px;
+      margin-top: 15px;
+    }
+  }
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -535,6 +582,13 @@ a{
     }
     &__section{
       grid-column: 3/4;
+    }
+    &__details{
+      grid-column: 3/4;
+    }
+    &__form-wrapper{
+      grid-column: 1/3;
+      grid-row: 2;
     }
   }
 }
