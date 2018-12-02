@@ -1,17 +1,18 @@
+/*==================================== Imports ======================================*/
+  @import 'utilities';
 /*==================================== Variables ====================================*/
   $btn-color-1: #fff;
-  $btn-color-2: #E31D3B;
 /*=============================== Read More Button =================================*/
 .button-read-more{
-  border: solid $btn-color-2 3px;
+  border: solid $main-color 3px;
   border-radius: 30px;
-  box-shadow: 3px 3px 2px lighten($btn-color-2, 20%);
+  box-shadow: 3px 3px 2px lighten($main-color, 20%);
   font-weight: bold;
   margin: 0 auto;
   overflow: hidden;
   text-align: center;
   &__link{
-    color: $btn-color-2;
+    color: $main-color;
     display: block;
     position: relative;
     text-transform: uppercase;
@@ -21,10 +22,10 @@
     }
     &:hover{
       color: $btn-color-1;
-      text-shadow: 2px 1px darken($btn-color-2,30%);
+      text-shadow: 2px 1px darken($main-color,30%);
     }
     &::before,&::after{
-      background: $btn-color-2;
+      background: $main-color;
       content: '';
       height: 100%;
       opacity: 0.75;

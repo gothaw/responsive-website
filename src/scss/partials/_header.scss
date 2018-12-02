@@ -1,6 +1,6 @@
+/*==================================== Header ======================================*/
+@import 'utilities';
 /*==================================== Variables ====================================*/
-$menu__link--active-color: #E31D3B;
-$carousel__title-color: #E31D3B;
 $carousel__subtitle-color: #fff;
 $carousel__arrow-color: #fff;
 /*==================================== Header ======================================*/
@@ -24,7 +24,7 @@ $carousel__arrow-color: #fff;
     color: #fff;
     transition: all 0.2s;
     &:active{
-      color: $menu__link--active-color;
+      color: $main-color;
     }
   }
 }
@@ -72,8 +72,8 @@ $carousel__arrow-color: #fff;
     text-align: center;
   }
   &__title{
-    color: $carousel__title-color;
-    text-shadow: 2px 1px darken($carousel__title-color,65%);
+    color: $main-color;
+    text-shadow: 2px 1px darken($main-color,65%);
   }
   &__subtitle{
     color: $carousel__subtitle-color;
@@ -99,7 +99,7 @@ $carousel__arrow-color: #fff;
       padding: 10px;
       width: 95%;
       &:hover{
-        background-color: $menu__link--active-color;
+        background-color: $main-color;
       }
     }
     &__toggle{
@@ -176,7 +176,7 @@ $carousel__arrow-color: #fff;
         visibility: visible;
       }
       &::before{
-        background: $menu__link--active-color;
+        background: $main-color;
         border-radius: 1px;
         bottom: 15px;
         content: "";

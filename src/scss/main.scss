@@ -2,6 +2,7 @@
 
 @import 'partials/reset';
 @import 'partials/_header';
+@import 'partials/_footer';
 @import 'partials/_read-more-btn';
 @import 'partials/_utilities';
 
@@ -147,7 +148,6 @@ a{
     &__CEO-quote{
       display: flex;
       justify-content: space-between;
-      padding: 15px $offset-md;
       .CEO-quote__text{
         padding-left: 25px;
       }
@@ -187,7 +187,6 @@ a{
     }
     &__CEO-quote{
       grid-column: 3/4;
-      padding: 15px $offset-lg;
     }
     &__values{
       grid-column: 1/3;
@@ -531,6 +530,10 @@ a{
       height: 200px;
       margin-top: 15px;
     }
+  }
+  &__details{
+    @include home-section-text-on-background;
+    @include home-section-text-font;
   }
 }
 /* ------------------- <767px   SECTION ------------------- */

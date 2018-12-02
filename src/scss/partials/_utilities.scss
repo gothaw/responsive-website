@@ -57,6 +57,15 @@ $offset-xlg: 100px;
   background-color: $main-color;
   color: $bg-color;
   text-align: center;
+  @media only screen and (max-width: 767px) {
+    padding: $offset-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    padding: $offset-md;
+  }
+  @media only screen and (min-width: 1025px) {
+    padding: $offset-lg;
+  }
 }
 @mixin inner-grid{
   display: grid;
