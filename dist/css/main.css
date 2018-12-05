@@ -335,8 +335,6 @@ html {
 body {
   background-color: #e9e6ed;
   font-family: 'Ropa Sans', sans-serif; }
-  body p {
-    font-family: 'Source Sans Pro', sans-serif; }
 
 a {
   text-decoration: none; }
@@ -755,8 +753,6 @@ a {
 .projects .recent-projects__project-wrapper {
   cursor: pointer;
   position: relative; }
-  .projects .recent-projects__project-wrapper:hover .recent-projects__overlay {
-    opacity: 1; }
 
 .projects .recent-projects__overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -767,13 +763,20 @@ a {
   width: 100%;
   opacity: 0; }
 
+.projects .recent-projects__description-wrapper {
+  opacity: 0;
+  border: red solid 1px;
+  margin: 20px auto;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px); }
+
 .projects .recent-projects__description {
   color: #e9e6ed;
-  position: absolute;
-  border: #e9e6ed solid 1px;
-  height: calc(100% - 40px);
-  width: calc(100% - 40px);
-  margin: 20px; }
+  border: blue solid 1px;
+  opacity: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
 
 .projects__stats {
   display: flex;

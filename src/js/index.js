@@ -10,7 +10,7 @@ if ($('#home').length) {
         const $recentProjectsStructural     = $('.structural');
         const $recentProjectsMechanical     = $('.mechanical');
         const $recentProjectsLandscape      = $('.landscape');
-
+        const $recentProjectDescriptions    = $('.recent-projects__description-wrapper');
         /**
          * @name        switchBetweenTabs
          * @param       e - tab click event
@@ -69,6 +69,31 @@ if ($('#home').length) {
             $(fourLatestProjects).fadeIn();
         }
 
+        /**
+         * @name        toggleProjectDescription
+         * @desc        Toggles project description when project image is clicked.
+         * @param       e - project clicked event
+         */
+        function toggleProjectDescription(e) {
+            const $targetProject = $(e.target);
+            $($targetProject.closest('.recent-projects__overlay')).animate({
+                    "opacity": 1.0
+                },
+                500
+            );
+            $targetProject.animate({
+                    "opacity": 1.0
+                },
+                1000
+            );
+            $($targetProject.closest('.recent-projects__description')).animate({
+                    "opacity": 1.0
+                },
+                2000
+            );
+            console.log($targetProject);
+        }
+
         function eventHandler() {
             for (let i=0;i<3;i++){
                 valuesTab[i].addEventListener("click",function (e) {
@@ -77,7 +102,10 @@ if ($('#home').length) {
             }
             $(projectsMenuItems).on("click",function (e) {
                 selectProjectCategory(e);
-            })
+            });
+            $recentProjectDescriptions.on("click",function (e) {
+               toggleProjectDescription(e);
+            });
         }
 
         function init() {
