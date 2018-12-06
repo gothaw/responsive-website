@@ -81,38 +81,12 @@ if ($('#home').length) {
             const overlay               = $targetProject.closest('.recent-projects__overlay');
             const wrapper               = overlay.find('.recent-projects__description-wrapper');
             const description           = overlay.find('.recent-projects__description');
-            // hides descriptions except for target description
-            $($recentProjectOverlay.not(overlay)).animate({
-                "opacity": 0
-                },
-                200
-            );
-            $($recentProjectWrapper.not(wrapper)).animate({
-                    "opacity": 0
-                },
-                200
-            );
-            $($recentProjectDescription.not(description)).animate({
-                    "opacity": 0
-                },
-                200
-            );
-            // shows target description
-            $(overlay).animate({
-                    "opacity": 1
-                },
-                500
-            );
-            $(wrapper).animate({
-                    "opacity": 1
-                },
-                500
-            );
-            $(description).animate({
-                    "opacity": 1
-                },
-                1500
-            );
+            $recentProjectOverlay.not(overlay).addClass('recent-projects__overlay--hidden').removeClass('recent-projects__overlay--shown');
+            $recentProjectWrapper.not(wrapper).addClass('recent-projects__description-wrapper--hidden').removeClass('recent-projects__description-wrapper--shown');
+            $recentProjectDescription.not(description).addClass('recent-projects__description--hidden').removeClass('recent-projects__description--shown');
+            overlay.addClass('recent-projects__overlay--shown').removeClass('recent-projects__overlay--hidden');
+            wrapper.addClass('recent-projects__description-wrapper--shown').removeClass('recent-projects__description-wrapper--hidden');
+            description.addClass('recent-projects__description--shown').removeClass('recent-projects__description--hidden');
         }
         function eventHandler() {
             for (let i=0;i<3;i++){
