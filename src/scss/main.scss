@@ -363,13 +363,24 @@ a{
       height: 100%;
       width: 100%;
       opacity: 0;
+      &--hidden{
+        opacity: 0;
+      }
+      &--shown{
+        opacity: 1;
+      }
     }
     &__description-wrapper{
-      opacity: 0;
       border: red solid 1px;
       margin: 20px auto;
       height: calc(100% - 40px);
       width: calc(100% - 40px);
+      &--hidden{
+        opacity: 0;
+      }
+      &--shown{
+        opacity: 1;
+      }
     }
     &__description{
       color: $bg-color;
@@ -378,6 +389,12 @@ a{
       position: relative;
       top: 50%;
       transform: translateY(-50%);
+      &--hidden{
+        opacity: 0;
+      }
+      &--shown{
+        opacity: 1;
+      }
     }
   }
   &__stats{

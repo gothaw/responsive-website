@@ -10,7 +10,9 @@ if ($('#home').length) {
         const $recentProjectsStructural     = $('.structural');
         const $recentProjectsMechanical     = $('.mechanical');
         const $recentProjectsLandscape      = $('.landscape');
-        const $recentProjectDescriptions    = $('.recent-projects__description-wrapper');
+        const $recentProjectOverlay         = $('.recent-projects__overlay')
+        const $recentProjectWrapper         = $('.recent-projects__description-wrapper');
+        const $recentProjectDescription     = $('.recent-projects__description');
         /**
          * @name        switchBetweenTabs
          * @param       e - tab click event
@@ -75,25 +77,43 @@ if ($('#home').length) {
          * @param       e - project clicked event
          */
         function toggleProjectDescription(e) {
-            const $targetProject = $(e.target);
-            $($targetProject.closest('.recent-projects__overlay')).animate({
-                    "opacity": 1.0
+            const $targetProject        = $(e.target);
+            const overlay               = $targetProject.closest('.recent-projects__overlay');
+            const wrapper               = overlay.find('.recent-projects__description-wrapper');
+            const description           = overlay.find('.recent-projects__description');
+            // hides descriptions except for target description
+            $($recentProjectOverlay.not(overlay)).animate({
+                "opacity": 0
+                },
+                200
+            );
+            $($recentProjectWrapper.not(wrapper)).animate({
+                    "opacity": 0
+                },
+                200
+            );
+            $($recentProjectDescription.not(description)).animate({
+                    "opacity": 0
+                },
+                200
+            );
+            // shows target description
+            $(overlay).animate({
+                    "opacity": 1
                 },
                 500
             );
-            $targetProject.animate({
-                    "opacity": 1.0
+            $(wrapper).animate({
+                    "opacity": 1
                 },
-                1000
+                500
             );
-            $($targetProject.closest('.recent-projects__description')).animate({
-                    "opacity": 1.0
+            $(description).animate({
+                    "opacity": 1
                 },
-                2000
+                1500
             );
-            console.log($targetProject);
         }
-
         function eventHandler() {
             for (let i=0;i<3;i++){
                 valuesTab[i].addEventListener("click",function (e) {
@@ -103,7 +123,7 @@ if ($('#home').length) {
             $(projectsMenuItems).on("click",function (e) {
                 selectProjectCategory(e);
             });
-            $recentProjectDescriptions.on("click",function (e) {
+            $recentProjectWrapper.on("click",function (e) {
                toggleProjectDescription(e);
             });
         }
