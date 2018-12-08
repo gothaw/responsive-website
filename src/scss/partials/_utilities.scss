@@ -15,9 +15,13 @@ $p-font-size-md: 1.2em;
 $offset-sm: 15px;
 $offset-md: 25px;
 $offset-lg: 30px;
-$offset-xlg: 100px;
+$offset-xlg: 50px;
 /*==================================== Mixins ====================================*/
-@mixin home-section-text-font{
+@mixin home-text-black-border{
+  border: black solid 3px;
+  margin: 15px 0;
+  padding: 15px;
+  text-align: center;
   @media only screen and (max-width: 767px) {
     font-size: $div-font-size-sm;
     line-height: $div-line-h-sm;
@@ -29,13 +33,8 @@ $offset-xlg: 100px;
   @media only screen and (min-width: 1025px) {
     font-size: $div-font-size-lg;
     line-height: $div-line-h-lg;
+    margin-bottom: 40px;
   }
-}
-@mixin home-text-black-border{
-  border: black solid 3px;
-  margin: 15px 0;
-  padding: 15px;
-  text-align: center;
 }
 @mixin home-section-title{
   font-weight: bold;
@@ -59,12 +58,18 @@ $offset-xlg: 100px;
   text-align: center;
   @media only screen and (max-width: 767px) {
     padding: $offset-sm;
+    font-size: $div-font-size-sm;
+    line-height: $div-line-h-sm;
   }
   @media only screen and (min-width: 768px) {
     padding: $offset-md;
+    font-size: $div-font-size-md;
+    line-height: $div-line-h-md;
   }
   @media only screen and (min-width: 1025px) {
     padding: $offset-lg;
+    font-size: $div-font-size-lg;
+    line-height: $div-line-h-lg;
   }
 }
 @mixin inner-grid{
@@ -90,7 +95,7 @@ $offset-xlg: 100px;
     padding: 25px;
   }
   @media only screen and (min-width: 1025px) {
-    padding: 30px 0 30px 25px;
+    padding: 0 0 0 25px;
   }
 }
 @mixin home-section-img-size{
@@ -100,5 +105,37 @@ $offset-xlg: 100px;
   }
   @media only screen and (min-width: 768px) {
     height: 500px;
+  }
+}
+@mixin home-values-tab{
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s;
+  @media only screen and (max-width: 767px) {
+    font-size: $div-font-size-sm;
+    padding: 15px $offset-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $div-font-size-md;
+    padding: 15px $offset-md;
+  }
+}
+@mixin home-values-description{
+  padding: 15px;
+  text-align: center;
+  @media only screen and (max-width: 767px) {
+    font-size: $div-font-size-sm;
+    line-height: $div-line-h-sm;
+  }
+    @media only screen and (min-width: 768px) {
+    font-size: $div-font-size-md;
+    line-height: $div-line-h-md;
+    margin: $offset-md;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: $div-font-size-lg;
+    line-height: $div-line-h-lg;
+    margin: 15px 15px 0 15px;
   }
 }

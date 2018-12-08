@@ -60,7 +60,7 @@ a{
   &__img-wrapper{
     position: relative;
   }
-  &__img-wrapper,&__img{
+  &__img{
     @include home-section-img-size;
   }
   &__section{
@@ -68,13 +68,11 @@ a{
   }
   &__text{
     @include home-text-black-border;
-    @include home-section-text-font;
   }
   &__title{
     @include home-section-title;
   }
   &__CEO-quote{
-    @include home-section-text-font;
     @include home-section-text-on-background;
     .CEO-quote__text p:nth-child(2){
       font-weight: bold;
@@ -90,10 +88,7 @@ a{
        margin-top: 30px;
      }
      &__tab{
-        cursor: pointer;
-        width: 100%;
-        text-align: center;
-        transition: all 0.3s;
+       @include home-values-tab;
         &--selected{
           background-color: $main-color;
           color: $secondary-color;
@@ -105,8 +100,9 @@ a{
         }
      }
      &__description{
-       border: darken($bg-color,30%) solid 1px;
-       padding: 15px;
+       @include home-values-description;
+       animation-name: fade;
+       animation-duration: 0.5s;
        &--hidden{
          display: none;
        }
@@ -130,12 +126,6 @@ a{
     .CEO-quote__text{
       padding: $offset-sm;
     }
-    &__values{
-       .values__tab{
-           font-size: $div-font-size-sm;
-           padding: 15px $offset-sm;
-       }
-     }
   }
 }
 /* ---------------- >768px SECTION -------------- */
@@ -152,24 +142,13 @@ a{
         border-radius: 50%;
       }
     }
-    &__values{
-      .values__tab{
-          font-size: $div-font-size-md;
-          padding: 15px $offset-md;
-      }
-      .values__description{
-          font-size: $p-font-size-md;
-          line-height: $p-font-size-md;
-          margin: $offset-md;
-      }
-    }
   }
 }
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
   .about-us {
     margin-top: $offset-xlg;
-    &__text, &__CEO-quote{
+    &__text{
       text-align: left;
     }
     &__img-wrapper{
@@ -178,6 +157,7 @@ a{
     }
     &__section{
       grid-column: 3/4;
+      align-self: center;
     }
     &__wrapper {
       @include inner-grid;
@@ -191,9 +171,6 @@ a{
       .values__tab-wrapper{
         border-top: none;
         margin-top: 0;
-      }
-      .values__description{
-        margin: 15px $offset-lg 0 $offset-lg;
       }
     }
   }
@@ -219,7 +196,6 @@ a{
   }
   &__text{
     @include home-text-black-border;
-    @include home-section-text-font;
   }
   &__title{
     @include home-section-title;
@@ -328,7 +304,6 @@ a{
   }
   &__text{
     @include home-text-black-border;
-    @include home-section-text-font;
   }
   &__title{
     @include home-section-title;
@@ -371,7 +346,7 @@ a{
       }
     }
     &__description-wrapper{
-      border: red solid 1px;
+      border: $bg-color solid 3px;
       margin: 20px auto;
       height: calc(100% - 40px);
       width: calc(100% - 40px);
@@ -385,7 +360,6 @@ a{
     }
     &__description{
       color: $bg-color;
-      border: blue solid 1px;
       position: relative;
       top: 50%;
       transform: translateY(-50%);
@@ -410,7 +384,6 @@ a{
       color: $main-color;
     }
     .stats__description{
-      @include home-section-text-font;
       font-weight: bold;
     }
   }
@@ -529,7 +502,6 @@ a{
   }
   &__text{
     @include home-text-black-border;
-    @include home-section-text-font;
   }
   &__title{
     @include home-section-title;
@@ -549,7 +521,6 @@ a{
   }
   &__details{
     @include home-section-text-on-background;
-    @include home-section-text-font;
   }
 }
 /* ------------------- <767px   SECTION ------------------- */

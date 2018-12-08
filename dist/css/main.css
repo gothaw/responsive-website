@@ -365,13 +365,13 @@ a {
 .about-us__img-wrapper {
   position: relative; }
 
-.about-us__img-wrapper, .about-us__img {
+.about-us__img {
   overflow: hidden; }
   @media only screen and (max-width: 767px) {
-    .about-us__img-wrapper, .about-us__img {
+    .about-us__img {
       height: 300px; } }
   @media only screen and (min-width: 768px) {
-    .about-us__img-wrapper, .about-us__img {
+    .about-us__img {
       height: 500px; } }
 
 @media only screen and (max-width: 767px) {
@@ -384,7 +384,7 @@ a {
 
 @media only screen and (min-width: 1025px) {
   .about-us__section {
-    padding: 30px 0 30px 25px; } }
+    padding: 0 0 0 25px; } }
 
 .about-us__text {
   border: black solid 3px;
@@ -402,7 +402,8 @@ a {
   @media only screen and (min-width: 1025px) {
     .about-us__text {
       font-size: 1.4em;
-      line-height: 1.5em; } }
+      line-height: 1.5em;
+      margin-bottom: 42px; } }
 
 .about-us__title {
   font-weight: bold;
@@ -426,25 +427,19 @@ a {
   text-align: center; }
   @media only screen and (max-width: 767px) {
     .about-us__CEO-quote {
+      padding: 15px;
       font-size: 1.2em;
       line-height: 1.2em; } }
   @media only screen and (min-width: 768px) {
     .about-us__CEO-quote {
+      padding: 25px;
       font-size: 1.4em;
       line-height: 1.5em; } }
   @media only screen and (min-width: 1025px) {
     .about-us__CEO-quote {
+      padding: 30px;
       font-size: 1.4em;
       line-height: 1.5em; } }
-  @media only screen and (max-width: 767px) {
-    .about-us__CEO-quote {
-      padding: 15px; } }
-  @media only screen and (min-width: 768px) {
-    .about-us__CEO-quote {
-      padding: 25px; } }
-  @media only screen and (min-width: 1025px) {
-    .about-us__CEO-quote {
-      padding: 30px; } }
   .about-us__CEO-quote .CEO-quote__text p:nth-child(2) {
     font-weight: bold; }
 
@@ -460,6 +455,14 @@ a {
   width: 100%;
   text-align: center;
   transition: all 0.3s; }
+  @media only screen and (max-width: 767px) {
+    .about-us__values .values__tab {
+      font-size: 1.2em;
+      padding: 15px 15px; } }
+  @media only screen and (min-width: 768px) {
+    .about-us__values .values__tab {
+      font-size: 1.4em;
+      padding: 15px 25px; } }
   .about-us__values .values__tab--selected {
     background-color: #E31D3B;
     color: #FFFFFF; }
@@ -467,8 +470,24 @@ a {
     color: #E31D3B; }
 
 .about-us__values .values__description {
-  border: #9b8dad solid 1px;
-  padding: 15px; }
+  padding: 15px;
+  text-align: center;
+  animation-name: fade;
+  animation-duration: 0.5s; }
+  @media only screen and (max-width: 767px) {
+    .about-us__values .values__description {
+      font-size: 1.2em;
+      line-height: 1.2em; } }
+  @media only screen and (min-width: 768px) {
+    .about-us__values .values__description {
+      font-size: 1.4em;
+      line-height: 1.5em;
+      margin: 25px; } }
+  @media only screen and (min-width: 1025px) {
+    .about-us__values .values__description {
+      font-size: 1.4em;
+      line-height: 1.5em;
+      margin: 15px 15px 0 15px; } }
   .about-us__values .values__description--hidden {
     display: none; }
   .about-us__values .values__description .values__title, .about-us__values .values__description p {
@@ -483,10 +502,7 @@ a {
     .about-us .CEO-quote__img {
       display: none; }
     .about-us .CEO-quote__text {
-      padding: 15px; }
-    .about-us__values .values__tab {
-      font-size: 1.2em;
-      padding: 15px 15px; } }
+      padding: 15px; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
@@ -498,26 +514,20 @@ a {
       .about-us__CEO-quote .CEO-quote__text {
         padding-left: 25px; }
       .about-us__CEO-quote .CEO-quote__img {
-        border-radius: 50%; }
-    .about-us__values .values__tab {
-      font-size: 1.4em;
-      padding: 15px 25px; }
-    .about-us__values .values__description {
-      font-size: 1.2em;
-      line-height: 1.2em;
-      margin: 25px; } }
+        border-radius: 50%; } }
 
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
   .about-us {
-    margin-top: 100px; }
-    .about-us__text, .about-us__CEO-quote {
+    margin-top: 50px; }
+    .about-us__text {
       text-align: left; }
     .about-us__img-wrapper {
       grid-column: 1/3;
       grid-row: 1; }
     .about-us__section {
-      grid-column: 3/4; }
+      grid-column: 3/4;
+      align-self: center; }
     .about-us__wrapper {
       display: grid;
       grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr; }
@@ -528,9 +538,7 @@ a {
       grid-row: 2; }
       .about-us__values .values__tab-wrapper {
         border-top: none;
-        margin-top: 0; }
-      .about-us__values .values__description {
-        margin: 15px 30px 0 30px; } }
+        margin-top: 0; } }
 
 /*========================================================================================================*/
 /*=============================================== Services ===============================================*/
@@ -571,7 +579,7 @@ a {
 
 @media only screen and (min-width: 1025px) {
   .services__section {
-    padding: 30px 0 30px 25px; } }
+    padding: 0 0 0 25px; } }
 
 .services__text {
   border: black solid 3px;
@@ -589,7 +597,8 @@ a {
   @media only screen and (min-width: 1025px) {
     .services__text {
       font-size: 1.4em;
-      line-height: 1.5em; } }
+      line-height: 1.5em;
+      margin-bottom: 42px; } }
 
 .services__title {
   font-weight: bold;
@@ -656,7 +665,7 @@ a {
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
   .services {
-    margin-top: 100px; }
+    margin-top: 50px; }
     .services__text {
       text-align: left; }
     .services__wrapper {
@@ -701,7 +710,7 @@ a {
 
 @media only screen and (min-width: 1025px) {
   .projects__section {
-    padding: 30px 0 30px 25px; } }
+    padding: 0 0 0 25px; } }
 
 .projects__text {
   border: black solid 3px;
@@ -719,7 +728,8 @@ a {
   @media only screen and (min-width: 1025px) {
     .projects__text {
       font-size: 1.4em;
-      line-height: 1.5em; } }
+      line-height: 1.5em;
+      margin-bottom: 42px; } }
 
 .projects__title {
   font-weight: bold;
@@ -768,7 +778,7 @@ a {
     opacity: 1; }
 
 .projects .recent-projects__description-wrapper {
-  border: red solid 1px;
+  border: #e9e6ed solid 3px;
   margin: 20px auto;
   height: calc(100% - 40px);
   width: calc(100% - 40px);
@@ -780,7 +790,6 @@ a {
 
 .projects .recent-projects__description {
   color: #e9e6ed;
-  border: blue solid 1px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -801,18 +810,6 @@ a {
     color: #E31D3B; }
   .projects__stats .stats__description {
     font-weight: bold; }
-    @media only screen and (max-width: 767px) {
-      .projects__stats .stats__description {
-        font-size: 1.2em;
-        line-height: 1.2em; } }
-    @media only screen and (min-width: 768px) {
-      .projects__stats .stats__description {
-        font-size: 1.4em;
-        line-height: 1.5em; } }
-    @media only screen and (min-width: 1025px) {
-      .projects__stats .stats__description {
-        font-size: 1.4em;
-        line-height: 1.5em; } }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -863,7 +860,7 @@ a {
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
   .projects {
-    margin-top: 100px; }
+    margin-top: 50px; }
     .projects__text {
       text-align: left; }
     .projects__wrapper {
@@ -924,7 +921,7 @@ a {
 
 @media only screen and (min-width: 1025px) {
   .contact__section {
-    padding: 30px 0 30px 25px; } }
+    padding: 0 0 0 25px; } }
 
 .contact__text {
   border: black solid 3px;
@@ -942,7 +939,8 @@ a {
   @media only screen and (min-width: 1025px) {
     .contact__text {
       font-size: 1.4em;
-      line-height: 1.5em; } }
+      line-height: 1.5em;
+      margin-bottom: 42px; } }
 
 .contact__title {
   font-weight: bold;
@@ -977,23 +975,17 @@ a {
   text-align: center; }
   @media only screen and (max-width: 767px) {
     .contact__details {
-      padding: 15px; } }
-  @media only screen and (min-width: 768px) {
-    .contact__details {
-      padding: 25px; } }
-  @media only screen and (min-width: 1025px) {
-    .contact__details {
-      padding: 30px; } }
-  @media only screen and (max-width: 767px) {
-    .contact__details {
+      padding: 15px;
       font-size: 1.2em;
       line-height: 1.2em; } }
   @media only screen and (min-width: 768px) {
     .contact__details {
+      padding: 25px;
       font-size: 1.4em;
       line-height: 1.5em; } }
   @media only screen and (min-width: 1025px) {
     .contact__details {
+      padding: 30px;
       font-size: 1.4em;
       line-height: 1.5em; } }
 
@@ -1024,7 +1016,7 @@ a {
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
   .contact {
-    margin-top: 100px; }
+    margin-top: 50px; }
     .contact__text {
       text-align: left; }
     .contact__wrapper {
