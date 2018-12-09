@@ -1,4 +1,4 @@
-/*==================================== Imports ====================================*/
+//==================================== Imports ====================================
 
 @import 'partials/reset';
 @import 'partials/_header';
@@ -275,9 +275,7 @@ a{
     @include home-section-number-position(-10px,-15px);
   }
   &__menu-wrapper{
-    background-color: $main-color;
-    overflow: hidden;
-    position: relative;
+    @include home-projects-menu-wrapper;
   }
   &__section{
     @include home-section-black-border-wrapper;
@@ -289,20 +287,19 @@ a{
     @include home-section-title;
   }
   &__projects-menu{
-    position: absolute;
-    color: $bg-color;
-    .projects-menu__item{
-      cursor: pointer;
-      padding: 5px;
-      border-top: $bg-color solid 1px;
-      transition: all 0.3s;
-      &:last-child{
-        border-bottom: $bg-color solid 1px;
-      }
-      &--selected{
-        background-color: $bg-color;
-        color: $main-color;
-      }
+    @include home-projects-menu;
+  }
+  .projects-menu__item{
+    cursor: pointer;
+    padding: 5px;
+    border-top: $bg-color solid 1px;
+    transition: all 0.3s;
+    &:last-child{
+      border-bottom: $bg-color solid 1px;
+    }
+    &--selected{
+      background-color: $bg-color;
+      color: $main-color;
     }
   }
   .recent-projects{
@@ -311,121 +308,64 @@ a{
       position: relative;
     }
     &__overlay{
-      background-color: rgba(0,0,0,0.5);
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      transition: opacity 1s;
-      &--hidden{
-        opacity: 0;
-      }
+      @include home-project-overlay;
       &--shown{
         opacity: 1;
       }
     }
     &__description-wrapper{
-      border: $bg-color solid 3px;
-      margin: 20px auto;
-      height: calc(100% - 40px);
-      width: calc(100% - 40px);
-      transition: opacity 2s;
-      &--hidden{
-        opacity: 0;
-      }
+      @include home-project-description-wrapper;
       &--shown{
         opacity: 1;
       }
     }
     &__description{
-      color: $bg-color;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: opacity 3s;
-      &--hidden{
-        opacity: 0;
-      }
+      @include home-project-description;
       &--shown{
         opacity: 1;
+      }
+      .recent-projects__title{
+        margin-bottom: 10px;
+        font-weight: bold;
       }
     }
   }
   &__stats{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    font-weight: bold;
+    @include home-projects-stats;
     .stats__wrapper{
       width: 24.5%;
     }
     .stats__counter{
-      color: $main-color;
+      @include home-stats-counter;
     }
     .stats__description{
-      font-weight: bold;
+      @include home-stats-description;
     }
   }
 }
 
-
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .projects{
-    margin-top: $offset-sm;
-    &__menu-wrapper{
-      height: 300px;
-    }
-    &__projects-menu{
-      font-size: $div-font-size-lg;
-      text-align: right;
-      top: 100px;
-      left: 15px;
-    }
+    margin-top: $offset-md;
     &__recent-projects{
       max-width: 500px;
       margin: 0 auto;
-      .recent-projects__project-wrapper{
-        margin-top: $offset-sm;
-       }
     }
-    &__stats {
-      padding-left: $offset-sm;
-      padding-right: $offset-sm;
+    .recent-projects__project-wrapper{
       margin-top: $offset-sm;
-      .stats__counter{
-        font-size: $h-font-size-md;
-      }
     }
   }
 }
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
   .projects{
-    margin-top: $offset-md;
-    &__menu-wrapper{
-      height: 500px;
-    }
-    &__projects-menu{
-      font-size: $h-font-size-sm;
-      text-align: right;
-      top: 250px;
-      right: 25px;
-    }
+    margin-top: $offset-lg;
     &__recent-projects{
       display: grid;
       grid-template-columns: repeat(2,1fr);
-      grid-gap: 20px;
+      grid-gap: 25px;
       margin-top: $offset-md;
-    }
-    &__stats {
-      padding-left: $offset-md;
-      padding-right: $offset-md;
-      margin-top: $offset-md;
-      .stats__counter{
-        font-size: $h-font-size-md;
-      }
     }
   }
 }
@@ -439,9 +379,6 @@ a{
     &__wrapper{
       @include inner-grid;
     }
-    &__wrapper{
-      @include inner-grid;
-    }
     &__menu-wrapper{
       grid-column: 1/3;
       grid-row: 1;
@@ -451,13 +388,6 @@ a{
     }
     &__recent-projects{
       margin-top: $offset-lg;
-    }
-    &__stats {
-      margin-top: $offset-lg;
-      padding: 0;
-      .stats__counter{
-        font-size: $h-font-size-lg;
-      }
     }
   }
 }
@@ -506,7 +436,7 @@ a{
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .contact{
-    margin-top: $offset-sm;
+    margin-top: $offset-md;
     &__menu-wrapper{
       height: 300px;
     }
@@ -521,7 +451,7 @@ a{
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
   .contact{
-    margin-top: $offset-md;
+    margin-top: $offset-lg;
     &__img-wrapper{
       height: 500px;
     }

@@ -1,4 +1,4 @@
-/*==================================== Variables ====================================*/
+//==================================== Variables ====================================
 $bg-color: #e9e6ed;
 $main-color: #E31D3B;
 $secondary-color: #FFFFFF;
@@ -16,14 +16,13 @@ $offset-sm: 15px;
 $offset-md: 25px;
 $offset-lg: 30px;
 $offset-xlg: 50px;
-/*=============================================== Mixins ===============================================*/
-/*=============================================== General ===============================================*/
-
+//=============================================== Mixins ===============================================
+//=============================================== General ===============================================
 // mixin for the text with the black border
 @mixin home-text-black-border{
   border: black solid 3px;
   font-family: 'Source Sans Pro', sans-serif;
-  margin: 15px 0 25px;
+  margin: 15px 0;
   padding: 15px;
   text-align: center;
   @media only screen and (max-width: 767px) {
@@ -33,6 +32,7 @@ $offset-xlg: 50px;
   @media only screen and (min-width: 768px) {
     font-size: $div-font-size-md;
     line-height: $div-line-h-md;
+    margin-bottom: 25px;
   }
   @media only screen and (min-width: 1025px) {
     margin-bottom: 40px;
@@ -115,7 +115,7 @@ $offset-xlg: 50px;
     height: 500px;
   }
 }
-/*=============================================== About Us ===============================================*/
+//=============================================== About Us ===============================================
 // mixin for styling values tab
 @mixin home-values-tab{
   cursor: pointer;
@@ -151,7 +151,8 @@ $offset-xlg: 50px;
     padding: $offset-sm;
   }
 }
-/*=============================================== Services ===============================================*/
+//=============================================== Services ===============================================
+// styling for card description
 @mixin home-card-description{
   text-align: center;
   padding: 15px 5px 0;
@@ -160,6 +161,7 @@ $offset-xlg: 50px;
   font-size: $p-font-size-md;
   line-height: $p-font-size-md;
 }
+// styling for card title
 @mixin home-card-title{
   text-align: center;
   font-weight: bold;
@@ -172,7 +174,125 @@ $offset-xlg: 50px;
     margin-top: 25px;
   }
 }
+// styling for card image
 @mixin home-card-img{
   overflow: hidden;
   margin: 15px 0;
+}
+//=============================================== Projects ===============================================
+// styling for menu wrapper
+@mixin home-projects-menu-wrapper{
+  background-color: $main-color;
+  overflow: hidden;
+  position: relative;
+  @media only screen and (max-width: 767px) {
+    height: 300px;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 500px;
+  }
+}
+// styling for recent projects menu
+@mixin home-projects-menu{
+  color: $bg-color;
+  position: absolute;
+  text-align: right;
+  @media only screen and (max-width: 767px) {
+    font-size: $div-font-size-lg;
+    top: 80px;
+    left: 15px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $h-font-size-sm;
+    top: 250px;
+    right: 25px;
+  }
+}
+// styling for home projects stats
+@mixin home-projects-stats{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-weight: bold;
+  @media only screen and (max-width: 767px) {
+    padding-left: $offset-sm;
+    padding-right: $offset-sm;
+    margin-top: $offset-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    padding-left: $offset-md;
+    padding-right: $offset-md;
+    margin-top: $offset-md;
+  }
+  @media only screen and (min-width: 1025px) {
+    margin-top: $offset-lg;
+    padding: 0;
+  }
+}
+//styling for stats counter
+@mixin home-stats-counter{
+  color: $main-color;
+  @media only screen and (max-width: 767px) {
+    font-size: $h-font-size-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $h-font-size-md;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: $h-font-size-lg;
+  }
+}
+//styling for stats description
+@mixin home-stats-description{
+  font-family: 'Source Sans Pro', sans-serif;
+  @media only screen and (max-width: 767px) {
+    font-size: $div-font-size-sm;
+    line-height: $div-line-h-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $div-font-size-md;
+    line-height: $div-line-h-md;
+  }
+}
+@mixin home-project-overlay{
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+@mixin home-project-description-wrapper{
+  border: $bg-color solid 3px;
+  transition: opacity 1s;
+  opacity: 0;
+  @media only screen and (max-width: 767px) {
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
+    margin: 15px auto;
+  }
+  @media only screen and (min-width: 768px) {
+    height: calc(100% - 50px);
+    width: calc(100% - 50px);
+    margin: 25px auto;
+  }
+}
+@mixin home-project-description{
+  color: $bg-color;
+  opacity: 0;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 1.5s;
+  font-size: $p-font-size-md;
+  line-height: $p-font-size-md;
+  @media only screen and (max-width: 767px) {
+    padding: 15px;
+  }
+  @media only screen and (min-width: 768px) {
+    padding: 25px;
+  }
 }

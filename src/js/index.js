@@ -81,12 +81,12 @@ if ($('#home').length) {
             const overlay               = $targetProject.closest('.recent-projects__overlay');
             const wrapper               = overlay.find('.recent-projects__description-wrapper');
             const description           = overlay.find('.recent-projects__description');
-            $recentProjectOverlay.not(overlay).addClass('recent-projects__overlay--hidden').removeClass('recent-projects__overlay--shown');
-            $recentProjectWrapper.not(wrapper).addClass('recent-projects__description-wrapper--hidden').removeClass('recent-projects__description-wrapper--shown');
-            $recentProjectDescription.not(description).addClass('recent-projects__description--hidden').removeClass('recent-projects__description--shown');
-            overlay.addClass('recent-projects__overlay--shown').removeClass('recent-projects__overlay--hidden');
-            wrapper.addClass('recent-projects__description-wrapper--shown').removeClass('recent-projects__description-wrapper--hidden');
-            description.addClass('recent-projects__description--shown').removeClass('recent-projects__description--hidden');
+            $recentProjectOverlay.not(overlay).removeClass('recent-projects__overlay--shown');
+            $recentProjectWrapper.not(wrapper).removeClass('recent-projects__description-wrapper--shown');
+            $recentProjectDescription.not(description).removeClass('recent-projects__description--shown');
+            overlay.toggleClass('recent-projects__overlay--shown');
+            wrapper.toggleClass('recent-projects__description-wrapper--shown');
+            description.toggleClass('recent-projects__description--shown');
         }
         function eventHandler() {
             for (let i=0;i<3;i++){
