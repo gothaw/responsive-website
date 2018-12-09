@@ -60,7 +60,7 @@ a{
   &__img-wrapper{
     position: relative;
   }
-  &__img{
+  &__img-wrapper,&__img{
     @include home-section-img-size;
   }
   &__section{
@@ -197,30 +197,24 @@ a{
   &__title{
     @include home-section-title;
   }
-  &__card{
-    text-align: center;
-    .card__description{
-      padding: 5px;
-      position: relative;
-      &::before{
-        background: $main-color;
-        border-radius: 50%;
-        content:"";
-        height: 3px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-      }
+  .card__description{
+    @include home-card-description;
+    &::before{
+      background: $main-color;
+      border-radius: 50%;
+      content:"";
+      height: 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
     }
-    .card__title{
-      font-weight: bold;
-      margin-top: 25px;
-    }
-    .card__img{
-      overflow: hidden;
-      margin: 10px 0;
-    }
+  }
+  .card__title{
+    @include home-card-title;
+  }
+  .card__img{
+    @include home-card-img;
   }
 }
 /* ------------------- <767px   SECTION ------------------- */
@@ -230,11 +224,6 @@ a{
     &__card-wrapper{
       margin-top: $offset-sm;
       max-width: 500px;
-    }
-    &__card{
-      .card__title{
-        font-size: $div-font-size-lg;
-      }
     }
   }
 }
@@ -246,16 +235,10 @@ a{
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      margin: 0 $offset-md;
     }
     &__card{
       width: 49%;
-      .card__description{
-        font-size: $p-font-size-md;
-        line-height: $p-font-size-md;
-      }
-      .card__title{
-        font-size: $h-font-size-sm;
-      }
     }
   }
 }
@@ -277,7 +260,7 @@ a{
       grid-column: 3/4;
     }
     &__card-wrapper{
-      padding: 0;
+      margin: auto;
     }
     &__card{
       width: 24%;
