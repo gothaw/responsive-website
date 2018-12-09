@@ -52,7 +52,10 @@ table {
 
 /*==================================== Header ======================================*/
 /*==================================== Variables ====================================*/
-/*==================================== Mixins ====================================*/
+/*=============================================== Mixins ===============================================*/
+/*=============================================== General ===============================================*/
+/*=============================================== About Us ===============================================*/
+/*=============================================== Services ===============================================*/
 /*==================================== Variables ====================================*/
 /*==================================== Header ======================================*/
 .menu__wrapper {
@@ -235,7 +238,10 @@ table {
 /* ------------------- >1025px ------------------ */
 /*==================================== Imports ======================================*/
 /*==================================== Variables ====================================*/
-/*==================================== Mixins ====================================*/
+/*=============================================== Mixins ===============================================*/
+/*=============================================== General ===============================================*/
+/*=============================================== About Us ===============================================*/
+/*=============================================== Services ===============================================*/
 /*==================================== Header ======================================*/
 .footer__wrapper {
   margin-top: 25px;
@@ -245,7 +251,10 @@ table {
 
 /*==================================== Imports ======================================*/
 /*==================================== Variables ====================================*/
-/*==================================== Mixins ====================================*/
+/*=============================================== Mixins ===============================================*/
+/*=============================================== General ===============================================*/
+/*=============================================== About Us ===============================================*/
+/*=============================================== Services ===============================================*/
 /*==================================== Variables ====================================*/
 /*=============================== Read More Button =================================*/
 .button-read-more {
@@ -288,7 +297,8 @@ table {
 @media only screen and (max-width: 767px) {
   .button-read-more {
     font-size: 1.2em;
-    width: 140px; }
+    width: 140px;
+    margin-bottom: 15px; }
     .button-read-more__link {
       padding: 15px; } }
 
@@ -297,13 +307,17 @@ table {
 @media only screen and (min-width: 768px) {
   .button-read-more {
     font-size: 1.4em;
-    width: 160px; }
+    width: 160px;
+    margin-bottom: 25px; }
     .button-read-more__link {
       padding: 20px; } }
 
 /* ---------------- >768px -------------- */
 /*==================================== Variables ====================================*/
-/*==================================== Mixins ====================================*/
+/*=============================================== Mixins ===============================================*/
+/*=============================================== General ===============================================*/
+/*=============================================== About Us ===============================================*/
+/*=============================================== Services ===============================================*/
 /*==================================== General ====================================*/
 .inner {
   max-width: 1140px;
@@ -376,15 +390,16 @@ a {
 
 @media only screen and (max-width: 767px) {
   .about-us__section {
-    padding: 15px; } }
+    padding: 0 15px; } }
 
 @media only screen and (min-width: 768px) {
   .about-us__section {
-    padding: 25px; } }
+    padding: 0 25px; } }
 
 @media only screen and (min-width: 1025px) {
   .about-us__section {
-    padding: 0 0 0 25px; } }
+    padding: 0 0 0 25px;
+    align-self: center; } }
 
 .about-us__text {
   border: black solid 3px;
@@ -398,12 +413,13 @@ a {
   @media only screen and (min-width: 768px) {
     .about-us__text {
       font-size: 1.4em;
-      line-height: 1.5em; } }
+      line-height: 1.5em;
+      margin-bottom: 25px; } }
   @media only screen and (min-width: 1025px) {
     .about-us__text {
       font-size: 1.4em;
       line-height: 1.5em;
-      margin-bottom: 42px; } }
+      margin-bottom: 40px; } }
 
 .about-us__title {
   font-weight: bold;
@@ -443,78 +459,79 @@ a {
   .about-us__CEO-quote .CEO-quote__text p:nth-child(2) {
     font-weight: bold; }
 
-.about-us__values .values__tab-wrapper {
+.about-us .values__tab-wrapper {
   border-top: #E31D3B solid 1px;
   border-bottom: #E31D3B solid 1px;
   display: flex;
-  justify-content: space-around;
-  margin-top: 30px; }
+  justify-content: space-around; }
 
-.about-us__values .values__tab {
+.about-us .values__tab {
   cursor: pointer;
   width: 100%;
   text-align: center;
   transition: all 0.3s; }
   @media only screen and (max-width: 767px) {
-    .about-us__values .values__tab {
+    .about-us .values__tab {
       font-size: 1.2em;
       padding: 15px 15px; } }
   @media only screen and (min-width: 768px) {
-    .about-us__values .values__tab {
+    .about-us .values__tab {
       font-size: 1.4em;
       padding: 15px 25px; } }
-  .about-us__values .values__tab--selected {
+  .about-us .values__tab--selected {
     background-color: #E31D3B;
     color: #FFFFFF; }
-  .about-us__values .values__tab--unselected:hover {
+  .about-us .values__tab--unselected:hover {
     color: #E31D3B; }
 
-.about-us__values .values__description {
-  padding: 15px;
-  text-align: center;
+.about-us .values__description {
   animation-name: fade;
-  animation-duration: 0.5s; }
+  animation-duration: 0.5s;
+  text-align: center; }
   @media only screen and (max-width: 767px) {
-    .about-us__values .values__description {
+    .about-us .values__description {
       font-size: 1.2em;
-      line-height: 1.2em; } }
+      line-height: 1.2em;
+      padding: 15px 15px 0; } }
   @media only screen and (min-width: 768px) {
-    .about-us__values .values__description {
+    .about-us .values__description {
       font-size: 1.4em;
       line-height: 1.5em;
-      margin: 25px; } }
+      padding: 15px 25px 0; } }
   @media only screen and (min-width: 1025px) {
-    .about-us__values .values__description {
+    .about-us .values__description {
       font-size: 1.4em;
       line-height: 1.5em;
-      margin: 15px 15px 0 15px; } }
-  .about-us__values .values__description--hidden {
+      padding: 15px; } }
+  .about-us .values__description--hidden {
     display: none; }
-  .about-us__values .values__description .values__title, .about-us__values .values__description p {
-    margin-bottom: 15px; }
-  .about-us__values .values__description .values__title {
+  .about-us .values__description .values__title, .about-us .values__description p {
+    margin-bottom: 10px; }
+  .about-us .values__description .values__title {
     font-weight: bold; }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .about-us {
-    margin-top: 15px; }
+    margin-top: 25px; }
     .about-us .CEO-quote__img {
       display: none; }
-    .about-us .CEO-quote__text {
-      padding: 15px; } }
+    .about-us .values__tab-wrapper {
+      margin-top: 25px; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
   .about-us {
-    margin-top: 25px; }
+    margin-top: 30px; }
     .about-us__CEO-quote {
       display: flex;
       justify-content: space-between; }
       .about-us__CEO-quote .CEO-quote__text {
         padding-left: 25px; }
       .about-us__CEO-quote .CEO-quote__img {
-        border-radius: 50%; } }
+        border-radius: 50%; }
+    .about-us .values__tab-wrapper {
+      margin-top: 25px; } }
 
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
@@ -526,8 +543,7 @@ a {
       grid-column: 1/3;
       grid-row: 1; }
     .about-us__section {
-      grid-column: 3/4;
-      align-self: center; }
+      grid-column: 3/4; }
     .about-us__wrapper {
       display: grid;
       grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr; }
@@ -571,15 +587,16 @@ a {
 
 @media only screen and (max-width: 767px) {
   .services__section {
-    padding: 15px; } }
+    padding: 0 15px; } }
 
 @media only screen and (min-width: 768px) {
   .services__section {
-    padding: 25px; } }
+    padding: 0 25px; } }
 
 @media only screen and (min-width: 1025px) {
   .services__section {
-    padding: 0 0 0 25px; } }
+    padding: 0 0 0 25px;
+    align-self: center; } }
 
 .services__text {
   border: black solid 3px;
@@ -593,12 +610,13 @@ a {
   @media only screen and (min-width: 768px) {
     .services__text {
       font-size: 1.4em;
-      line-height: 1.5em; } }
+      line-height: 1.5em;
+      margin-bottom: 25px; } }
   @media only screen and (min-width: 1025px) {
     .services__text {
       font-size: 1.4em;
       line-height: 1.5em;
-      margin-bottom: 42px; } }
+      margin-bottom: 40px; } }
 
 .services__title {
   font-weight: bold;
@@ -639,7 +657,7 @@ a {
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .services {
-    margin-top: 15px; }
+    margin-top: 25px; }
     .services__card-wrapper {
       margin-top: 15px;
       max-width: 500px; }
@@ -649,7 +667,7 @@ a {
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
   .services {
-    margin-top: 25px; }
+    margin-top: 30px; }
     .services__card-wrapper {
       display: flex;
       justify-content: space-between;
@@ -702,15 +720,16 @@ a {
 
 @media only screen and (max-width: 767px) {
   .projects__section {
-    padding: 15px; } }
+    padding: 0 15px; } }
 
 @media only screen and (min-width: 768px) {
   .projects__section {
-    padding: 25px; } }
+    padding: 0 25px; } }
 
 @media only screen and (min-width: 1025px) {
   .projects__section {
-    padding: 0 0 0 25px; } }
+    padding: 0 0 0 25px;
+    align-self: center; } }
 
 .projects__text {
   border: black solid 3px;
@@ -724,12 +743,13 @@ a {
   @media only screen and (min-width: 768px) {
     .projects__text {
       font-size: 1.4em;
-      line-height: 1.5em; } }
+      line-height: 1.5em;
+      margin-bottom: 25px; } }
   @media only screen and (min-width: 1025px) {
     .projects__text {
       font-size: 1.4em;
       line-height: 1.5em;
-      margin-bottom: 42px; } }
+      margin-bottom: 40px; } }
 
 .projects__title {
   font-weight: bold;
@@ -913,15 +933,16 @@ a {
 
 @media only screen and (max-width: 767px) {
   .contact__section {
-    padding: 15px; } }
+    padding: 0 15px; } }
 
 @media only screen and (min-width: 768px) {
   .contact__section {
-    padding: 25px; } }
+    padding: 0 25px; } }
 
 @media only screen and (min-width: 1025px) {
   .contact__section {
-    padding: 0 0 0 25px; } }
+    padding: 0 0 0 25px;
+    align-self: center; } }
 
 .contact__text {
   border: black solid 3px;
@@ -935,12 +956,13 @@ a {
   @media only screen and (min-width: 768px) {
     .contact__text {
       font-size: 1.4em;
-      line-height: 1.5em; } }
+      line-height: 1.5em;
+      margin-bottom: 25px; } }
   @media only screen and (min-width: 1025px) {
     .contact__text {
       font-size: 1.4em;
       line-height: 1.5em;
-      margin-bottom: 42px; } }
+      margin-bottom: 40px; } }
 
 .contact__title {
   font-weight: bold;

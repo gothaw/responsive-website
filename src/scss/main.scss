@@ -64,7 +64,7 @@ a{
     @include home-section-img-size;
   }
   &__section{
-    @include home-section-outer-padding;
+    @include home-section-black-border-wrapper;
   }
   &__text{
     @include home-text-black-border;
@@ -78,60 +78,55 @@ a{
       font-weight: bold;
     }
   }
-  &__values{
-    .values{
-     &__tab-wrapper{
-       border-top: $main-color solid 1px;
-       border-bottom: $main-color solid 1px;
-       display: flex;
-       justify-content: space-around;
-       margin-top: 30px;
-     }
-     &__tab{
-       @include home-values-tab;
-        &--selected{
-          background-color: $main-color;
-          color: $secondary-color;
+  .values{
+   &__tab-wrapper{
+     border-top: $main-color solid 1px;
+     border-bottom: $main-color solid 1px;
+     display: flex;
+     justify-content: space-around;
+   }
+   &__tab{
+     @include home-values-tab;
+      &--selected{
+        background-color: $main-color;
+        color: $secondary-color;
+      }
+      &--unselected{
+        &:hover{
+          color: $main-color;
         }
-        &--unselected{
-          &:hover{
-            color: $main-color;
-          }
-        }
+      }
+   }
+   &__description{
+     @include home-values-description;
+     &--hidden{
+       display: none;
      }
-     &__description{
-       @include home-values-description;
-       animation-name: fade;
-       animation-duration: 0.5s;
-       &--hidden{
-         display: none;
-       }
-       .values__title, p{
-         margin-bottom: $offset-sm;
-       }
-       .values__title{
-         font-weight: bold;
-       }
+     .values__title, p{
+       margin-bottom: 10px;
      }
-    }
+     .values__title{
+       font-weight: bold;
+     }
+   }
   }
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .about-us {
-    margin-top: $offset-sm;
+    margin-top: $offset-md;
     .CEO-quote__img{
       display: none;
     }
-    .CEO-quote__text{
-      padding: $offset-sm;
+    .values__tab-wrapper{
+      margin-top: $offset-md;
     }
   }
 }
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
   .about-us {
-    margin-top: $offset-md;
+    margin-top: $offset-lg;
     &__CEO-quote{
       display: flex;
       justify-content: space-between;
@@ -141,6 +136,9 @@ a{
       .CEO-quote__img{
         border-radius: 50%;
       }
+    }
+    .values__tab-wrapper{
+      margin-top: $offset-md;
     }
   }
 }
@@ -157,7 +155,6 @@ a{
     }
     &__section{
       grid-column: 3/4;
-      align-self: center;
     }
     &__wrapper {
       @include inner-grid;
@@ -192,7 +189,7 @@ a{
     @include home-section-img-size;
   }
   &__section{
-    @include home-section-outer-padding;
+    @include home-section-black-border-wrapper;
   }
   &__text{
     @include home-text-black-border;
@@ -229,7 +226,7 @@ a{
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .services{
-    margin-top: $offset-sm;
+    margin-top: $offset-md;
     &__card-wrapper{
       margin-top: $offset-sm;
       max-width: 500px;
@@ -244,7 +241,7 @@ a{
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
   .services{
-    margin-top: $offset-md;
+    margin-top: $offset-lg;
     &__card-wrapper{
       display: flex;
       justify-content: space-between;
@@ -300,7 +297,7 @@ a{
     position: relative;
   }
   &__section{
-    @include home-section-outer-padding;
+    @include home-section-black-border-wrapper;
   }
   &__text{
     @include home-text-black-border;
@@ -498,7 +495,7 @@ a{
     @include home-section-img-size;
   }
   &__section{
-    @include home-section-outer-padding;
+    @include home-section-black-border-wrapper;
   }
   &__text{
     @include home-text-black-border;

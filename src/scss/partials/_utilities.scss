@@ -16,7 +16,10 @@ $offset-sm: 15px;
 $offset-md: 25px;
 $offset-lg: 30px;
 $offset-xlg: 50px;
-/*==================================== Mixins ====================================*/
+/*=============================================== Mixins ===============================================*/
+/*=============================================== General ===============================================*/
+
+// mixin for the text with the black border
 @mixin home-text-black-border{
   border: black solid 3px;
   margin: 15px 0;
@@ -29,6 +32,7 @@ $offset-xlg: 50px;
   @media only screen and (min-width: 768px) {
     font-size: $div-font-size-md;
     line-height: $div-line-h-md;
+    margin-bottom: 25px;
   }
   @media only screen and (min-width: 1025px) {
     font-size: $div-font-size-lg;
@@ -36,6 +40,20 @@ $offset-xlg: 50px;
     margin-bottom: 40px;
   }
 }
+// mixin for the wrapper of text with black border
+@mixin home-section-black-border-wrapper{
+  @media only screen and (max-width: 767px) {
+    padding: 0 15px;
+  }
+  @media only screen and (min-width: 768px) {
+    padding: 0 25px;
+  }
+  @media only screen and (min-width: 1025px) {
+    padding: 0 0 0 25px;
+    align-self: center;
+  }
+}
+// mixin for the section title
 @mixin home-section-title{
   font-weight: bold;
   text-transform: uppercase;
@@ -51,6 +69,7 @@ $offset-xlg: 50px;
     text-align: left;
   }
 }
+// mixin for the text on the background
 @mixin home-section-text-on-background{
   align-items: center;
   background-color: $main-color;
@@ -72,10 +91,12 @@ $offset-xlg: 50px;
     line-height: $div-line-h-lg;
   }
 }
+// mixin for inner grid with minmax width of 1140px
 @mixin inner-grid{
   display: grid;
   grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr;
 }
+// mixin which control position of the section number on the image
 @mixin home-section-number-position ($right-sm, $right-md){
   top:0;
   @media only screen and (max-width: 767px) {
@@ -87,17 +108,7 @@ $offset-xlg: 50px;
     right: $right-md;
   }
 }
-@mixin home-section-outer-padding{
-  @media only screen and (max-width: 767px) {
-    padding: 15px;
-  }
-  @media only screen and (min-width: 768px) {
-    padding: 25px;
-  }
-  @media only screen and (min-width: 1025px) {
-    padding: 0 0 0 25px;
-  }
-}
+// mixin section that controls section image height
 @mixin home-section-img-size{
   overflow: hidden;
   @media only screen and (max-width: 767px) {
@@ -107,6 +118,8 @@ $offset-xlg: 50px;
     height: 500px;
   }
 }
+/*=============================================== About Us ===============================================*/
+// mixin for styling values tab
 @mixin home-values-tab{
   cursor: pointer;
   width: 100%;
@@ -121,21 +134,25 @@ $offset-xlg: 50px;
     padding: 15px $offset-md;
   }
 }
+// mixin for styling values description
 @mixin home-values-description{
-  padding: 15px;
+  animation-name: fade;
+  animation-duration: 0.5s;
   text-align: center;
   @media only screen and (max-width: 767px) {
     font-size: $div-font-size-sm;
     line-height: $div-line-h-sm;
+    padding: 15px $offset-sm 0;
   }
     @media only screen and (min-width: 768px) {
     font-size: $div-font-size-md;
     line-height: $div-line-h-md;
-    margin: $offset-md;
+    padding: 15px $offset-md 0;
   }
   @media only screen and (min-width: 1025px) {
     font-size: $div-font-size-lg;
     line-height: $div-line-h-lg;
-    margin: 15px 15px 0 15px;
+    padding: $offset-sm;
   }
 }
+/*=============================================== Services ===============================================*/
