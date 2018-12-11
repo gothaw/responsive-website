@@ -13,6 +13,40 @@ if ($('#home').length) {
         const $recentProjectOverlay         = $('.recent-projects__overlay')
         const $recentProjectWrapper         = $('.recent-projects__description-wrapper');
         const $recentProjectDescription     = $('.recent-projects__description');
+
+        //
+        const $projectStats             = $('#projects-stats');
+        const projectStats=document.getElementById('projects-stats');
+        let animated                  = false;
+
+        function animateCounters() {
+            if(!animated){
+                console.log('Hello world');
+                animated=true;
+            }
+
+        }
+
+        $(window).scroll(function () {
+            const docViewTop = $(window).scrollTop();
+            const docViewBottom = docViewTop + $(window).height();
+
+            const elementTop = $projectStats.offset().top;
+            const elementBottom = elementTop+$projectStats.height();
+
+            if ((elementBottom<=docViewBottom) && (elementTop>=docViewTop)){
+                animateCounters();
+            }
+            /*if(projectStats.getBoundingClientRect().top<window.innerHeight && !animated){
+                console.log("1");
+                animated=true;
+            }*/
+        });
+        //
+        
+        
+        
+        
         /**
          * @name        switchBetweenTabs
          * @param       e - tab click event
@@ -106,6 +140,7 @@ if ($('#home').length) {
             eventHandler();
             loadFourLatestProjects();
         }
+
         window.addEventListener("load", init);
     })();
 }
