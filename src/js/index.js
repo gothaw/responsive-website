@@ -10,43 +10,59 @@ if ($('#home').length) {
         const $recentProjectsStructural     = $('.structural');
         const $recentProjectsMechanical     = $('.mechanical');
         const $recentProjectsLandscape      = $('.landscape');
-        const $recentProjectOverlay         = $('.recent-projects__overlay')
+        const $recentProjectOverlay         = $('.recent-projects__overlay');
         const $recentProjectWrapper         = $('.recent-projects__description-wrapper');
         const $recentProjectDescription     = $('.recent-projects__description');
 
         //
-        const $projectStats             = $('#projects-stats');
-        const projectStats=document.getElementById('projects-stats');
-        let animated                  = false;
+        const projectStats                  = document.getElementById('projects-stats');
+        const counters                      = document.querySelectorAll('.stats__counter');
 
         function animateCounters() {
-            if(!animated){
-                console.log('Hello world');
-                animated=true;
-            }
-
+            const refreshRate=100;
+            const checkingCounters=setInterval(function () {
+                if(projectStats.getBoundingClientRect().top<window.innerHeight){
+                    const projectsCompleted         =25;
+                    const happyClients              =18;
+                    const awardsWon                 =12;
+                    const charteredEngineers        =10;
+                    let i=1;
+                    let j=1;
+                    let k=1;
+                    let m=1;
+                    const countProjects = setInterval(function () {
+                        counters[0].innerHTML=i.toString();
+                        if (i===projectsCompleted){
+                           clearInterval(countProjects)
+                        }
+                        i++;
+                    },1000/10);
+                    const countClients = setInterval(function () {
+                        counters[1].innerHTML=j.toString();
+                        if (j===happyClients){
+                            clearInterval(countClients)
+                        }
+                        j++;
+                    },1000/10);
+                    const countAwards = setInterval(function () {
+                        counters[2].innerHTML=k.toString();
+                        if (k===awardsWon){
+                            clearInterval(countAwards)
+                        }
+                        k++;
+                    },1000/10);
+                    const countEngineers = setInterval(function () {
+                        counters[3].innerHTML=k.toString();
+                        if (m===charteredEngineers){
+                            clearInterval(countEngineers)
+                        }
+                        m++;
+                    },1000/10);
+                clearInterval(checkingCounters);
+                }
+            },1000/refreshRate);
         }
 
-        $(window).scroll(function () {
-            const docViewTop = $(window).scrollTop();
-            const docViewBottom = docViewTop + $(window).height();
-
-            const elementTop = $projectStats.offset().top;
-            const elementBottom = elementTop+$projectStats.height();
-
-            if ((elementBottom<=docViewBottom) && (elementTop>=docViewTop)){
-                animateCounters();
-            }
-            /*if(projectStats.getBoundingClientRect().top<window.innerHeight && !animated){
-                console.log("1");
-                animated=true;
-            }*/
-        });
-        //
-        
-        
-        
-        
         /**
          * @name        switchBetweenTabs
          * @param       e - tab click event
@@ -134,6 +150,7 @@ if ($('#home').length) {
             $recentProjectWrapper.on("click",function (e) {
                toggleProjectDescription(e);
             });
+            animateCounters();
         }
 
         function init() {
