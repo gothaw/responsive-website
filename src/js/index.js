@@ -1,9 +1,11 @@
 if ($('#home').length) {
     (function () {
         // Variables
+        const counters                      = document.querySelectorAll('.stats__counter');
         const valuesDescription             = document.querySelectorAll('.values__description');
         const valuesTab                     = document.querySelectorAll('.values__tab');
         const projectsMenuItems             = document.querySelectorAll('.projects-menu__item');
+        const projectStats                  = document.getElementById('projects-stats');
         const recentProjects                = document.querySelectorAll('.recent-projects__project-wrapper');
         // jQuery variables
         const $recentProjectsArchitecture   = $('.architecture');
@@ -14,11 +16,13 @@ if ($('#home').length) {
         const $recentProjectWrapper         = $('.recent-projects__description-wrapper');
         const $recentProjectDescription     = $('.recent-projects__description');
 
-        //
-        const projectStats                  = document.getElementById('projects-stats');
-        const counters                      = document.querySelectorAll('.stats__counter');
-
-        function animateCounters() {
+        /**
+         * @name        checkCounters
+         * @desc        Checks if counters are visible in the viewport.
+         *              If counters are visible, animateCounter function is invoked for each counter with a limit that
+         *              counter counts to.
+         */
+        function checkCounters() {
             const refreshRate=100;
             const checkingCounters=setInterval(function () {
                 if(projectStats.getBoundingClientRect().top<window.innerHeight){
@@ -26,41 +30,31 @@ if ($('#home').length) {
                     const happyClients              =18;
                     const awardsWon                 =12;
                     const charteredEngineers        =10;
-                    let i=1;
-                    let j=1;
-                    let k=1;
-                    let m=1;
-                    const countProjects = setInterval(function () {
-                        counters[0].innerHTML=i.toString();
-                        if (i===projectsCompleted){
-                           clearInterval(countProjects)
-                        }
-                        i++;
-                    },1000/10);
-                    const countClients = setInterval(function () {
-                        counters[1].innerHTML=j.toString();
-                        if (j===happyClients){
-                            clearInterval(countClients)
-                        }
-                        j++;
-                    },1000/10);
-                    const countAwards = setInterval(function () {
-                        counters[2].innerHTML=k.toString();
-                        if (k===awardsWon){
-                            clearInterval(countAwards)
-                        }
-                        k++;
-                    },1000/10);
-                    const countEngineers = setInterval(function () {
-                        counters[3].innerHTML=k.toString();
-                        if (m===charteredEngineers){
-                            clearInterval(countEngineers)
-                        }
-                        m++;
-                    },1000/10);
-                clearInterval(checkingCounters);
+                    animateCounter(counters[0],projectsCompleted);
+                    animateCounter(counters[1],happyClients);
+                    animateCounter(counters[2],awardsWon);
+                    animateCounter(counters[3],charteredEngineers);
+                    clearInterval(checkingCounters);
                 }
             },1000/refreshRate);
+        }
+
+        /**
+         * @name        animateCounter
+         * @desc        Function animates counter using setInterval by modifying innerHTML of counter parameter.
+         * @param       counter - DOM element with class of stats__counter.
+         * @param       limit - limit that a counter reaches after animation is finished.
+         */
+        function animateCounter(counter,limit) {
+            let i=1;
+            let refreshFactor=1.1;
+            const interval = setInterval(function () {
+                counter.innerHTML=i.toString();
+                if (i===limit){
+                    clearInterval(interval)
+                }
+                i++;
+            },1000/(limit*refreshFactor));
         }
 
         /**
@@ -150,10 +144,10 @@ if ($('#home').length) {
             $recentProjectWrapper.on("click",function (e) {
                toggleProjectDescription(e);
             });
-            animateCounters();
         }
 
         function init() {
+            checkCounters();
             eventHandler();
             loadFourLatestProjects();
         }
