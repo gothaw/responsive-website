@@ -30,6 +30,9 @@
 .title__slash{
   color: $main-color;
 }
+.text__bold{
+  font-weight: bold;
+}
 html{
   box-sizing: border-box;
 }
@@ -47,6 +50,7 @@ a{
   from {opacity: 0.5}
   to {opacity: 1}
 }
+
 /*========================================================================================================*/
 /*=============================================== About Us ===============================================*/
 /*========================================================================================================*/
@@ -74,9 +78,6 @@ a{
   }
   &__CEO-quote{
     @include home-section-text-on-background;
-    .CEO-quote__text p:nth-child(2){
-      font-weight: bold;
-    }
   }
   .values{
    &__tab-wrapper{
@@ -395,6 +396,21 @@ a{
 /*=============================================== Contact ===============================================*/
 /*========================================================================================================*/
 .contact{
+  &__map {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0; overflow: hidden;
+    max-width: 100%;
+    border: solid 3px $bg-color;
+  }
+  &__map iframe, &__map object, &__map embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   &__number--position{
     @include home-section-number-position(-8px,-12px);
   }
@@ -437,6 +453,9 @@ a{
 @media only screen and (max-width: 767px) {
   .contact{
     margin-top: $offset-md;
+    &__map{
+      margin-top: $offset-sm;
+    }
     &__menu-wrapper{
       height: 300px;
     }
@@ -452,6 +471,9 @@ a{
 @media only screen and (min-width: 768px){
   .contact{
     margin-top: $offset-lg;
+    &__map{
+      margin-top: $offset-md;
+    }
     &__img-wrapper{
       height: 500px;
     }
@@ -467,6 +489,9 @@ a{
 @media only screen and (min-width: 1025px) {
   .contact{
     margin-top: $offset-xlg;
+    &__map{
+      margin-top: $offset-lg;
+    }
     &__text{
       text-align: left;
     }

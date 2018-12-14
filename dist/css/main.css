@@ -314,6 +314,9 @@ table {
 .title__slash {
   color: #E31D3B; }
 
+.text__bold {
+  font-weight: bold; }
+
 html {
   box-sizing: border-box; }
 
@@ -428,8 +431,6 @@ a {
   @media only screen and (min-width: 1025px) {
     .about-us__CEO-quote {
       padding: 30px; } }
-  .about-us__CEO-quote .CEO-quote__text p:nth-child(2) {
-    font-weight: bold; }
 
 .about-us .values__tab-wrapper {
   border-top: #E31D3B solid 1px;
@@ -911,6 +912,21 @@ a {
 /*========================================================================================================*/
 /*=============================================== Contact ===============================================*/
 /*========================================================================================================*/
+.contact__map {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border: solid 3px #e9e6ed; }
+
+.contact__map iframe, .contact__map object, .contact__map embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
 .contact__number--position {
   top: 0; }
   @media only screen and (max-width: 767px) {
@@ -1019,6 +1035,8 @@ a {
 @media only screen and (max-width: 767px) {
   .contact {
     margin-top: 25px; }
+    .contact__map {
+      margin-top: 15px; }
     .contact__menu-wrapper {
       height: 300px; }
     .contact__projects-menu {
@@ -1031,6 +1049,8 @@ a {
 @media only screen and (min-width: 768px) {
   .contact {
     margin-top: 30px; }
+    .contact__map {
+      margin-top: 25px; }
     .contact__img-wrapper {
       height: 500px; }
     .contact__projects-menu {
@@ -1043,6 +1063,8 @@ a {
 @media only screen and (min-width: 1025px) {
   .contact {
     margin-top: 50px; }
+    .contact__map {
+      margin-top: 30px; }
     .contact__text {
       text-align: left; }
     .contact__wrapper {
