@@ -415,21 +415,22 @@
                     <div class="contact__form-wrapper">
                         <form class="contact__form" name="contactForm" action="action_page.php" method="post">
                             <fieldset>
-                                <label for="fullName">Full Name</label>
-                                <input class="contact__input" type="text" id="fullName" name="fullName">
-                                <label for="email">Email Address</label>
-                                <input class="contact__input" type="email" id="email" name="email">
-                                <label for="subject">Subject</label>
-                                <input class="contact__input" type="text" id="subject" name="subject">
-                                <label for="interest">What are you interested in?</label>
+                                <!--<label class="contact__label" for="fullName">Full Name</label>-->
+                                <input class="contact__input" type="text" id="fullName" name="fullName" placeholder="Full Name">
+                                <!--<label class="contact__label" for="email">Email Address</label>-->
+                                <input class="contact__input" type="email" id="email" name="email" placeholder="Email Address">
+                                <!--<label class="contact__label" for="subject">Subject</label>-->
+                                <input class="contact__input" type="text" id="subject" name="subject" placeholder="Subject">
+                                <textarea class="contact__text-area" name="message" id="message" placeholder="Message"></textarea>
+                                <label class="contact__label" for="interest">What are you interested in?</label>
                                 <select class="contact__select" id="interest" name="interest">
+                                    <option style="display:none;"></option>
                                     <option value="architecture">Architecture</option>
                                     <option value="structural">Structural Engineering</option>
                                     <option value="mechanical">Mechanical Engineering</option>
                                     <option value="landscape">Landscape Design</option>
                                     <option value="other">Other</option>
-                                </select>
-                                <textarea class="contact__text-area" name="message" id="message"></textarea>
+                                </select> <!--/contact__select-->
                                 <input class="contact__send" type="submit" value="Send">
                             </fieldset>
                         </form> <!--/contact__form-->
