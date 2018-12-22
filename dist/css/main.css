@@ -559,9 +559,6 @@ a {
       padding: 25px;
       font-size: 1.4em;
       line-height: 1.5em; } }
-  @media only screen and (min-width: 1025px) {
-    .about-us__CEO-quote {
-      padding: 30px; } }
 
 .about-us .values__tab-wrapper {
   border-top: #E31D3B solid 1px;
@@ -1048,8 +1045,7 @@ a {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  max-width: 100%;
-  border: solid 3px #e9e6ed; }
+  max-width: 100%; }
 
 .contact__map iframe, .contact__map object, .contact__map embed {
   position: absolute;
@@ -1132,32 +1128,35 @@ a {
       text-align: left; } }
 
 .contact__form-wrapper {
-  margin: 0 auto;
-  width: 400px;
-  background: white;
+  width: 100%;
   padding: 25px;
-  border-radius: 15px; }
+  border: 3px black solid; }
 
 .contact__input, .contact__select, .contact__text-area {
   display: block;
   width: 100%;
   margin-bottom: 10px;
   border: none;
-  position: relative; }
-
-.contact__input {
-  padding: 10px;
-  transition: all 0.4s; }
-  .contact__input::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "a"; }
+  position: relative;
+  background-color: #e9e6ed;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: all 0.4s;
+  padding: 10px 0;
+  border-bottom: solid 1px #E31D3B; }
 
 .contact__text-area {
-  resize: none;
-  height: 200px;
+  resize: vertical;
+  height: 100px;
   margin-top: 15px; }
+
+.contact__select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Some browsers will not display the caret when using calc, so we put the fallback first */
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat calc(100% - 10px) !important;
+  /* Better placement regardless of input width */
+  cursor: pointer; }
 
 .contact__details {
   align-items: center;
@@ -1175,9 +1174,6 @@ a {
       padding: 25px;
       font-size: 1.4em;
       line-height: 1.5em; } }
-  @media only screen and (min-width: 1025px) {
-    .contact__details {
-      padding: 30px; } }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -1185,13 +1181,6 @@ a {
     margin-top: 25px; }
     .contact__map {
       margin-top: 15px; }
-    .contact__menu-wrapper {
-      height: 300px; }
-    .contact__projects-menu {
-      font-size: 1.8em;
-      text-align: right;
-      top: 100px;
-      left: 15px; }
     .contact__form-wrapper {
       margin-top: 15px; } }
 
@@ -1203,11 +1192,6 @@ a {
       margin-top: 25px; }
     .contact__img-wrapper {
       height: 500px; }
-    .contact__projects-menu {
-      font-size: 2em;
-      text-align: right;
-      top: 250px;
-      right: 25px; }
     .contact__form-wrapper {
       margin-top: 25px; } }
 
@@ -1233,8 +1217,9 @@ a {
     .contact__details {
       grid-column: 3/4; }
     .contact__form-wrapper {
+      width: calc(100% - 25px);
       margin-top: 30px;
-      grid-column: 1/3;
+      grid-column: 2/3;
       grid-row: 2; } }
 
 .test {

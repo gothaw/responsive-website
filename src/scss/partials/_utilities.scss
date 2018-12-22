@@ -128,9 +128,6 @@ a{
     font-size: $div-font-size-md;
     line-height: $div-line-h-md;
   }
-  @media only screen and (min-width: 1025px) {
-    padding: $offset-lg;
-  }
 }
 // mixin for inner grid with minmax width of 1140px
 @mixin inner-grid{
