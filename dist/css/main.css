@@ -1132,6 +1132,18 @@ a {
   padding: 25px;
   border: 3px black solid; }
 
+.contact__form-text {
+  margin-bottom: 15px;
+  text-align: center; }
+  @media only screen and (max-width: 767px) {
+    .contact__form-text {
+      font-size: 1.2em;
+      line-height: 1.2em; } }
+  @media only screen and (min-width: 768px) {
+    .contact__form-text {
+      font-size: 1.4em;
+      line-height: 1.5em; } }
+
 .contact__input, .contact__select, .contact__text-area {
   display: block;
   width: 100%;
@@ -1140,22 +1152,20 @@ a {
   position: relative;
   background-color: #e9e6ed;
   font-family: 'Source Sans Pro', sans-serif;
-  transition: all 0.4s;
   padding: 10px 0;
-  border-bottom: solid 1px #E31D3B; }
+  border-bottom: solid 1px #E31D3B;
+  font-size: 1.2em;
+  line-height: 1.2em; }
 
 .contact__text-area {
   resize: vertical;
-  height: 100px;
-  margin-top: 15px; }
+  height: 100px; }
 
 .contact__select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  /* Some browsers will not display the caret when using calc, so we put the fallback first */
-  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat calc(100% - 10px) !important;
-  /* Better placement regardless of input width */
+  background: url("../../dist/img/icons/drop-down.png") no-repeat calc(100% - 10px) !important;
   cursor: pointer; }
 
 .contact__details {

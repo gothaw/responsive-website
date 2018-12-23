@@ -360,7 +360,6 @@
     padding-bottom: 56.25%;
     height: 0; overflow: hidden;
     max-width: 100%;
-    //border: solid 3px $bg-color;
   }
   &__map iframe, &__map object, &__map embed {
     position: absolute;
@@ -391,35 +390,27 @@
     @include home-section-title;
   }
   &__form-wrapper{
-    //margin: 0 auto;
     width: 100%;
     padding: 25px;
     border: 3px black solid;
+
+  }
+  &__form-text{
+    @include home-form-text;
   }
   &__input, &__select, &__text-area{
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    border: none;
-    position: relative;
-    background-color: $bg-color;
-    font-family: 'Source Sans Pro', sans-serif;
-    transition: all 0.4s;
-    padding: 10px 0;
-    border-bottom: solid 1px $main-color;
+    @include home-contact-form-fields;
+
   }
   &__text-area{
     resize: vertical;
     height: 100px;
-    margin-top: 15px;
   }
   &__select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /* Some browsers will not display the caret when using calc, so we put the fallback first */
-    //background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 98.5% !important; /* !important used for overriding all other customisations */
-    background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+    background: url("../../dist/img/icons/drop-down.png") no-repeat calc(100% - 10px) !important;
     cursor: pointer;
   }
   &__details{
