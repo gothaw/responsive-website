@@ -405,12 +405,14 @@
                         <div class="img__number contact__number--position">04</div> <!--/img__number contact__number--position-->
                     </div> <!--/contact__img-wrapper-->
                     <div class="contact__details">
-                        <p><span class="text__bold">Address:</span> 20 Fenchurch St, London EC3M 1DT</p>
-                        <p><span class="text__bold">Email:</span> lorem.design@mail.com</p>
-                        <p><span class="text__bold">Tel:</span> +44 7654 321 123</p>
-                        <div class='contact__map'>
-                            <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.095687244581!2d-0.0856949842298825!3d51.51146047963577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876035268388745%3A0x183aaac5ba798230!2s20+Fenchurch+St%2C+London+EC3M+3BY!5e0!3m2!1spl!2suk!4v1543777669408' frameborder='0' style='border:0' allowfullscreen></iframe>
-                        </div> <!--/contact__map-->
+                        <div class="contact__details-wrapper">
+                            <p><span class="text__bold">Address:</span> 20 Fenchurch St, London EC3M 1DT</p>
+                            <p><span class="text__bold">Email:</span> lorem.design@mail.com</p>
+                            <p><span class="text__bold">Tel:</span> +44 7654 321 123</p>
+                            <div class='contact__map'>
+                                <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.095687244581!2d-0.0856949842298825!3d51.51146047963577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876035268388745%3A0x183aaac5ba798230!2s20+Fenchurch+St%2C+London+EC3M+3BY!5e0!3m2!1spl!2suk!4v1543777669408' frameborder='0' style='border:0' allowfullscreen></iframe>
+                            </div> <!--/contact__map-->
+                        </div> <!--/contact__details-wrapper-->
                     </div> <!--/contact__details-->
                     <div class="contact__form-wrapper">
                         <p class="contact__form-text">
@@ -423,7 +425,7 @@
                                 <input class="contact__input" type="text" id="subject" name="subject" placeholder="Subject">
                                 <textarea class="contact__text-area" name="message" id="message" placeholder="Message"></textarea>
                                 <select class="contact__select" id="interest" name="interest">
-                                    <option class="select__placeholder" disabled selected hidden>Area of interest?</option>
+                                    <option class="select__placeholder" selected disabled hidden>Area of interest?</option>
                                     <option value="architecture">Architecture</option>
                                     <option value="structural">Structural Engineering</option>
                                     <option value="mechanical">Mechanical Engineering</option>
@@ -433,7 +435,7 @@
                                 <input class="contact__send" type="submit" value="Send">
                             </fieldset>
                         </form> <!--/contact__form-->
-                    </div> <!--contact__details-->
+                    </div> <!--/contact__form-wrapper-->
                 </div> <!--/contact__wrapper-->
             </div> <!--/contact-->
         </main>

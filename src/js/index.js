@@ -7,6 +7,8 @@ if ($('#home').length) {
         const projectsMenuItems             = document.querySelectorAll('.projects-menu__item');
         const projectStats                  = document.getElementById('projects-stats');
         const recentProjects                = document.querySelectorAll('.recent-projects__project-wrapper');
+        const areaOfInterest                = document.querySelector(".contact__select");
+
         // jQuery variables
         const $recentProjectsArchitecture   = $('.architecture');
         const $recentProjectsStructural     = $('.structural');
@@ -132,6 +134,21 @@ if ($('#home').length) {
             wrapper.toggleClass('recent-projects__description-wrapper--shown');
             description.toggleClass('recent-projects__description--shown');
         }
+
+        /**
+         * @name        greyOutSelectPlaceholder
+         * @desc        Adds contact__select--grey class to the select tag in the form if first placeholder (first option) is selected.
+         *              If other option is selected the class is removed.
+         */
+        function greyOutSelectPlaceholder(){
+            if(areaOfInterest[0].selected){
+                areaOfInterest.classList.add("contact__select--grey");
+            }
+            else{
+                areaOfInterest.classList.remove("contact__select--grey");
+            }
+        }
+
         function eventHandler() {
             for (let i=0;i<3;i++){
                 valuesTab[i].addEventListener("click",function (e) {
@@ -144,12 +161,14 @@ if ($('#home').length) {
             $recentProjectWrapper.on("click",function (e) {
                toggleProjectDescription(e);
             });
+            areaOfInterest.addEventListener("change",greyOutSelectPlaceholder);
         }
 
         function init() {
             checkCounters();
             eventHandler();
             loadFourLatestProjects();
+            greyOutSelectPlaceholder();
         }
 
         window.addEventListener("load", init);
