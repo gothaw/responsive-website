@@ -2,6 +2,7 @@
 @import 'utilities';
 /*==================================== Header ======================================*/
 .footer{
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: $main-color;
   color: $bg-color;
   &__wrapper{
@@ -21,8 +22,9 @@
     }
   }
   &__disclaimer{
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
+    padding-top: $offset-sm;
     padding-bottom: $offset-lg;
   }
 }

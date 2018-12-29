@@ -1,23 +1,29 @@
-//==================================== Variables ====================================
+//======================================================================================================
+//=========================================== Variables ================================================
+//======================================================================================================
+
 $bg-color: #e9e6ed;
 $main-color: #E31D3B;
 $secondary-color: #FFFFFF;
 $h-font-size-lg: 3.2em;
 $h-font-size-md: 2.5em;
 $h-font-size-sm: 2.0em;
-$div-font-size-lg: 1.8em;
-$div-font-size-md: 1.4em;
-$div-font-size-sm: 1.2em;
-$div-line-h-lg: 1.8em;
-$div-line-h-md: 1.5em;
-$div-line-h-sm: 1.2em;
-$p-font-size-md: 1.2em;
-$p-font-size-sm: 1.0em;
+$div-font-size-lg: 1.6em;
+$div-font-size-md: 1.2em;
+$div-font-size-sm: 1.0em;
+$div-line-h-lg: 1.7em;
+$div-line-h-md: 1.3em;
+$div-line-h-sm: 1.1em;
+$p-font-size: 1.0em;
 $offset-sm: 15px;
 $offset-md: 25px;
 $offset-lg: 30px;
 $offset-xlg: 50px;
-//==================================== General Styling ====================================
+
+//======================================================================================================
+//========================================== General Styling ===========================================
+//======================================================================================================
+
 .inner{
   max-width: 1140px;
   margin: 0 auto;
@@ -61,7 +67,10 @@ a{
   from {opacity: 0.5}
   to {opacity: 1}
 }
+//======================================================================================================
 //=============================================== Mixins ===============================================
+//======================================================================================================
+
 //=============================================== General ===============================================
 // mixin for the text with the black border
 @mixin home-text-black-border{
@@ -80,7 +89,7 @@ a{
     margin-bottom: 25px;
   }
   @media only screen and (min-width: 1025px) {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 }
 // mixin for the wrapper of text with black border
@@ -157,6 +166,31 @@ a{
     height: 500px;
   }
 }
+// mixin for large text
+@mixin text-large{
+  @media only screen and (max-width: 767px) {
+    font-size: $h-font-size-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $h-font-size-md;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: $h-font-size-lg;
+  }
+}
+// mixin for medium text
+@mixin text-medium{
+  font-family: 'Source Sans Pro', sans-serif;
+  @media only screen and (max-width: 767px) {
+    font-size: $div-font-size-sm;
+    line-height: $div-line-h-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $div-font-size-md;
+    line-height: $div-line-h-md;
+  }
+}
+//=============================================== H O M E ===============================================
 //=============================================== About Us ===============================================
 // mixin for styling values tab
 @mixin home-values-tab{
@@ -194,15 +228,6 @@ a{
   }
 }
 //=============================================== Services ===============================================
-// styling for card description
-@mixin home-card-description{
-  text-align: center;
-  padding: 15px 5px 0;
-  position: relative;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: $p-font-size-md;
-  line-height: $p-font-size-md;
-}
 // styling for card title
 @mixin home-card-title{
   text-align: center;
@@ -215,11 +240,6 @@ a{
     font-size: $h-font-size-sm;
     margin-top: 25px;
   }
-}
-// styling for card image
-@mixin home-card-img{
-  overflow: hidden;
-  margin: 15px 0;
 }
 //=============================================== Projects ===============================================
 // styling for menu wrapper
@@ -271,41 +291,6 @@ a{
     padding: 0;
   }
 }
-//styling for stats counter
-@mixin home-stats-counter{
-  color: $main-color;
-  @media only screen and (max-width: 767px) {
-    font-size: $h-font-size-sm;
-  }
-  @media only screen and (min-width: 768px) {
-    font-size: $h-font-size-md;
-  }
-  @media only screen and (min-width: 1025px) {
-    font-size: $h-font-size-lg;
-  }
-}
-//styling for stats description
-@mixin home-stats-description{
-  font-family: 'Source Sans Pro', sans-serif;
-  @media only screen and (max-width: 767px) {
-    font-size: $div-font-size-sm;
-    line-height: $div-line-h-sm;
-  }
-  @media only screen and (min-width: 768px) {
-    font-size: $div-font-size-md;
-    line-height: $div-line-h-md;
-  }
-}
-@mixin home-project-overlay{
-  background-color: rgba(0,0,0,0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
 @mixin home-project-description-wrapper{
   border: $bg-color solid 3px;
   transition: opacity 1s;
@@ -329,60 +314,12 @@ a{
   top: 50%;
   transform: translateY(-50%);
   transition: opacity 1.5s;
-  font-size: $p-font-size-md;
-  line-height: $p-font-size-md;
+  font-size: $p-font-size;
+  line-height: $p-font-size;
   @media only screen and (max-width: 767px) {
-    padding: 15px;
+    padding: $offset-sm;
   }
   @media only screen and (min-width: 768px) {
-    padding: 25px;
-  }
-}
-//=============================================== Contact ===============================================
-@mixin home-contact-form-fields{
-  display: block;
-  width: 100%;
-  border: none;
-  background: transparent;
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 10px 0;
-  font-size: 15px;
-  line-height: 1.2;
-}
-@mixin home-form-text{
-  margin-bottom: 15px;
-  text-align: center;
-  @media only screen and (max-width: 767px) {
-    font-size: $div-font-size-sm;
-    line-height: $div-line-h-sm;
-  }
-  @media only screen and (min-width: 768px) {
-    font-size: $div-font-size-md;
-    line-height: $div-line-h-md;
-  }
-}
-@mixin send-button{
-  background: none;
-  border: solid $main-color 2px;
-  border-radius: 20px;
-  box-shadow: 2px 2px 1px lighten($main-color, 20%);
-  color: $main-color;
-  cursor: pointer;
-  display: block;
-  font-size: $p-font-size-sm;
-  font-weight: bold;
-  line-height: $p-font-size-md;
-  padding: 8px;
-  position: relative;
-  text-transform: uppercase;
-  transition: all 0.4s;
-  margin: 20px auto 0;
-  width: 120px;
-  &:active{
-    color: #000 !important;
-  }
-  &:hover{
-    color: #fff;
-    background-color: $main-color;
+    padding: $offset-md;
   }
 }
