@@ -1,9 +1,65 @@
 //==================================== Imports ======================================
 @import 'utilities';
 /*==================================== Header ======================================*/
-.footer__wrapper{
-  margin-top: 25px;
-  height: 100px;
+.footer{
   background-color: $main-color;
   color: $bg-color;
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__icons{
+    display: flex;
+    justify-content: space-between;
+  }
+  .icon__img{
+    display: block;
+    margin: 0 5px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  &__disclaimer{
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: $offset-lg;
+  }
+}
+
+
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .footer {
+    margin-top: $offset-md;
+    &__wrapper{
+      padding: $offset-sm;
+    }
+    &__disclaimer{
+      padding-left: $offset-sm;
+      padding-right: $offset-sm;
+    }
+  }
+}
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px){
+  .footer {
+    margin-top: $offset-lg;
+    &__wrapper{
+      padding: $offset-md;
+    }
+    &__disclaimer{
+      padding-left: $offset-md;
+      padding-right: $offset-md;
+    }
+  }
+}
+/* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+  .footer {
+    margin-top: $offset-xlg;
+    &__wrapper{
+      padding: $offset-lg 0 0 0;
+    }
+  }
 }

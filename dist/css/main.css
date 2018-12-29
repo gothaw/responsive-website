@@ -314,11 +314,52 @@ a {
     opacity: 1; } }
 
 /*==================================== Header ======================================*/
-.footer__wrapper {
-  margin-top: 25px;
-  height: 100px;
+.footer {
   background-color: #E31D3B;
   color: #e9e6ed; }
+  .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .footer__icons {
+    display: flex;
+    justify-content: space-between; }
+  .footer .icon__img {
+    display: block;
+    margin: 0 5px; }
+    .footer .icon__img:last-child {
+      margin-right: 0; }
+  .footer__disclaimer {
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 30px; }
+
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .footer {
+    margin-top: 25px; }
+    .footer__wrapper {
+      padding: 15px; }
+    .footer__disclaimer {
+      padding-left: 15px;
+      padding-right: 15px; } }
+
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .footer {
+    margin-top: 30px; }
+    .footer__wrapper {
+      padding: 25px; }
+    .footer__disclaimer {
+      padding-left: 25px;
+      padding-right: 25px; } }
+
+/* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+  .footer {
+    margin-top: 50px; }
+    .footer__wrapper {
+      padding: 30px 0 0 0; } }
 
 .inner {
   max-width: 1140px;

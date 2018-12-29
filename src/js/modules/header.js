@@ -85,11 +85,11 @@ import enquire from '../lib/enquire.js'
     function toggleMenu() {
         $menu.slideToggle();
         if(toggleMenuActive){
-            $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon-32-32.png");
+            $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon.png");
             toggleMenuActive=false;
         }
         else {
-            $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon-32-32-red.png");
+            $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon-red.png");
             toggleMenuActive=true;
         }
     }
