@@ -33,7 +33,7 @@
         <div class="menu__wrapper menu__wrapper--top">
             <div class="menu__toggle">
                 <div class="toggle__icon">
-                    <img src="dist/img/icons/toggle-menu-32-32.png" width="32" height="32" alt="toggle menu icon">
+                    <img class="toggle__img" src="dist/img/icons/toggle-icon-32-32.png" width="32" height="32" alt="toggle menu icon">
                 </div> <!--/toggle__icon-->
             </div> <!--/menu_toggle-->
             <nav class="menu inner">
@@ -420,19 +420,34 @@
                         </p> <!--contact__form-text-->
                         <form class="contact__form" name="contactForm" action="action_page.php" method="post">
                             <fieldset>
-                                <input class="contact__input" type="text" id="fullName" name="fullName" placeholder="Full Name">
-                                <input class="contact__input" type="email" id="email" name="email" placeholder="Email Address">
-                                <input class="contact__input" type="text" id="subject" name="subject" placeholder="Subject">
-                                <textarea class="contact__text-area" name="message" id="message" placeholder="Message"></textarea>
-                                <select class="contact__select" id="interest" name="interest">
-                                    <option class="select__placeholder" selected disabled hidden>Area of interest?</option>
-                                    <option value="architecture">Architecture</option>
-                                    <option value="structural">Structural Engineering</option>
-                                    <option value="mechanical">Mechanical Engineering</option>
-                                    <option value="landscape">Landscape Design</option>
-                                    <option value="other">Other</option>
-                                </select> <!--/contact__select-->
-                                <input class="contact__send" type="submit" value="Send">
+                                <div class="contact__field-wrapper">
+                                    <input class="contact__input" type="text" id="fullName" name="fullName" placeholder="Full Name">
+                                    <span class="contact__input-focus"></span>
+                                </div> <!--/contact__filed-wrapper-->
+                                <div class="contact__field-wrapper">
+                                    <input class="contact__input" type="email" id="email" name="email" placeholder="Email Address">
+                                    <span class="contact__input-focus"></span>
+                                </div> <!--/contact__filed-wrapper-->
+                                <div class="contact__field-wrapper">
+                                    <input class="contact__input" type="text" id="subject" name="subject" placeholder="Subject">
+                                    <span class="contact__input-focus"></span>
+                                </div> <!--/contact__filed-wrapper-->
+                                <div class="contact__field-wrapper">
+                                    <textarea class="contact__text-area" name="message" id="message" placeholder="Message"></textarea>
+                                    <span class="contact__input-focus"></span>
+                                </div> <!--/contact__filed-wrapper-->
+                                <div class="contact__field-wrapper">
+                                    <select class="contact__select" id="interest" name="interest">
+                                        <option class="select__placeholder" selected disabled hidden>Area of interest?</option>
+                                        <option value="architecture">Architecture</option>
+                                        <option value="structural">Structural Engineering</option>
+                                        <option value="mechanical">Mechanical Engineering</option>
+                                        <option value="landscape">Landscape Design</option>
+                                        <option value="other">Other</option>
+                                    </select> <!--/contact__select-->
+                                    <span class="contact__input-focus"></span>
+                                </div> <!--/contact__filed-wrapper-->
+                                <input class="contact__submit" type="submit" value="Submit" disabled>
                             </fieldset>
                         </form> <!--/contact__form-->
                     </div> <!--/contact__form-wrapper-->

@@ -93,9 +93,8 @@ $carousel__arrow-color: #fff;
     &__link{
       border-top: 1px solid white;
       display: block;
-      margin: 0 auto;
+      margin: 0 15px;
       padding: 10px;
-      width: 95%;
       &:hover{
         background-color: $main-color;
       }

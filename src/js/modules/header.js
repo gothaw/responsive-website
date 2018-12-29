@@ -12,7 +12,9 @@ import enquire from '../lib/enquire.js'
     const $menuItem             = $('.menu__item').not('.menu__home');
     const $toggleMenu           = $('.menu__toggle');
     const $toggleMenuIcon       = $('.toggle__icon');
+    const $toggleMenuIconImg    = $('.toggle__img');
 
+    let toggleMenuActive        = false;
     /**
      * @name    showNextImage
      * @desc    Function toggles between carousel images in header.
@@ -67,6 +69,8 @@ import enquire from '../lib/enquire.js'
         enquire.register("screen and (max-width: 767px)", {
             match: function () {
                 $menu.hide();
+                $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon-32-32.png");
+                toggleMenuActive=false;
             },
             unmatch: function () {
                 $menu.show();
@@ -76,10 +80,18 @@ import enquire from '../lib/enquire.js'
 
     /**
      * @name    toggleMenu
-     * @desc    Slide toggle animation for hamburger menu.
+     * @desc    Slide toggle animation for hamburger menu. Changes src attribute for menu icon image when icon is clicked.
      */
     function toggleMenu() {
         $menu.slideToggle();
+        if(toggleMenuActive){
+            $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon-32-32.png");
+            toggleMenuActive=false;
+        }
+        else {
+            $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon-32-32-red.png");
+            toggleMenuActive=true;
+        }
     }
 
     /**

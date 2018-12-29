@@ -167,9 +167,8 @@ a {
     .menu__link {
       border-top: 1px solid white;
       display: block;
-      margin: 0 auto;
-      padding: 10px;
-      width: 95%; }
+      margin: 0 15px;
+      padding: 10px; }
       .menu__link:hover {
         background-color: #E31D3B; }
     .menu__toggle {
@@ -1044,8 +1043,7 @@ a {
   position: relative;
   padding-bottom: 56.25%;
   overflow: hidden;
-  max-width: 100%;
-  height: 350px; }
+  max-width: 100%; }
 
 .contact__map iframe, .contact__map object, .contact__map embed {
   position: absolute;
@@ -1128,7 +1126,6 @@ a {
       text-align: left; } }
 
 .contact__form-wrapper {
-  width: 100%;
   padding: 25px;
   border: 3px black solid; }
 
@@ -1147,18 +1144,43 @@ a {
 .contact__input, .contact__select, .contact__text-area {
   display: block;
   width: 100%;
-  margin-bottom: 10px;
   border: none;
-  position: relative;
-  background-color: #e9e6ed;
+  background: transparent;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 10px 0;
-  border-bottom: solid 1px #E31D3B;
-  font-size: 1.2em;
-  line-height: 1.2em; }
+  font-size: 15px;
+  line-height: 1.2; }
   .contact__input::placeholder, .contact__select::placeholder, .contact__text-area::placeholder {
-    color: rgba(170, 170, 170, 0.8);
+    color: rgba(120, 120, 120, 0.8);
     opacity: 1; }
+  .contact__input:focus + .contact__input-focus::before, .contact__select:focus + .contact__input-focus::before, .contact__text-area:focus + .contact__input-focus::before {
+    width: 100%; }
+
+.contact__field-wrapper {
+  width: 100%;
+  position: relative;
+  border-bottom: solid 2px #b5abc2;
+  margin-bottom: 10px;
+  z-index: 1; }
+
+.contact__input-focus {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; }
+  .contact__input-focus::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.4s;
+    background: #E31D3B; }
 
 .contact__input, .contact__text-area {
   padding: 10px 5px; }
@@ -1171,12 +1193,35 @@ a {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url("../../dist/img/icons/drop-down.png") no-repeat calc(100% - 10px) !important;
+  background: url("../../dist/img/icons/drop-down-grey.png") no-repeat calc(100% - 10px) !important;
   cursor: pointer; }
   .contact__select option {
     color: #000; }
   .contact__select--grey {
-    color: rgba(170, 170, 170, 0.8); }
+    color: rgba(120, 120, 120, 0.8); }
+
+.contact__submit {
+  background: none;
+  border: solid #E31D3B 2px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 1px #ee788a;
+  color: #E31D3B;
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.2em;
+  padding: 8px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 0.4s;
+  margin: 20px auto 0;
+  width: 120px; }
+  .contact__submit:active {
+    color: #000 !important; }
+  .contact__submit:hover {
+    color: #fff;
+    background-color: #E31D3B; }
 
 .contact__details {
   align-items: center;
@@ -1195,37 +1240,35 @@ a {
       font-size: 1.4em;
       line-height: 1.5em; } }
 
-.contact__details-wrapper {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%); }
-
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .contact {
     margin-top: 25px; }
     .contact__map {
-      margin-top: 15px; }
+      margin-top: 15px;
+      height: 200px; }
     .contact__form-wrapper {
-      margin-top: 15px; } }
+      margin: 15px 15px 0; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
   .contact {
     margin-top: 30px; }
     .contact__map {
-      margin-top: 25px; }
+      margin-top: 25px;
+      height: 250px; }
     .contact__img-wrapper {
       height: 500px; }
     .contact__form-wrapper {
-      margin-top: 25px; } }
+      margin: 25px 25px 0; } }
 
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
   .contact {
     margin-top: 50px; }
     .contact__map {
-      margin-top: 30px; }
+      margin-top: 30px;
+      height: 350px; }
     .contact__text {
       text-align: left; }
     .contact__wrapper {
@@ -1243,9 +1286,13 @@ a {
       grid-column: 3/4; }
     .contact__form-wrapper {
       width: calc(100% - 25px);
-      margin-top: 30px;
+      margin: 30px 0 0 0;
       grid-column: 2/3;
-      grid-row: 2; } }
+      grid-row: 2; }
+    .contact__details-wrapper {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); } }
 
 .test {
   margin-top: 150px; }

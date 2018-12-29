@@ -12,6 +12,7 @@ $div-line-h-lg: 1.8em;
 $div-line-h-md: 1.5em;
 $div-line-h-sm: 1.2em;
 $p-font-size-md: 1.2em;
+$p-font-size-sm: 1.0em;
 $offset-sm: 15px;
 $offset-md: 25px;
 $offset-lg: 30px;
@@ -341,15 +342,30 @@ a{
 @mixin home-contact-form-fields{
   display: block;
   width: 100%;
-  margin-bottom: 10px;
   border: none;
-  position: relative;
-  background-color: $bg-color;
+  background: transparent;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 10px 0;
-  border-bottom: solid 1px $main-color;
-  font-size: $p-font-size-md;
-  line-height: $p-font-size-md;
+  font-size: 15px;
+  line-height: 1.2;
+
+
+
+  //display: block;
+  //width: 100%;
+  //background: transparent;
+  //font-family: Poppins-Regular;
+  //font-size: 15px;
+  //color: #fff;
+  //line-height: 1.2;
+  //padding: 0 5px;
+
+
+
+
+
+
+
 }
 @mixin home-form-text{
   margin-bottom: 15px;
@@ -361,5 +377,30 @@ a{
   @media only screen and (min-width: 768px) {
     font-size: $div-font-size-md;
     line-height: $div-line-h-md;
+  }
+}
+@mixin send-button{
+  background: none;
+  border: solid $main-color 2px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 1px lighten($main-color, 20%);
+  color: $main-color;
+  cursor: pointer;
+  display: block;
+  font-size: $p-font-size-sm;
+  font-weight: bold;
+  line-height: $p-font-size-md;
+  padding: 8px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 0.4s;
+  margin: 20px auto 0;
+  width: 120px;
+  &:active{
+    color: #000 !important;
+  }
+  &:hover{
+    color: #fff;
+    background-color: $main-color;
   }
 }
