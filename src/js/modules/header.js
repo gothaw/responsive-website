@@ -47,7 +47,7 @@ import enquire from '../lib/enquire.js'
     /**
      * @name    moveLogoToggleMenu
      * @desc    Function prepends logo image before menu links if width is less than 767px.
-     *          If width is greater than 767px, logo is appended after second menu link.
+     *          If width is greater than 767px, logo is appended after second or third menu link.
      */
     function moveLogoToggleMenu() {
         enquire.register("screen and (max-width: 767px)", {
@@ -55,7 +55,12 @@ import enquire from '../lib/enquire.js'
                 $(menuLogo).prependTo($toggleMenu);
             },
             unmatch: function () {
-                $(menuItems[1]).after(menuLogo);
+                if ($('#home').length){
+                    $(menuItems[1]).after(menuLogo);
+                }
+                else {
+                    $(menuItems[2]).after(menuLogo);
+                }
             }
         });
     }
