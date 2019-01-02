@@ -21,53 +21,6 @@ $offset-lg: 30px;
 $offset-xlg: 50px;
 
 //======================================================================================================
-//========================================== General Styling ===========================================
-//======================================================================================================
-
-.inner{
-  max-width: 1140px;
-  margin: 0 auto;
-}
-.img{
-  &-responsive{
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  &__number{
-    color: #e9e6ed;
-    font-family: 'Ropa Sans', sans-serif;
-    position: absolute;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-}
-.title__slash{
-  color: $main-color;
-}
-.text__bold{
-  font-weight: bold;
-}
-html{
-  box-sizing: border-box;
-}
-*,*:before,*:after{
-  box-sizing: inherit;
-}
-body{
-  background-color: $bg-color;
-  font-family: 'Ropa Sans', sans-serif;
-}
-a{
-  text-decoration: none;
-}
-@keyframes fade {
-  from {opacity: 0.5}
-  to {opacity: 1}
-}
-//======================================================================================================
 //=============================================== Mixins ===============================================
 //======================================================================================================
 

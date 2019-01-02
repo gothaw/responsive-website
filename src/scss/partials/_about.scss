@@ -28,6 +28,37 @@
   &__CEO-quote{
     @include home-section-text-on-background;
   }
+  .values__wrapper{
+    transition: all 0.4s;
+    transform-style: preserve-3d;
+    position: relative;
+    .values__front, .values__back{
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+    }
+    .values__front{
+      position: relative;
+      z-index: 2;
+      transform: rotateX(0deg);
+      background-color: red;
+    }
+    .values__back{
+      position: absolute;
+      overflow-y: scroll;
+      transform: rotateX(180deg);
+      background-color: blue;
+    }
+    .flip{
+      transform: rotateX(180deg);
+    }
+    .flipper{
+      perspective: 1000px;
+    }
+  }
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -74,6 +105,11 @@
     }
     &__CEO-quote{
       grid-column: 2/3;
+    }
+    &__values{
+      grid-column: 3/5;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
   }
 }

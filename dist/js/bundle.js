@@ -108,6 +108,17 @@ eval("var require;var require;/*!\n * enquire.js v2.1.6 - Awesome Media Queries 
 
 /***/ }),
 
+/***/ "./src/js/modules/about.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/about.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("(function () {\r\n    if ($('#about').length) {\r\n        // jQuery variables\r\n        const $valueFront           = $('.values__front');\r\n        const $valueBack            = $('.values__back');\r\n        const $valueWrapper         = $('.values__wrapper');\r\n\r\n\r\n        /**\r\n         * @name    showValueDescription\r\n         * @desc\r\n         * @param   e\r\n         */\r\n        function showValueDescription(e) {\r\n            const targetValue = $(e.target).closest($valueWrapper);\r\n            targetValue.addClass(\"flip\");\r\n        }\r\n\r\n        /**\r\n         * @name    hideValueDescription\r\n         * @desc\r\n         * @param   e\r\n         */\r\n        function hideValueDescription(e) {\r\n            const targetValue = $(e.target).closest($valueWrapper);\r\n            targetValue.removeClass(\"flip\");\r\n        }\r\n\r\n        function eventHandler() {\r\n            $valueFront.on(\"click\",function (e) {\r\n                showValueDescription(e);\r\n            });\r\n            $valueBack.on(\"click\",function (e) {\r\n                hideValueDescription(e);\r\n            });\r\n        }\r\n\r\n        function init() {\r\n            eventHandler();\r\n        }\r\n\r\n        window.addEventListener(\"load\", init);\r\n    }\r\n})();\r\n\n\n//# sourceURL=webpack:///./src/js/modules/about.js?");
+
+/***/ }),
+
 /***/ "./src/js/modules/header.js":
 /*!**********************************!*\
   !*** ./src/js/modules/header.js ***!
@@ -121,13 +132,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************!*\
-  !*** multi ./src/js/index.js ./src/js/modules/header.js ***!
-  \**********************************************************/
+/*!************************************************************************************!*\
+  !*** multi ./src/js/index.js ./src/js/modules/about.js ./src/js/modules/header.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./src/js/index.js */\"./src/js/index.js\");\nmodule.exports = __webpack_require__(/*! ./src/js/modules/header.js */\"./src/js/modules/header.js\");\n\n\n//# sourceURL=webpack:///multi_./src/js/index.js_./src/js/modules/header.js?");
+eval("__webpack_require__(/*! ./src/js/index.js */\"./src/js/index.js\");\n__webpack_require__(/*! ./src/js/modules/about.js */\"./src/js/modules/about.js\");\nmodule.exports = __webpack_require__(/*! ./src/js/modules/header.js */\"./src/js/modules/header.js\");\n\n\n//# sourceURL=webpack:///multi_./src/js/index.js_./src/js/modules/about.js_./src/js/modules/header.js?");
 
 /***/ })
 

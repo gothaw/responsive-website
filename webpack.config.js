@@ -4,6 +4,7 @@ module.exports = {
     entry: {
         'bundle.js': [
             './src/js/index.js',
+            './src/js/modules/about.js',
             './src/js/modules/header.js'
         ]
     },
