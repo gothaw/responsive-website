@@ -1,20 +1,10 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v4.0 | 20180602
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-main, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0b2 | 201101 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
+address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead,
+tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output,
+ruby, section, summary, time, mark,
+audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -22,14 +12,13 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline; }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, main, menu, nav, section {
-  display: block; }
+img {
+  vertical-align: top; }
 
-/* HTML5 hidden-attribute fix for newer browsers */
-*[hidden] {
-  display: none; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, menu, nav,
+section, canvas, main {
+  display: block; }
 
 body {
   line-height: 1; }
@@ -40,14 +29,17 @@ ol, ul {
 blockquote, q {
   quotes: none; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none; }
 
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
 
 /*========================================================================================================*/
 /*========================================== General Styling =============================================*/
@@ -84,7 +76,7 @@ html {
 
 body {
   background-color: #e9e6ed;
-  font-family: 'Ropa Sans', sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif; }
 
 a {
   text-decoration: none; }
@@ -108,6 +100,7 @@ a {
 .menu {
   align-items: center;
   font-size: 1.1em;
+  font-family: 'Ropa Sans', sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase; }
   .menu__item {
@@ -152,6 +145,7 @@ a {
   .carousel__text {
     left: 0;
     letter-spacing: 1px;
+    font-family: 'Ropa Sans', sans-serif;
     position: absolute;
     right: 0;
     text-align: center; }
@@ -341,6 +335,7 @@ a {
   .button-read-more__link {
     color: #E31D3B;
     display: block;
+    font-family: 'Ropa Sans', sans-serif;
     position: relative;
     text-transform: uppercase;
     transition: all 0.3s; }
@@ -436,7 +431,6 @@ a {
 
 .about-us__text {
   border: black solid 3px;
-  font-family: 'Source Sans Pro', sans-serif;
   margin: 15px 0;
   padding: 15px;
   text-align: center; }
@@ -455,6 +449,7 @@ a {
 
 .about-us__title {
   font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center; }
   @media only screen and (max-width: 767px) {
@@ -472,7 +467,6 @@ a {
   align-items: center;
   background-color: #E31D3B;
   color: #e9e6ed;
-  font-family: 'Source Sans Pro', sans-serif;
   text-align: center; }
   @media only screen and (max-width: 767px) {
     .about-us__CEO-quote {
@@ -492,6 +486,7 @@ a {
   justify-content: space-around; }
 
 .about-us .values__tab {
+  font-family: 'Ropa Sans', sans-serif;
   cursor: pointer;
   width: 100%;
   text-align: center;
@@ -513,7 +508,6 @@ a {
 .about-us .values__description {
   animation-name: fade;
   animation-duration: 0.5s;
-  font-family: 'Source Sans Pro', sans-serif;
   text-align: center; }
   @media only screen and (max-width: 767px) {
     .about-us .values__description {
@@ -625,7 +619,6 @@ a {
 
 .services__text {
   border: black solid 3px;
-  font-family: 'Source Sans Pro', sans-serif;
   margin: 15px 0;
   padding: 15px;
   text-align: center; }
@@ -644,6 +637,7 @@ a {
 
 .services__title {
   font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center; }
   @media only screen and (max-width: 767px) {
@@ -661,7 +655,6 @@ a {
   text-align: center;
   padding: 15px 5px 0;
   position: relative;
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1em;
   line-height: 1em; }
   .services .card__description::before {
@@ -676,6 +669,7 @@ a {
 
 .services .card__title {
   text-align: center;
+  font-family: 'Ropa Sans', sans-serif;
   font-weight: bold; }
   @media only screen and (max-width: 767px) {
     .services .card__title {
@@ -748,6 +742,7 @@ a {
 
 .projects__menu-wrapper {
   background-color: #E31D3B;
+  font-family: 'Ropa Sans', sans-serif;
   overflow: hidden;
   position: relative; }
   @media only screen and (max-width: 767px) {
@@ -772,7 +767,6 @@ a {
 
 .projects__text {
   border: black solid 3px;
-  font-family: 'Source Sans Pro', sans-serif;
   margin: 15px 0;
   padding: 15px;
   text-align: center; }
@@ -791,6 +785,7 @@ a {
 
 .projects__title {
   font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center; }
   @media only screen and (max-width: 767px) {
@@ -889,7 +884,8 @@ a {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  font-weight: bold; }
+  font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif; }
   @media only screen and (max-width: 767px) {
     .projects__stats {
       padding-left: 15px;
@@ -917,16 +913,14 @@ a {
     @media only screen and (min-width: 1025px) {
       .projects__stats .stats__counter {
         font-size: 3.2em; } }
-  .projects__stats .stats__description {
-    font-family: 'Source Sans Pro', sans-serif; }
-    @media only screen and (max-width: 767px) {
-      .projects__stats .stats__description {
-        font-size: 1em;
-        line-height: 1.1em; } }
-    @media only screen and (min-width: 768px) {
-      .projects__stats .stats__description {
-        font-size: 1.2em;
-        line-height: 1.3em; } }
+  @media only screen and (max-width: 767px) {
+    .projects__stats .stats__description {
+      font-size: 1em;
+      line-height: 1.1em; } }
+  @media only screen and (min-width: 768px) {
+    .projects__stats .stats__description {
+      font-size: 1.2em;
+      line-height: 1.3em; } }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -1022,7 +1016,6 @@ a {
 
 .contact__text {
   border: black solid 3px;
-  font-family: 'Source Sans Pro', sans-serif;
   margin: 15px 0;
   padding: 15px;
   text-align: center; }
@@ -1041,6 +1034,7 @@ a {
 
 .contact__title {
   font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center; }
   @media only screen and (max-width: 767px) {
@@ -1060,8 +1054,7 @@ a {
 
 .contact__form-text {
   margin-bottom: 15px;
-  text-align: center;
-  font-family: 'Source Sans Pro', sans-serif; }
+  text-align: center; }
   @media only screen and (max-width: 767px) {
     .contact__form-text {
       font-size: 1em;
@@ -1139,6 +1132,7 @@ a {
   display: block;
   font-size: 1em;
   font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
   line-height: 1em;
   padding: 8px;
   position: relative;
@@ -1156,7 +1150,6 @@ a {
   align-items: center;
   background-color: #E31D3B;
   color: #e9e6ed;
-  font-family: 'Source Sans Pro', sans-serif;
   text-align: center; }
   @media only screen and (max-width: 767px) {
     .contact__details {
@@ -1256,7 +1249,6 @@ a {
 
 .team__text {
   border: black solid 3px;
-  font-family: 'Source Sans Pro', sans-serif;
   margin: 15px 0;
   padding: 15px;
   text-align: center; }
@@ -1277,6 +1269,7 @@ a {
 
 .team__title {
   font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center; }
   @media only screen and (max-width: 767px) {
@@ -1294,7 +1287,6 @@ a {
   align-items: center;
   background-color: #E31D3B;
   color: #e9e6ed;
-  font-family: 'Source Sans Pro', sans-serif;
   text-align: center; }
   @media only screen and (max-width: 767px) {
     .team__CEO-quote {
@@ -1307,38 +1299,78 @@ a {
       font-size: 1.2em;
       line-height: 1.3em; } }
 
-.team .values__wrapper {
+.team .values__card-wrapper {
+  height: 100%;
+  width: 100%;
+  perspective: 2000px; }
+
+.team .values__card {
+  height: 100%;
   transition: all 0.4s;
   transform-style: preserve-3d;
   position: relative; }
-  .team .values__wrapper .values__front, .team .values__wrapper .values__back {
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    top: 0;
-    left: 0;
-    cursor: pointer; }
-  .team .values__wrapper .values__front {
+
+.team .values__card--flipped {
+  transform: rotateX(180deg); }
+
+.team .card__front, .team .card__back {
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  text-align: center; }
+
+.team .card__front {
+  color: #e9e6ed;
+  position: relative;
+  z-index: 2;
+  transform: rotateX(0deg); }
+
+.team .values__card-1 .card__front {
+  background-color: #e6344f; }
+
+.team .values__card-2 .card__front {
+  background-color: #e94a62; }
+
+.team .values__card-3 .card__front {
+  background-color: #eb6176; }
+
+.team .card__title {
+  font-family: 'Ropa Sans', sans-serif;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+  @media only screen and (max-width: 767px) {
+    .team .card__title {
+      font-size: 1em;
+      line-height: 1.1em; } }
+  @media only screen and (min-width: 768px) {
+    .team .card__title {
+      font-size: 1.2em;
+      line-height: 1.3em; } }
+
+.team .card__back {
+  position: absolute;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  transform: rotateX(180deg);
+  text-align: center; }
+  .team .card__back p {
     position: relative;
-    z-index: 2;
-    transform: rotateX(0deg);
-    background-color: red; }
-  .team .values__wrapper .values__back {
-    position: absolute;
-    overflow-y: scroll;
-    transform: rotateX(180deg);
-    background-color: blue; }
-  .team .values__wrapper .flip {
-    transform: rotateX(180deg); }
-  .team .values__wrapper .flipper {
-    perspective: 1000px; }
+    top: 50%;
+    transform: translateY(-50%); }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .team {
     margin-top: 25px; }
     .team .CEO-quote__img {
-      display: none; } }
+      display: none; }
+    .team .values__card-wrapper {
+      height: 100px; }
+    .team .card__back {
+      padding: 15px; } }
 
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px) {
@@ -1350,7 +1382,15 @@ a {
       .team__CEO-quote .CEO-quote__text {
         padding-left: 25px; }
       .team__CEO-quote .CEO-quote__img {
-        border-radius: 50%; } }
+        border-radius: 50%; }
+    .team__values {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between; }
+      .team__values .values__card-wrapper {
+        height: 160px; }
+      .team__values .card__back {
+        padding: 15px 25px; } }
 
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
@@ -1372,4 +1412,7 @@ a {
     .team__values {
       grid-column: 3/5;
       display: grid;
-      grid-template-columns: 1fr 1fr; } }
+      grid-template-columns: 1fr 1fr;
+      margin-top: 0; }
+      .team__values .card__back {
+        padding: 15px; } }

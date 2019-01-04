@@ -151,7 +151,6 @@
     text-align: center;
     padding: 15px 5px 0;
     position: relative;
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: $p-font-size;
     line-height: $p-font-size;
     &::before{
@@ -479,6 +478,7 @@
     display: block;
     font-size: $p-font-size;
     font-weight: bold;
+    font-family: 'Ropa Sans', sans-serif;
     line-height: $p-font-size;
     padding: 8px;
     position: relative;

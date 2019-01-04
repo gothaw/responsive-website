@@ -16,6 +16,7 @@ $carousel__arrow-color: #fff;
 .menu{
   align-items: center;
   font-size: 1.1em;
+  font-family: 'Ropa Sans', sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
   &__item{
@@ -69,6 +70,7 @@ $carousel__arrow-color: #fff;
   &__text{
     left: 0;
     letter-spacing: 1px;
+    font-family: 'Ropa Sans', sans-serif;
     position: absolute;
     right: 0;
     text-align: center;

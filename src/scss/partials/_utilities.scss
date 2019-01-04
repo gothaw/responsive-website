@@ -28,7 +28,6 @@ $offset-xlg: 50px;
 // mixin for the text with the black border
 @mixin home-text-black-border{
   border: black solid 3px;
-  font-family: 'Source Sans Pro', sans-serif;
   margin: 15px 0;
   padding: 15px;
   text-align: center;
@@ -61,6 +60,7 @@ $offset-xlg: 50px;
 // mixin for the section title
 @mixin home-section-title{
   font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
   text-align: center;
   @media only screen and (max-width: 767px) {
@@ -79,7 +79,6 @@ $offset-xlg: 50px;
   align-items: center;
   background-color: $main-color;
   color: $bg-color;
-  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   @media only screen and (max-width: 767px) {
     padding: $offset-sm;
@@ -133,7 +132,6 @@ $offset-xlg: 50px;
 }
 // mixin for medium text
 @mixin text-medium{
-  font-family: 'Source Sans Pro', sans-serif;
   @media only screen and (max-width: 767px) {
     font-size: $div-font-size-sm;
     line-height: $div-line-h-sm;
@@ -147,6 +145,7 @@ $offset-xlg: 50px;
 //=============================================== About Us ===============================================
 // mixin for styling values tab
 @mixin home-values-tab{
+  font-family: 'Ropa Sans', sans-serif;
   cursor: pointer;
   width: 100%;
   text-align: center;
@@ -164,7 +163,6 @@ $offset-xlg: 50px;
 @mixin home-values-description{
   animation-name: fade;
   animation-duration: 0.5s;
-  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   @media only screen and (max-width: 767px) {
     font-size: $div-font-size-sm;
@@ -184,6 +182,7 @@ $offset-xlg: 50px;
 // styling for card title
 @mixin home-card-title{
   text-align: center;
+  font-family: 'Ropa Sans', sans-serif;
   font-weight: bold;
   @media only screen and (max-width: 767px) {
     font-size: $div-font-size-lg;
@@ -198,6 +197,7 @@ $offset-xlg: 50px;
 // styling for menu wrapper
 @mixin home-projects-menu-wrapper{
   background-color: $main-color;
+  font-family: 'Ropa Sans', sans-serif;
   overflow: hidden;
   position: relative;
   @media only screen and (max-width: 767px) {
@@ -229,6 +229,7 @@ $offset-xlg: 50px;
   justify-content: space-between;
   text-align: center;
   font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
   @media only screen and (max-width: 767px) {
     padding-left: $offset-sm;
     padding-right: $offset-sm;

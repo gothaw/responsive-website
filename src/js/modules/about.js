@@ -1,29 +1,30 @@
 (function () {
     if ($('#about').length) {
         // jQuery variables
-        const $valueFront           = $('.values__front');
-        const $valueBack            = $('.values__back');
-        const $valueWrapper         = $('.values__wrapper');
+        const $valueFront           = $('.card__front');
+        const $valueBack            = $('.card__back');
+        const $valueWrapper         = $('.values__card');
 
 
         /**
          * @name    showValueDescription
-         * @desc
-         * @param   e
+         * @desc    Shows value description by adding --flipped class and closes all other descriptions that were clicked previously.
+         * @param   e - clicked value div
          */
         function showValueDescription(e) {
-            const targetValue = $(e.target).closest($valueWrapper);
-            targetValue.addClass("flip");
+            const target = $(e.target).closest($valueWrapper);
+            target.addClass("values__card--flipped");
+            setTimeout(()=>{$valueWrapper.not(target).removeClass("values__card--flipped");}, 100);
         }
 
         /**
          * @name    hideValueDescription
-         * @desc
-         * @param   e
+         * @desc    Hides value description by removing --flipped class.
+         * @param   e - clicked value div
          */
         function hideValueDescription(e) {
-            const targetValue = $(e.target).closest($valueWrapper);
-            targetValue.removeClass("flip");
+            const target = $(e.target).closest($valueWrapper);
+            target.removeClass("values__card--flipped");
         }
 
         function eventHandler() {
