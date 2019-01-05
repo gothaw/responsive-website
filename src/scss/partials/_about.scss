@@ -11,22 +11,22 @@
     position: relative;
   }
   &__img-wrapper,&__img{
-    @include home-section-img-size;
+    @include section-img-size;
   }
   &__section{
-    @include home-section-black-border-wrapper;
+    @include section-black-border-wrapper;
   }
   &__text{
-    @include home-text-black-border;
+    @include text-black-border;
     p:not(:last-child){
       margin-bottom: $offset-sm;
     }
   }
   &__title{
-    @include home-section-title;
+    @include section-title;
   }
   &__CEO-quote{
-    @include home-section-text-on-background;
+    @include section-text-on-background;
   }
   .values__card-wrapper{
     height: 100%;
@@ -62,11 +62,7 @@
     }
   }
   .card__title{
-    font-family: 'Ropa Sans', sans-serif;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    @include text-medium;
+    @include about-card-title;
   }
   .card__back{
     position: absolute;
@@ -153,5 +149,34 @@
         padding: $offset-sm;
       }
     }
+  }
+}
+/*========================================================================================================*/
+/*=========================================== Architecture ===============================================*/
+/*========================================================================================================*/
+.architecture-team{
+  &__title{
+    @include section-title;
+  }
+}
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .architecture-team{
+    margin-top: $offset-md;
+
+  }
+}
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px){
+  .architecture-team{
+    margin-top: $offset-lg;
+
+  }
+}
+/* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+  .architecture-team{
+    margin-top: $offset-xlg;
+
   }
 }

@@ -26,7 +26,7 @@ $offset-xlg: 50px;
 
 //=============================================== General ===============================================
 // mixin for the text with the black border
-@mixin home-text-black-border{
+@mixin text-black-border{
   border: black solid 3px;
   margin: 15px 0;
   padding: 15px;
@@ -45,7 +45,7 @@ $offset-xlg: 50px;
   }
 }
 // mixin for the wrapper of text with black border
-@mixin home-section-black-border-wrapper{
+@mixin section-black-border-wrapper{
   @media only screen and (max-width: 767px) {
     padding: 0 15px;
   }
@@ -58,7 +58,7 @@ $offset-xlg: 50px;
   }
 }
 // mixin for the section title
-@mixin home-section-title{
+@mixin section-title{
   font-weight: bold;
   font-family: 'Ropa Sans', sans-serif;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ $offset-xlg: 50px;
   }
 }
 // mixin for the text on the background
-@mixin home-section-text-on-background{
+@mixin section-text-on-background{
   align-items: center;
   background-color: $main-color;
   color: $bg-color;
@@ -97,7 +97,7 @@ $offset-xlg: 50px;
   grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr;
 }
 // mixin which control position of the section number on the image
-@mixin home-section-number-position ($right-sm, $right-md){
+@mixin section-number-position ($right-sm, $right-md){
   top:0;
   @media only screen and (max-width: 767px) {
     font-size: 10em;
@@ -109,7 +109,7 @@ $offset-xlg: 50px;
   }
 }
 // mixin section that controls section image height
-@mixin home-section-img-size{
+@mixin section-img-size{
   overflow: hidden;
   @media only screen and (max-width: 767px) {
     height: 300px;
@@ -275,5 +275,24 @@ $offset-xlg: 50px;
   }
   @media only screen and (min-width: 768px) {
     padding: $offset-md;
+  }
+}
+//=============================================== A B O U T ===============================================
+@mixin about-card-title{
+  font-family: 'Ropa Sans', sans-serif;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  @media only screen and (max-width: 767px) {
+    font-size: $div-font-size-sm;
+    line-height: $div-line-h-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $div-font-size-md;
+    line-height: $div-line-h-md;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: $div-font-size-lg;
+    line-height: $div-line-h-lg;
   }
 }

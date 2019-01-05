@@ -1349,6 +1349,10 @@ a {
     .team .card__title {
       font-size: 1.2em;
       line-height: 1.3em; } }
+  @media only screen and (min-width: 1025px) {
+    .team .card__title {
+      font-size: 1.6em;
+      line-height: 1.7em; } }
 
 .team .card__back {
   position: absolute;
@@ -1416,3 +1420,37 @@ a {
       margin-top: 0; }
       .team__values .card__back {
         padding: 15px; } }
+
+/*========================================================================================================*/
+/*=========================================== Architecture ===============================================*/
+/*========================================================================================================*/
+.architecture-team__title {
+  font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
+  text-transform: uppercase;
+  text-align: center; }
+  @media only screen and (max-width: 767px) {
+    .architecture-team__title {
+      font-size: 2em; } }
+  @media only screen and (min-width: 768px) {
+    .architecture-team__title {
+      font-size: 2.5em; } }
+  @media only screen and (min-width: 1025px) {
+    .architecture-team__title {
+      font-size: 3.2em;
+      text-align: left; } }
+
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .architecture-team {
+    margin-top: 25px; } }
+
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .architecture-team {
+    margin-top: 30px; } }
+
+/* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+  .architecture-team {
+    margin-top: 50px; } }

@@ -5,7 +5,7 @@
 /*========================================================================================================*/
 .about-us{
   &__number--position{
-    @include home-section-number-position(-12px,-19px);
+    @include section-number-position(-12px,-19px);
   }
   &__img{
     object-fit: cover;
@@ -14,19 +14,19 @@
     position: relative;
   }
   &__img-wrapper,&__img{
-    @include home-section-img-size;
+    @include section-img-size;
   }
   &__section{
-    @include home-section-black-border-wrapper;
+    @include section-black-border-wrapper;
   }
   &__text{
-    @include home-text-black-border;
+    @include text-black-border;
   }
   &__title{
-    @include home-section-title;
+    @include section-title;
   }
   &__CEO-quote{
-    @include home-section-text-on-background;
+    @include section-text-on-background;
   }
   .values{
     &__tab-wrapper{
@@ -127,7 +127,7 @@
 /*========================================================================================================*/
 .services{
   &__number--position{
-    @include home-section-number-position(-8px,-12px);
+    @include section-number-position(-8px,-12px);
   }
   &__img{
     object-fit: cover;
@@ -136,16 +136,16 @@
     position: relative;
   }
   &__img-wrapper,&__img{
-    @include home-section-img-size;
+    @include section-img-size;
   }
   &__section{
-    @include home-section-black-border-wrapper;
+    @include section-black-border-wrapper;
   }
   &__text{
-    @include home-text-black-border;
+    @include text-black-border;
   }
   &__title{
-    @include home-section-title;
+    @include section-title;
   }
   .card__description{
     text-align: center;
@@ -231,19 +231,19 @@
 /*========================================================================================================*/
 .projects{
   &__number--position{
-    @include home-section-number-position(-10px,-15px);
+    @include section-number-position(-10px,-15px);
   }
   &__menu-wrapper{
     @include home-projects-menu-wrapper;
   }
   &__section{
-    @include home-section-black-border-wrapper;
+    @include section-black-border-wrapper;
   }
   &__text{
-    @include home-text-black-border;
+    @include text-black-border;
   }
   &__title{
-    @include home-section-title;
+    @include section-title;
   }
   &__projects-menu{
     @include home-projects-menu;
@@ -376,7 +376,7 @@
     height: 100%;
   }
   &__number--position{
-    @include home-section-number-position(-8px,-12px);
+    @include section-number-position(-8px,-12px);
   }
   &__img{
     object-fit: cover;
@@ -385,16 +385,16 @@
     position: relative;
   }
   &__img-wrapper,&__img{
-    @include home-section-img-size;
+    @include section-img-size;
   }
   &__section{
-    @include home-section-black-border-wrapper;
+    @include section-black-border-wrapper;
   }
   &__text{
-    @include home-text-black-border;
+    @include text-black-border;
   }
   &__title{
-    @include home-section-title;
+    @include section-title;
   }
   &__form-wrapper{
     padding: 25px;
@@ -495,7 +495,7 @@
     }
   }
   &__details{
-    @include home-section-text-on-background;
+    @include section-text-on-background;
   }
 }
 /* ------------------- <767px   SECTION ------------------- */
