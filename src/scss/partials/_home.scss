@@ -3,7 +3,7 @@
 /*========================================================================================================*/
 /*============================================= About Us =================================================*/
 /*========================================================================================================*/
-.about-us{
+.home-about{
   &__number--position{
     @include section-number-position(-12px,-19px);
   }
@@ -63,7 +63,7 @@
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .about-us {
+  .home-about {
     margin-top: $offset-md;
     .CEO-quote__img{
       display: none;
@@ -75,7 +75,7 @@
 }
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
-  .about-us {
+  .home-about {
     margin-top: $offset-lg;
     &__CEO-quote{
       display: flex;
@@ -94,7 +94,7 @@
 }
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
-  .about-us {
+  .home-about {
     margin-top: $offset-xlg;
     &__text{
       text-align: left;
@@ -179,10 +179,7 @@
     &__card-wrapper{
       margin: $offset-sm auto 0;
       max-width: 530px;
-    }
-    .card__title, .card__img, .card__description{
-      margin-left: $offset-sm;
-      margin-right: $offset-sm;
+      padding: 0 $offset-sm;
     }
   }
 }
@@ -229,7 +226,7 @@
 /*========================================================================================================*/
 /*=============================================== Projects ===============================================*/
 /*========================================================================================================*/
-.projects{
+.home-projects{
   &__number--position{
     @include section-number-position(-10px,-15px);
   }
@@ -267,29 +264,13 @@
       position: relative;
     }
     &__overlay{
-      background-color: rgba(0,0,0,0.5);
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      transition: opacity 0.5s;
-      opacity: 0;
-      &--shown{
-        opacity: 1;
-      }
+      @include image-overlay;
     }
     &__description-wrapper{
-      @include home-project-description-wrapper;
-      &--shown{
-        opacity: 1;
-      }
+      @include image-description-wrapper;
     }
     &__description{
-      @include home-project-description;
-      &--shown{
-        opacity: 1;
-      }
+      @include image-description;
       .recent-projects__title{
         margin-bottom: 10px;
         font-weight: bold;
@@ -313,20 +294,21 @@
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .projects{
+  .home-projects{
     margin-top: $offset-md;
     &__recent-projects{
       max-width: 530px;
       margin: 0 auto;
+      padding: 0 $offset-sm;
     }
     .recent-projects__project-wrapper{
-      margin: $offset-sm $offset-sm 0;
+      margin-top: $offset-sm;
     }
   }
 }
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
-  .projects{
+  .home-projects{
     margin-top: $offset-lg;
     &__recent-projects{
       display: grid;
@@ -338,7 +320,7 @@
 }
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
-  .projects{
+  .home-projects{
     margin-top: $offset-xlg;
     &__text{
       text-align: left;

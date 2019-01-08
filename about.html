@@ -37,11 +37,11 @@
                 </div> <!--/toggle__icon-->
             </div> <!--/menu_toggle-->
             <nav class="menu inner">
-                <div class="menu__item menu__home">
+                <div class="menu__item menu__home menu__item--short">
                     <a class="menu__link" href="index.html">Home</a> <!--/menu__link-->
                 </div> <!--/menu__item-->
-                <div class="menu__item">
-                    <a class="menu__link" href="#our-team">Team</a> <!--/menu__link-->
+                <div class="menu__item menu__item--short">
+                    <a class="menu__link" href="#about-us">About</a> <!--/menu__link-->
                 </div> <!--/menu__item-->
                 <div class="menu__item">
                     <a class="menu__link" href="#architecture">Architecture</a> <!--/menu__link-->
@@ -97,24 +97,24 @@
             </div> <!--/carousel-->
         </header>
         <main id="about">
-            <div id="our-team" class="team">
-                <div class="team__wrapper">
-                    <section class="team__section">
-                        <h3 class="team__title"><span class="title__slash">/ </span>Our Team</h3> <!--/team__title-->
-                        <div class="team__text">
+            <div id="about-us" class="about">
+                <div class="about__wrapper">
+                    <section class="about__section">
+                        <h3 class="about__title"><span class="title__slash">/ </span>About Us</h3> <!--/about__title-->
+                        <div class="about__text">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cum eligendi et iste nam! Aliquam aliquid commodi deleniti distinctio, facilis ipsa nemo nisi numquam quaerat quasi reiciendis reprehenderit saepe vitae?</p>
                             <p>Alias assumenda consectetur deserunt dolor ea error exercitationem, facere ipsum magni natus neque nostrum numquam obcaecati omnis possimus qui quod repellendus repudiandae sapiente tempore unde veniam voluptas voluptatem voluptates voluptatum. At obcaecati perferendis quidem saepe?</p>
-                        </div> <!--/team__text-->
-                    </section> <!--/team__section-->
-                    <div class="team__img-wrapper">
+                        </div> <!--/about__text-->
+                    </section> <!--/about__section-->
+                    <div class="about__img-wrapper">
                         <picture>
                             <source media="print" srcset="dist/img/our-team/our-team-img-1025.jpg">
                             <source media="(max-width: 540px)" srcset="dist/img/our-team/our-team-img-540.jpg">
                             <source media="(max-width: 768px)" srcset="dist/img/our-team/our-team-img-768.jpg">
-                            <img class="team__img img-responsive" src="dist/img/our-team/our-team-img-1025.jpg" alt="group fist bump"> <!--/team__img img-responsive-->
+                            <img class="about__img img-responsive" src="dist/img/our-team/our-team-img-1025.jpg" alt="group fist bump"> <!--/about__img img-responsive-->
                         </picture>
-                    </div> <!--/team__img-wrapper-->
-                    <section class="team__CEO-quote">
+                    </div> <!--/about__img-wrapper-->
+                    <section class="about__CEO-quote">
                         <div class="CEO-quote__img-wrapper">
                             <img class="CEO-quote__img" src="dist/img/CEO-img-180.jpg" width="180" height="180" alt="ceo photo">
                         </div> <!--/CEO-quote__img-->
@@ -122,8 +122,8 @@
                             <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias maxime numquam odio quaerat, tempora veritatis! Accusantium adipisci commodi dignissimos dolores est fugit illo incidunt ipsam nam neque odit."</p>
                             <p class="text__bold">~John Doe CEO</p>
                         </div> <!--/CEO-quote__text-->
-                    </section> <!--/team__CEO-quote-->
-                    <div class="team__values">
+                    </section> <!--/about__CEO-quote-->
+                    <div class="about__values">
                         <div class="values__card-wrapper">
                             <div class="values__card values__card-1">
                                 <div class="card__front">
@@ -154,15 +154,74 @@
                                 </div> <!--/card__back-->
                             </div> <!--/values__card values__card-3-->
                         </div> <!--/values__card-wrapper-->
-                    </div> <!--/team__values-->
-                </div> <!--/team__wrapper-->
+                    </div> <!--/about__values-->
+                </div> <!--/about__wrapper-->
+            </div> <!--/about-->
+            <div id="architecture" class="team inner" >
+                <h3 class="team__title"><span class="title__slash">/ </span>Architecture Team</h3>
+                <div class="team__wrapper">
+                    <div class="team__team-member">
+                        <img class="img-responsive" src="dist/img/team-members/archi_tm_1.jpg" width="500" height="500" alt="architecture team member 1">
+                        <div class="team-member__overlay">
+                            <div class="team-member__description">
+                                <p class="team-member__name">John Doe</p>
+                                <p class="team-member__position">CEO</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorum eius facere molestiae, placeat rem similique voluptates. Ab amet distinctio ea molestiae officiis quia veniam.</p>
+                            </div>
+                        </div> <!--/team-member__overlay-->
+                    </div> <!--/team__team-member-->
+                    <div class="team__team-member">
+                        <img class="img-responsive" src="dist/img/team-members/archi_tm_2.jpg" width="500" height="500" alt="architecture team member 2">
+                        <div class="team-member__overlay">
+                            <div class="team-member__description">
+                                <p class="team-member__name">John Doe</p>
+                                <p class="team-member__position">CEO</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus cum dolore earum ipsa nam omnis pariatur quas reiciendis rerum veritatis.</p>
+                            </div>
+                        </div> <!--/team-member__overlay-->
+                    </div> <!--/team__team-member-->
+                    <div class="team__team-member">
+                        <img class="img-responsive" src="dist/img/team-members/archi_tm_3.jpg" width="500" height="500" alt="architecture team member 3">
+                        <div class="team-member__overlay">
+                            <div class="team-member__description">
+                                <p class="team-member__name">Mark </p>
+                                <p class="team-member__position">CEO</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias, cum cupiditate earum et, eum expedita facilis fuga fugit impedit in nobis quasi, ratione rerum sed tempora tenetur vel voluptatibus!</p>
+                            </div>
+                        </div> <!--/team-member__overlay-->
+                    </div> <!--/team__team-member-->
+                    <div class="team__team-member">
+                        <img class="img-responsive" src="dist/img/team-members/archi_tm_4.jpg" width="500" height="500" alt="architecture team member 4">
+                        <div class="team-member__overlay">
+                            <div class="team-member__description">
+                                <p class="team-member__name">Sophie Dolor</p>
+                                <p class="team-member__position">Architect</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, quibusdam.</p>
+                            </div>
+                        </div> <!--/team-member__overlay-->
+                    </div> <!--/team__team-member-->
+                    <div class="team__team-member">
+                        <img class="img-responsive" src="dist/img/team-members/archi_tm_5.jpg" width="500" height="500" alt="architecture team member 5">
+                        <div class="team-member__overlay">
+                            <div class="team-member__description">
+                                <p class="team-member__name">Mark Ipsum</p>
+                                <p class="team-member__position">CAD Technician</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis minus nam nulla quia quidem sint.</p>
+                            </div>
+                        </div> <!--/team-member__overlay-->
+                    </div> <!--/team__team-member-->
+                    <div class="team__team-member">
+                        <img class="img-responsive" src="dist/img/team-members/archi_tm_6.jpg" width="500" height="500" alt="architecture team member 6">
+                        <div class="team-member__overlay">
+                            <div class="team-member__description">
+                                <p class="team-member__name">Jenny Lorem</p>
+                                <p class="team-member__position">Graduate Architect</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum officiis, similique! At aut consectetur dolore dolorem doloremque, ipsam labore, mollitia rerum sed similique tenetur, vitae.</p>
+                            </div>
+                        </div> <!--/team-member__overlay-->
+                    </div> <!--/team__team-member-->
+                </div> <!--team__wrapper-->
             </div> <!--/team-->
-            <div id="architecture" class="architecture-team inner" >
-                <h3 class="architecture-team__title"><span class="title__slash">/ </span>Architecture</h3>
-                <div class="architecture-team__wrapper">
-
-                </div> <!--architecture-team__wrapper-->
-            </div> <!--/architecture-team-->
         </main>
         <footer class="footer">
                 <div class="inner">

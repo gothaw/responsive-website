@@ -1,12 +1,29 @@
 (function () {
     if ($('#about').length) {
         // Variables
-        const valueCard             = document.querySelectorAll('.values__card');
+        const valueCard                 = document.querySelectorAll('.values__card');
         // jQuery variables
-        const $valueFront           = $('.card__front');
-        const $valueBack            = $('.card__back');
-        const $valueCard            = $('.values__card');
+        const $valueFront               = $('.card__front');
+        const $valueBack                = $('.card__back');
+        const $valueCard                = $('.values__card');
+        const $teamMember               = $('.team__team-member');
+        const $teamMemberOverlay        = $('.team-member__overlay');
+        const $teamMemberDescription    = $('.team-member__description');
 
+        /**
+         * @name        toggleTeamMemberDescription
+         * @desc        Toggles team member description when image is clicked.
+         * @param       e - image clicked event
+         */
+        function toggleTeamMemberDescription(e) {
+            const $targetImage          = $(e.target);
+            const overlay               = $targetImage.closest('.team-member__overlay');
+            const description           = overlay.find('.team-member__description');
+            $teamMemberOverlay.not(overlay).removeClass('team-member__overlay--shown');
+            $teamMemberDescription.not(description).removeClass('team-member__description--shown');
+            overlay.toggleClass('team-member__overlay--shown');
+            description.toggleClass('team-member__description--shown');
+        }
 
         /**
          * @name        animateValueDescriptions
@@ -59,6 +76,9 @@
             $valueBack.on("click",function (e) {
                 hideValueDescription(e);
             });
+            $teamMember.on("click",function (e) {
+                toggleTeamMemberDescription(e);
+            })
         }
 
         function init() {

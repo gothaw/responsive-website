@@ -15,8 +15,8 @@ $carousel__arrow-color: #fff;
 }
 .menu{
   align-items: center;
-  font-size: 1.1em;
   font-family: 'Ropa Sans', sans-serif;
+  font-size: 0.95em;
   letter-spacing: 1px;
   text-transform: uppercase;
   &__item{
@@ -168,7 +168,9 @@ $carousel__arrow-color: #fff;
   .menu{
     display: flex;
     justify-content: space-around;
-    &__item{
+    font-size: 0.95em;
+    &__item--short{
+      padding: 0 20px;
     }
     &__link{
       padding: 25px 10px;
@@ -231,8 +233,11 @@ $carousel__arrow-color: #fff;
 
 /* --------------------- >1025px   SECTION ------------------ */
 @media only screen and (min-width: 1025px) {
-  .menu__wrapper{
-    position: sticky;
+  .menu{
+    font-size: 1.1em;
+    &__wrapper {
+      position: sticky;
+    }
   }
   .carousel {
     &__img{

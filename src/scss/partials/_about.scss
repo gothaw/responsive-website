@@ -3,7 +3,7 @@
 /*========================================================================================================*/
 /*================================================= Team =================================================*/
 /*========================================================================================================*/
-.team{
+.about{
   &__img{
     object-fit: cover;
   }
@@ -79,7 +79,7 @@
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .team {
+  .about {
     margin-top: $offset-md;
     .CEO-quote__img{
       display: none;
@@ -94,7 +94,7 @@
 }
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
-  .team{
+  .about{
     margin-top: $offset-lg;
     &__CEO-quote{
       display: flex;
@@ -121,7 +121,7 @@
 }
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
-  .team {
+  .about {
     margin-top: $offset-xlg;
     &__text{
       text-align: left;
@@ -152,31 +152,65 @@
   }
 }
 /*========================================================================================================*/
-/*=========================================== Architecture ===============================================*/
+/*============================================== T E A M S ===============================================*/
 /*========================================================================================================*/
-.architecture-team{
+.team{
   &__title{
     @include section-title;
+  }
+  &__team-member{
+    cursor: pointer;
+    position: relative;
+  }
+  .team-member__overlay{
+    @include image-overlay;
+  }
+  .team-member__description{
+    @include image-description;
+    p:not(:last-child){
+      margin-bottom: 10px;
+    }
+  }
+  .team-member__name, .team-member__position{
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: $div-font-size-md;
   }
 }
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .architecture-team{
+  .team{
     margin-top: $offset-md;
-
+    &__wrapper{
+      max-width: 530px;
+      padding: 0 $offset-sm;
+      margin: $offset-sm auto 0;
+    }
+    &__team-member{
+      margin-top: $offset-sm;
+    }
   }
 }
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
-  .architecture-team{
+  .team{
     margin-top: $offset-lg;
-
+      &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 25px;
+        padding: 0 $offset-md;
+        margin-top: $offset-md;
+      }
   }
 }
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
-  .architecture-team{
+  .team{
     margin-top: $offset-xlg;
-
+    &__wrapper{
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0;
+    }
   }
 }

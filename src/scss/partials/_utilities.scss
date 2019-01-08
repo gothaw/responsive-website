@@ -141,6 +141,63 @@ $offset-xlg: 50px;
     line-height: $div-line-h-md;
   }
 }
+//mixin for image description overlay
+@mixin image-overlay{
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.5s;
+  opacity: 0;
+  &--shown{
+    opacity: 1;
+  }
+}
+//mixin for image description wrapper, includes white border around text
+@mixin image-description-wrapper{
+  border: $bg-color solid 3px;
+  transition: opacity 1s;
+  opacity: 0;
+  @media only screen and (max-width: 767px) {
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
+    margin: 15px auto;
+  }
+  @media only screen and (min-width: 768px) {
+    height: calc(100% - 50px);
+    width: calc(100% - 50px);
+    margin: 25px auto;
+  }
+  &--shown{
+    opacity: 1;
+  }
+}
+//mixin for image description
+@mixin image-description{
+  color: $bg-color;
+  opacity: 0;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 1.5s;
+  font-size: $p-font-size;
+  line-height: $p-font-size;
+  @media only screen and (max-width: 767px) {
+    padding: $offset-sm;
+  }
+  @media only screen and (min-width: 768px) {
+    padding: $offset-md;
+  }
+  &--shown{
+    opacity: 1;
+  }
+}
+
+
+
 //=============================================== H O M E ===============================================
 //=============================================== About Us ===============================================
 // mixin for styling values tab
@@ -243,38 +300,6 @@ $offset-xlg: 50px;
   @media only screen and (min-width: 1025px) {
     margin-top: $offset-lg;
     padding: 0;
-  }
-}
-@mixin home-project-description-wrapper{
-  border: $bg-color solid 3px;
-  transition: opacity 1s;
-  opacity: 0;
-  @media only screen and (max-width: 767px) {
-    height: calc(100% - 30px);
-    width: calc(100% - 30px);
-    margin: 15px auto;
-  }
-  @media only screen and (min-width: 768px) {
-    height: calc(100% - 50px);
-    width: calc(100% - 50px);
-    margin: 25px auto;
-  }
-}
-@mixin home-project-description{
-  color: $bg-color;
-  opacity: 0;
-  position: relative;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: opacity 1.5s;
-  font-size: $p-font-size;
-  line-height: $p-font-size;
-  @media only screen and (max-width: 767px) {
-    padding: $offset-sm;
-  }
-  @media only screen and (min-width: 768px) {
-    padding: $offset-md;
   }
 }
 //=============================================== A B O U T ===============================================
