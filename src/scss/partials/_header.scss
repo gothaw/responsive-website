@@ -16,7 +16,7 @@ $carousel__arrow-color: #fff;
 .menu{
   align-items: center;
   font-family: 'Ropa Sans', sans-serif;
-  font-size: 0.95em;
+  font-size: 0.9em;
   letter-spacing: 1px;
   text-transform: uppercase;
   &__item{
@@ -168,9 +168,11 @@ $carousel__arrow-color: #fff;
   .menu{
     display: flex;
     justify-content: space-around;
-    font-size: 0.95em;
     &__item--short{
       padding: 0 20px;
+    }
+    &__item--medium{
+      padding: 0 10px;
     }
     &__link{
       padding: 25px 10px;

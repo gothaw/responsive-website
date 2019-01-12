@@ -1,7 +1,7 @@
 import enquire from '../lib/enquire.js'
 
 (function () {
-    // Variables
+    // variables
     const menuItems             = document.querySelectorAll('.menu__item');
     const menuLogo              = document.getElementById('logo');
     // jQuery variables
@@ -55,7 +55,7 @@ import enquire from '../lib/enquire.js'
                 $(menuLogo).prependTo($toggleMenu);
             },
             unmatch: function () {
-                if ($('#home').length){
+                if ($('#home-page').length){
                     $(menuItems[1]).after(menuLogo);
                 }
                 else {
@@ -74,7 +74,7 @@ import enquire from '../lib/enquire.js'
         enquire.register("screen and (max-width: 767px)", {
             match: function () {
                 $menu.hide();
-                $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon-32-32.png");
+                $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon.png");
                 toggleMenuActive=false;
             },
             unmatch: function () {

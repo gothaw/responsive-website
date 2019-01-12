@@ -1,6 +1,6 @@
 (function () {
-    if ($('#about').length) {
-        // Variables
+    if ($('#about-page').length) {
+        // variables
         const valueCard                 = document.querySelectorAll('.values__card');
         // jQuery variables
         const $valueFront               = $('.card__front');

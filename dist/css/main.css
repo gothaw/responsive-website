@@ -100,7 +100,7 @@ a {
 .menu {
   align-items: center;
   font-family: 'Ropa Sans', sans-serif;
-  font-size: 0.95em;
+  font-size: 0.9em;
   letter-spacing: 1px;
   text-transform: uppercase; }
   .menu__item {
@@ -213,10 +213,11 @@ a {
     padding: 7px 0; }
   .menu {
     display: flex;
-    justify-content: space-around;
-    font-size: 0.95em; }
+    justify-content: space-around; }
     .menu__item--short {
       padding: 0 20px; }
+    .menu__item--medium {
+      padding: 0 10px; }
     .menu__link {
       padding: 25px 10px; }
       .menu__link:hover::before {
@@ -1221,7 +1222,7 @@ a {
       transform: translateY(-50%); } }
 
 /*========================================================================================================*/
-/*================================================= Team =================================================*/
+/*=============================== About Text, CEO Quote and Values =======================================*/
 /*========================================================================================================*/
 .about__img {
   object-fit: cover; }
@@ -1426,7 +1427,7 @@ a {
         padding: 15px; } }
 
 /*========================================================================================================*/
-/*============================================== T E A M S ===============================================*/
+/*================================================== Teams ===============================================*/
 /*========================================================================================================*/
 .team__title {
   font-weight: bold;
@@ -1515,3 +1516,137 @@ a {
     .team__wrapper {
       grid-template-columns: repeat(3, 1fr);
       padding: 0; } }
+
+/*========================================================================================================*/
+/*============================================= Projects =================================================*/
+/*========================================================================================================*/
+@media only screen and (max-width: 767px) {
+  .projects__section {
+    padding: 0 15px; } }
+
+@media only screen and (min-width: 768px) {
+  .projects__section {
+    padding: 0 25px; } }
+
+@media only screen and (min-width: 1025px) {
+  .projects__section {
+    padding: 0 0 0 25px;
+    align-self: center; } }
+
+.projects__text {
+  border: black solid 3px;
+  margin: 15px 0;
+  padding: 15px;
+  text-align: center; }
+  @media only screen and (max-width: 767px) {
+    .projects__text {
+      font-size: 1em;
+      line-height: 1.1em; } }
+  @media only screen and (min-width: 768px) {
+    .projects__text {
+      font-size: 1.2em;
+      line-height: 1.3em;
+      margin-bottom: 25px; } }
+  @media only screen and (min-width: 1025px) {
+    .projects__text {
+      margin-bottom: 0; } }
+  .projects__text p:not(:last-child) {
+    margin-bottom: 15px; }
+
+.projects__title {
+  font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif;
+  text-transform: uppercase;
+  text-align: center; }
+  @media only screen and (max-width: 767px) {
+    .projects__title {
+      font-size: 2em; } }
+  @media only screen and (min-width: 768px) {
+    .projects__title {
+      font-size: 2.5em; } }
+  @media only screen and (min-width: 1025px) {
+    .projects__title {
+      font-size: 3.2em;
+      text-align: left; } }
+
+.projects__client-opinions {
+  background-color: #E31D3B; }
+
+.projects .client-opinions__wrapper {
+  position: relative;
+  overflow: hidden; }
+
+.projects .client-opinions__carousel {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 300%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s; }
+
+.projects .carousel__opinion {
+  color: #e9e6ed;
+  text-align: center;
+  width: 100%; }
+  @media only screen and (max-width: 767px) {
+    .projects .carousel__opinion {
+      font-size: 1em;
+      line-height: 1.1em; } }
+  @media only screen and (min-width: 768px) {
+    .projects .carousel__opinion {
+      font-size: 1.2em;
+      line-height: 1.3em; } }
+
+.projects .opinion__name {
+  margin-top: 15px;
+  font-weight: bold;
+  font-family: 'Ropa Sans', sans-serif; }
+
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .projects {
+    margin-top: 25px; }
+    .projects__client-opinions {
+      padding: 15px; }
+    .projects .opinion__img {
+      display: none; } }
+
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .projects {
+    margin-top: 30px; }
+    .projects__client-opinions {
+      padding: 25px; }
+    .projects .carousel__opinion {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    .projects .opinion__img {
+      border-radius: 50%; }
+    .projects .opinion__img-wrapper {
+      width: 100%;
+      max-width: 200px; }
+    .projects .opinion__text {
+      padding-left: 15px;
+      width: 100%; } }
+
+/* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+  .projects {
+    margin-top: 50px; }
+    .projects__text {
+      text-align: left; }
+    .projects__client-opinions {
+      grid-column: 1/3;
+      grid-row: 1;
+      position: relative; }
+    .projects .client-opinions__wrapper {
+      top: 50%;
+      transform: translateY(-50%); }
+    .projects__section {
+      grid-column: 3/4; }
+    .projects__wrapper {
+      display: grid;
+      grid-template-columns: 1fr minmax(auto, 570px) minmax(auto, 570px) 1fr; } }

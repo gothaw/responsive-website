@@ -1,0 +1,109 @@
+//============================================= Imports ==================================================
+@import '_utilities';
+/*========================================================================================================*/
+/*============================================= Projects =================================================*/
+/*========================================================================================================*/
+.projects{
+  &__section{
+    @include section-black-border-wrapper;
+  }
+  &__text{
+    @include text-black-border;
+    p:not(:last-child){
+      margin-bottom: $offset-sm;
+    }
+  }
+  &__title{
+    @include section-title;
+  }
+  &__client-opinions{
+    background-color: $main-color;
+  }
+  .client-opinions__wrapper{
+    position: relative;
+    overflow: hidden;
+  }
+  .client-opinions__carousel{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 300%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s;
+  }
+  .carousel__opinion{
+    @include text-medium;
+    color: $bg-color;
+    text-align: center;
+    width: 100%;
+  }
+  .opinion__name{
+    margin-top: 15px;
+    font-weight: bold;
+    font-family: 'Ropa Sans', sans-serif;
+  }
+}
+
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .projects{
+    margin-top: $offset-md;
+    &__client-opinions{
+      padding: $offset-sm;
+    }
+    .opinion__img{
+      display: none;
+    }
+  }
+}
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px){
+  .projects{
+    margin-top: $offset-lg;
+    &__client-opinions{
+      padding: $offset-md;
+    }
+    .carousel__opinion{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .opinion__img{
+      border-radius: 50%;
+    }
+    .opinion__img-wrapper{
+      width: 100%;
+      max-width: 200px;
+    }
+    .opinion__text{
+      padding-left: 15px;
+      width: 100%;
+    }
+  }
+}
+/* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+  .projects{
+    margin-top: $offset-xlg;
+    &__text{
+      text-align: left;
+    }
+    &__client-opinions{
+      grid-column: 1/3;
+      grid-row: 1;
+      position: relative;
+    }
+    .client-opinions__wrapper{
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &__section{
+      grid-column: 3/4;
+    }
+    &__wrapper {
+      @include inner-grid;
+    }
+  }
+}

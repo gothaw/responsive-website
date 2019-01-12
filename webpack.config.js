@@ -5,7 +5,8 @@ module.exports = {
         'bundle.js': [
             './src/js/index.js',
             './src/js/modules/about.js',
-            './src/js/modules/header.js'
+            './src/js/modules/header.js',
+            './src/js/modules/projects.js'
         ]
     },
     output: {

@@ -1,6 +1,6 @@
-if ($('#home').length) {
-    (function () {
-        // Variables
+(function () {
+    if ($('#home-page').length) {
+        // variables
         const counters                      = document.querySelectorAll('.stats__counter');
         const valuesDescription             = document.querySelectorAll('.values__description');
         const valuesTab                     = document.querySelectorAll('.values__tab');
@@ -172,5 +172,5 @@ if ($('#home').length) {
         }
 
         window.addEventListener("load", init);
-    })();
-}
+    }
+})();
