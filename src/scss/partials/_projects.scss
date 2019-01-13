@@ -1,22 +1,22 @@
 //============================================= Imports ==================================================
 @import '_utilities';
 /*========================================================================================================*/
-/*============================================= Projects =================================================*/
+/*========================================= Projects Intro ===============================================*/
 /*========================================================================================================*/
 .projects{
-  &__section{
+  .intro__section{
     @include section-black-border-wrapper;
   }
-  &__text{
+  .intro__text{
     @include text-black-border;
     p:not(:last-child){
       margin-bottom: $offset-sm;
     }
   }
-  &__title{
+  .intro__title{
     @include section-title;
   }
-  &__client-opinions{
+  .intro__client-opinions{
     background-color: $main-color;
   }
   .client-opinions__wrapper{
@@ -50,7 +50,7 @@
 @media only screen and (max-width: 767px) {
   .projects{
     margin-top: $offset-md;
-    &__client-opinions{
+    .intro__client-opinions{
       padding: $offset-sm;
     }
     .opinion__img{
@@ -62,7 +62,7 @@
 @media only screen and (min-width: 768px){
   .projects{
     margin-top: $offset-lg;
-    &__client-opinions{
+    .intro__client-opinions{
       padding: $offset-md;
     }
     .carousel__opinion{
@@ -87,23 +87,81 @@
 @media only screen and (min-width: 1025px) {
   .projects{
     margin-top: $offset-xlg;
-    &__text{
-      text-align: left;
+    &__intro {
+      @include inner-grid;
     }
-    &__client-opinions{
+    .intro__client-opinions{
       grid-column: 1/3;
       grid-row: 1;
       position: relative;
+      min-height: 350px;
     }
     .client-opinions__wrapper{
       top: 50%;
       transform: translateY(-50%);
     }
-    &__section{
+    .intro__section{
       grid-column: 3/4;
     }
-    &__wrapper {
-      @include inner-grid;
-    }
+  }
+}
+/*========================================================================================================*/
+/*=========================== Architecture Structural Mechanical Landscape ===============================*/
+/*========================================================================================================*/
+.architecture__section,.structural__section,.mechanical__section, .landscape__section{
+  @include section-black-border-wrapper;
+}
+.architecture__text,.structural__text,.mechanical__text,.landscape__text{
+  @include text-black-border;
+  p:not(:last-child){
+    margin-bottom: $offset-sm;
+  }
+}
+.architecture__title,.structural__title,.mechanical__title,.landscape__title{
+  @include section-title;
+}
+.architecture__gallery,.structural__gallery,.mechanical__gallery,.landscape__gallery{
+  @include projects-gallery;
+}
+.gallery__img-wrapper{
+  cursor: pointer;
+}
+/* ------------------- <767px   SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .projects__architecture,.projects__structural,.projects__mechanical,.projects__landscape{
+    margin-top: $offset-md;
+  }
+  .gallery__img-wrapper{
+    margin-bottom: $offset-sm;
+  }
+}
+/* ---------------- >768px SECTION -------------- */
+@media only screen and (min-width: 768px){
+  .projects__architecture, .projects__structural, .projects__mechanical, .projects__landscape {
+    margin-top: $offset-lg;
+  }
+}
+/* ---------------- >1025px SECTION -------------- */
+@media only screen and (min-width: 1025px) {
+  .projects__architecture, .projects__structural, .projects__mechanical, .projects__landscape {
+    margin-top: $offset-xlg;
+    @include inner-grid;
+  }
+  .projects__structural, .projects__landscape{
+    justify-items: end;
+  }
+  .architecture__section, .mechanical__section {
+    grid-column: 2/3;
+    padding: 0 25px 0 0; //overwriting default mixin styling
+  }
+  .architecture__gallery, .mechanical__gallery{
+    grid-column: 3/5;
+  }
+  .structural__section, .landscape__section{
+    grid-column: 3/4;
+    grid-row: 1;
+  }
+  .structural__gallery, .landscape__gallery{
+    grid-column: 1/3;
   }
 }

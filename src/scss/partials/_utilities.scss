@@ -30,18 +30,20 @@ $offset-xlg: 50px;
   border: black solid 3px;
   margin: 15px 0;
   padding: 15px;
-  text-align: center;
   @media only screen and (max-width: 767px) {
     font-size: $div-font-size-sm;
     line-height: $div-line-h-sm;
+    text-align: center;
   }
   @media only screen and (min-width: 768px) {
     font-size: $div-font-size-md;
     line-height: $div-line-h-md;
     margin-bottom: 25px;
+    text-align: center;
   }
   @media only screen and (min-width: 1025px) {
     margin-bottom: 0;
+    text-align: left;
   }
 }
 // mixin for the wrapper of text with black border
@@ -322,3 +324,21 @@ $offset-xlg: 50px;
   }
 }
 //============================================ P R O J E C T S ============================================
+@mixin projects-gallery{
+  @media only screen and (max-width: 767px) {
+    max-width: 530px;
+    padding: 0 $offset-sm;
+    margin: 0 auto;
+  }
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $offset-md;
+    padding: 0 $offset-md;
+  }
+  @media only screen and (min-width: 1025px) {
+    grid-gap: 0;
+    padding: 0;
+    max-width: 1200px;
+  }
+}

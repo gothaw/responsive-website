@@ -123,9 +123,6 @@
 @media only screen and (min-width: 1025px) {
   .about {
     margin-top: $offset-xlg;
-    &__text{
-      text-align: left;
-    }
     &__img-wrapper{
       grid-column: 3/5;
       grid-row: 1;
