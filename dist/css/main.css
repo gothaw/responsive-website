@@ -1758,3 +1758,54 @@ a {
     grid-row: 1; }
   .structural__gallery, .landscape__gallery {
     grid-column: 1/3; } }
+
+/*========================================================================================================*/
+/*============================================= Lightbox =================================================*/
+/*========================================================================================================*/
+.projects__lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 100;
+  width: 100%;
+  height: 100%; }
+  .projects__lightbox--shown {
+    display: block; }
+
+.lightbox__wrapper {
+  max-width: 1600px;
+  margin: 0 auto; }
+
+.lightbox__architecture-projects {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin: 0 auto; }
+
+.lightbox__img-wrapper {
+  width: 800px;
+  margin: 50px auto; }
+
+.description__architecture {
+  display: none; }
+
+.description__structural {
+  color: #e9e6ed;
+  width: 100%;
+  margin: 0 auto; }
+  @media only screen and (max-width: 767px) {
+    .description__structural {
+      font-size: 1em;
+      line-height: 1.1em; } }
+  @media only screen and (min-width: 768px) {
+    .description__structural {
+      font-size: 1.2em;
+      line-height: 1.3em; } }
+
+.description__wrapper {
+  display: block; }
+
+/* ------------------- <767px   SECTION ------------------- */
+/* ---------------- >768px SECTION -------------- */
+/* ---------------- >1025px SECTION -------------- */
