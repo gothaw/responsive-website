@@ -5,6 +5,17 @@
         const clientOpinionsCarousel            = document.querySelector('.client-opinions__carousel');
         const architectureProjectDescription    = document.querySelectorAll('.description__architecture');
 
+        //lightbox variables
+        const projectThumbnails                 = document.querySelectorAll('.lightbox__thumbnail');
+        const architectureThumbnails            = document.querySelector('.lightbox__thumbnails-wrapper').querySelectorAll('.architecture');
+        const structuralThumbnails              = document.querySelector('.lightbox__thumbnails-wrapper').querySelectorAll('.structural');
+        const mechanicalThumbnails              = document.querySelector('.lightbox__thumbnails-wrapper').querySelectorAll('.mechanical');
+        const landscapeThumbnails               = document.querySelector('.lightbox__thumbnails-wrapper').querySelectorAll('.landscape');
+        const projectDescriptions               = document.querySelectorAll('.lightbox__description');
+        const architectureDescription           = document.querySelector('.lightbox__description-wrapper').querySelectorAll('.architecture');
+        const structuralDescription             = document.querySelector('.lightbox__description-wrapper').querySelectorAll('.structural');
+        const mechanicalDescription             = document.querySelector('.lightbox__description-wrapper').querySelectorAll('.mechanical');
+        const landscapeDescription              = document.querySelector('.lightbox__description-wrapper').querySelectorAll('.landscape');
 
         //jQuery variables
         const $architectureGallery              = $('.architecture__gallery');
@@ -17,6 +28,26 @@
             $lightbox.addClass("lightbox__wrapper--shown");
             $(architectureProjectDescription[targetIndex]).addClass("description__wrapper");
         }
+        
+        console.log(architectureDescription);
+        console.log(structuralDescription);
+        console.log(mechanicalDescription);
+        console.log(landscapeDescription);
+
+        console.log(architectureThumbnails);
+        console.log(structuralThumbnails);
+        console.log(mechanicalThumbnails);
+        console.log(landscapeThumbnails);
+
+
+        function initilizeLightbox() {
+            $(projectDescriptions).hide();
+            $(architectureDescription[0]).show();
+            $(projectThumbnails).hide();
+            $(architectureThumbnails).show();
+        }
+        
+        
         
         /**
          * @name    animateClientOpinions
@@ -48,6 +79,7 @@
 
         function init(){
             eventHandler();
+            initilizeLightbox();
         }
 
         window.addEventListener("load",init)

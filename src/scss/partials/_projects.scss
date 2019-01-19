@@ -177,6 +177,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
+  //display: none;
   &--shown{
     display: block;
   }
@@ -186,36 +187,37 @@
   max-width: 1600px;
   margin: 0 auto;
 }
-.lightbox__thumbnail-wrapper{
+.lightbox__img-wrapper{
+  position: relative;
+}
+.lightbox__thumbnail{
   cursor: pointer;
   opacity: 0.5;
+  transition: all 0.4s;
   &--selected{
     opacity: 1.0;
   }
 }
-.lightbox__img-wrapper{
+.lightbox__images{
   margin: 0 auto;
   position: relative;
 }
-.description__architecture{
-  display: none;
-}
-.description__structural{
+.lightbox__description{
   @include text-medium;
   color: $bg-color;
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  p:not(last-child){
+  p:not(:last-child){
     margin-bottom: 15px;
+  }
+  p:last-child{
+    margin-bottom: 25px;
   }
 }
 .description__title{
   font-weight: bold;
   margin: 25px 0 15px;
-}
-.description__wrapper{
-  display: block;
 }
 .lightbox__close{
   color: $bg-color;
@@ -223,7 +225,6 @@
   top: 25px;
   right: -15px;
   font-weight: bold;
-  font-size: 30px;
   font-family: 'Source Sans Pro', sans-serif;
   cursor: pointer;
   -webkit-user-select: none;
@@ -234,19 +235,35 @@
     color: darken($bg-color,20%);
   }
 }
+.lightbox__arrow{
+  color: $bg-color;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: all 0.4s;
+  &--left{
+    left:0;
+    border-radius: 0 10px 10px 0;
+  }
+  &--right{
+    right:0;
+    border-radius: 10px 0 0 10px;
+  }
+  &:hover{
+    background-color: rgba(0,0,0,0.8);
+  }
+}
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .projects__lightbox{
-
-  }
   .lightbox__wrapper{
     padding: 0 $offset-sm;
   }
-  .lightbox__img-wrapper{
+  .lightbox__images{
     max-width: 600px;
     padding-top: 45px;
   }
-  .lightbox__architecture-projects{
+  .lightbox__thumbnails-wrapper{
     display: flex;
     justify-content: space-between;
     margin-top: 25px;
@@ -255,44 +272,45 @@
     position: absolute;
     top: 5px;
     right: 0;
+    font-size: 1.9em;
+  }
+  .lightbox__arrow{
+    font-size: 1.6em;
+    padding: 10px;
   }
 }
 /* ---------------- >768px SECTION -------------- */
 @media only screen and (min-width: 768px){
-  .projects__lightbox{
-
-  }
   .lightbox__wrapper{
     padding: 0 $offset-md;
   }
-  .lightbox__img-wrapper{
-    max-width: 1000px;
+  .lightbox__images{
+    max-width: 1025px;
     display: flex;
     justify-content: space-between;
     padding-top: 65px;
   }
-  .lightbox__architecture-projects{
-    display: block;
-  }
-  .lightbox__main-img{
+  .lightbox__img-wrapper{
     width: 80%;
   }
-  .lightbox__architecture-projects{
+  .lightbox__thumbnails-wrapper{
+    display: block;
     margin-left: 25px;
     margin-top: 0;
     width: 20%;
   }
   .lightbox__close{
     position: absolute;
-    top: 25px;
+    top: 20px;
     right: -15px;
+    font-size: 2.5em;
+  }
+  .lightbox__arrow{
+    font-size: 1.9em;
+    padding: 15px;
   }
 }
 /* ---------------- >1025px SECTION -------------- */
 @media only screen and (min-width: 1025px) {
-  .projects__lightbox{
 
-  }
-  .lightbox__img-wrapper{
-  }
 }
