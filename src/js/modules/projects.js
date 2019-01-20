@@ -21,16 +21,69 @@
         const structuralDescription             = document.querySelector('.lightbox__description-wrapper').querySelectorAll('.structural');
         const mechanicalDescription             = document.querySelector('.lightbox__description-wrapper').querySelectorAll('.mechanical');
         const landscapeDescription              = document.querySelector('.lightbox__description-wrapper').querySelectorAll('.landscape');
-
         const $lightbox                         = $('.projects__lightbox');
         const $lightboxImg                      = $('.lightbox__img');
         const $lightboxClose                    = $('.lightbox__close');
+        const $lightboxArrowLeft                = $('.lightbox__arrow--left');
+        const $lightboxArrowRight               = $('.lightbox__arrow--right');
 
+        //image index in a selected project discipline/gallery from 0 to 3
+        let imageIndex;
+        //overall index of the project from 0 to 9
+        let projectIndex;
+        //selected project discipline/gallery: 'architecture', 'structural', 'mechanical' or 'landscape'
+        let projectDiscipline;
+
+        /**
+         * @name        showPreviousProject
+         * @desc        Function shows previous project from selected project discipline/gallery.
+         */
+        function showPreviousProject() {
+            imageIndex--;
+            $(projectThumbnails).removeClass("lightbox__thumbnail--selected");
+            $(projectDescriptions).hide();
+            if(imageIndex<0){
+                imageIndex=3;
+            }
+            showProjectDetails(imageIndex,projectDiscipline);
+            showLightboxMainImg(projectIndex);
+        }
+
+        /**
+         * @name        showNextProject
+         * @desc        Function shows next project from selected project discipline/gallery.
+         */
+        function showNextProject() {
+            imageIndex++;
+            $(projectThumbnails).removeClass("lightbox__thumbnail--selected");
+            $(projectDescriptions).hide();
+            if(imageIndex>3){
+                imageIndex=0;
+            }
+            showProjectDetails(imageIndex,projectDiscipline);
+            showLightboxMainImg(projectIndex);
+        }
+
+        /**
+         * @name        showProjectFromThumbnail
+         * @desc        Function shows project image and description when a thumbnail is clicked.
+         * @param       e - target thumbnail click event
+         */
+        function showProjectFromThumbnail(e) {
+            const $targetImg            = $(e.target);
+            const targetThumbnail       = $targetImg.closest(".lightbox__thumbnail");
+            projectIndex                = $(targetThumbnail).index();
+            $(projectThumbnails).removeClass("lightbox__thumbnail--selected");
+            $(targetThumbnail).addClass("lightbox__thumbnail--selected");
+            $(projectDescriptions).hide();
+            $(projectDescriptions[projectIndex]).show();
+            showLightboxMainImg(projectIndex);
+        }
 
         /**
          * @name        showLightboxMainImg
-         * @desc
-         * @param       index
+         * @desc        Function changes attributes of the main lightbox image depending on what image was clicked in the gallery.
+         * @param       index - project index number from 0 to 9. It is index of the project description lightbox__description.
          */
         function showLightboxMainImg(index) {
             switch (index) {
@@ -118,85 +171,65 @@
                     });
 
                     break;
-                default:
-                    //shows first project as default
-                    $lightboxImg.attr({
-                        srcset: "dist/img/projects/1-civil-mechanical-600.jpg 600w, dist/img/projects/1-civil-mechanical-1000.jpg 1000w",
-                        sizes: "(max-width: 768px) 600px, 1000px",
-                        src: "dist/img/projects/1-civil-mechanical-1000.jpg",
-                        alt: "concrete dam"
-                    });
+            }
+        }
+
+        /**
+         * @name        showProjectDetails
+         * @desc        Function shows project description and thumbnails of similar project from selected discipline.
+         * @param       index - index of a project in selected discipline/gallery
+         * @param       discipline - string describing project discipline: 'architecture', 'structural', 'mechanical' or 'landscape'
+         */
+        function showProjectDetails(index,discipline) {
+            switch (discipline) {
+                case "architecture":
+                    $(architectureThumbnails).show();
+                    $(architectureThumbnails[index]).addClass("lightbox__thumbnail--selected");
+                    $(architectureDescription[index]).show();
+                    projectIndex = $(architectureDescription[index]).index();
+                    break;
+                case "structural":
+                    $(structuralThumbnails).show();
+                    $(structuralThumbnails[index]).addClass("lightbox__thumbnail--selected");
+                    $(structuralDescription[index]).show();
+                    projectIndex = $(structuralDescription[index]).index();
+                    break;
+                case "mechanical":
+                    $(mechanicalThumbnails).show();
+                    $(mechanicalThumbnails[index]).addClass("lightbox__thumbnail--selected");
+                    $(mechanicalDescription[index]).show();
+                    projectIndex = $(mechanicalDescription[index]).index();
+                    break;
+                case "landscape":
+                    $(landscapeThumbnails).show();
+                    $(landscapeThumbnails[index]).addClass("lightbox__thumbnail--selected");
+                    $(landscapeDescription[index]).show();
+                    projectIndex = $(landscapeDescription[index]).index();
+                    break;
             }
         }
 
         /**
          * @name        showLightbox
-         * @desc
-         * @param       e
-         * @param       discipline
+         * @desc        Function shows project lightbox when an image in project gallery is clicked.
+         *              It shows main image by invoking showLightboxMainImg. It also shows project description and thumbnails for projects from the same discipline.
+         * @param       e - image click event
+         * @param       discipline - string describing project discipline: 'architecture', 'structural', 'mechanical' or 'landscape'
          */
         function showLightbox(e,discipline) {
             const $targetImg            = $(e.target);
             const targetImgWrapper      = $targetImg.closest(".gallery__img-wrapper");
             const targetImgIndex        = $(targetImgWrapper).index();
-            let descriptionIndex;
+            imageIndex = targetImgIndex;
+            projectDiscipline = discipline;
             $(projectDescriptions).hide();
             $(projectThumbnails).hide();
             $(projectThumbnails).removeClass("lightbox__thumbnail--selected");
-            switch (discipline) {
-                case "architecture":
-                    $(architectureThumbnails).show();
-                    $(architectureThumbnails[targetImgIndex]).addClass("lightbox__thumbnail--selected");
-                    $(architectureDescription[targetImgIndex]).show();
-                    descriptionIndex =  $(architectureDescription[targetImgIndex]).index();
-                    break;
-                case "structural":
-                    $(structuralThumbnails).show();
-                    $(structuralThumbnails[targetImgIndex]).addClass("lightbox__thumbnail--selected");
-                    $(structuralDescription[targetImgIndex]).show();
-                    descriptionIndex =  $(structuralDescription[targetImgIndex]).index();
-                    break;
-                case "mechanical":
-                    $(mechanicalThumbnails).show();
-                    $(mechanicalThumbnails[targetImgIndex]).addClass("lightbox__thumbnail--selected");
-                    $(mechanicalDescription[targetImgIndex]).show();
-                    descriptionIndex =  $(mechanicalDescription[targetImgIndex]).index();
-                    break;
-                case "landscape":
-                    $(landscapeThumbnails).show();
-                    $(landscapeThumbnails[targetImgIndex]).addClass("lightbox__thumbnail--selected");
-                    $(landscapeDescription[targetImgIndex]).show();
-                    descriptionIndex =  $(landscapeDescription[targetImgIndex]).index();
-                    break;
-                default:
-                    //shows first project as default
-                    $(mechanicalThumbnails).show();
-                    $(mechanicalThumbnails[0]).addClass("lightbox__thumbnail--selected");
-                    $(mechanicalDescription[0]).show();
-                    descriptionIndex =  $(mechanicalDescription[0]).index();
-            }
-            showLightboxMainImg(descriptionIndex);
+            showProjectDetails(targetImgIndex,discipline);
+            showLightboxMainImg(projectIndex);
             $lightbox.show();
         }
 
-
-        /*function initilizeLightbox() {
-            $(projectDescriptions).hide();
-            $(projectThumbnails).hide();
-            $(architectureThumbnails).show();
-            $(architectureDescription[0]).show();
-            $(architectureThumbnails[0]).addClass("lightbox__thumbnail--selected");
-            $lightbox.show();
-        }*/
-
-        /**
-         * @name        closeLightbox
-         * @desc
-         */
-        function closeLightbox() {
-            $lightbox.hide();
-        }
-        
         /**
          * @name        animateClientOpinions
          * @desc        Functions animates client opinions using setInterval and by changing left property in CSS.
@@ -220,23 +253,29 @@
         function eventHandler() {
             animateClientOpinions();
             $architectureGallery.on("click", function (e) {
-                showLightbox(e,"architecture")
+                showLightbox(e,"architecture");
             });
             $structuralGallery.on("click", function (e) {
-                showLightbox(e,"structural")
+                showLightbox(e,"structural");
             });
             $mechanicalGallery.on("click", function (e) {
-                showLightbox(e,"mechanical")
+                showLightbox(e,"mechanical");
             });
             $landscapeGallery.on("click", function (e) {
-                showLightbox(e,"landscape")
+                showLightbox(e,"landscape");
             });
-            $lightboxClose.on("click",closeLightbox)
+            $lightboxClose.on("click",function (){
+                $lightbox.hide();
+            });
+            $(projectThumbnails).on("click",function (e) {
+                showProjectFromThumbnail(e);
+            });
+            $lightboxArrowLeft.on("click",showPreviousProject);
+            $lightboxArrowRight.on("click",showNextProject);
         }
 
         function init(){
             eventHandler();
-            initilizeLightbox();
         }
 
         window.addEventListener("load",init)
