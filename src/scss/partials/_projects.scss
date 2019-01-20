@@ -177,10 +177,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  //display: none;
-  &--shown{
-    display: block;
-  }
+  display: none;
 }
 .lightbox__wrapper{
   position: relative;

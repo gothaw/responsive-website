@@ -1770,9 +1770,8 @@ a {
   z-index: 100;
   width: 100%;
   height: 100%;
-  overflow: auto; }
-  .projects__lightbox--shown {
-    display: block; }
+  overflow: auto;
+  display: none; }
 
 .lightbox__wrapper {
   position: relative;

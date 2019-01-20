@@ -299,8 +299,12 @@
         <div class="lightbox__wrapper">
             <div class="lightbox__images">
                 <div class="lightbox__img-wrapper">
-                    <!--<img class="lightbox__img img-responsive" srcset="dist" alt="">-->
-                    <img class="lightbox__img img-responsive" src="dist/img/projects/2-architecture-landscape-600.jpg" width="600" height="450" alt="">
+                    <img class="img-responsive lightbox__img"   srcset = "dist/img/projects/1-civil-mechanical-600.jpg 600w,
+                                                                         dist/img/projects/1-civil-mechanical-1000.jpg 1000w"
+                                                                sizes  = "(max-width: 768px) 600px,
+                                                                         1000px"
+                                                                src    = "dist/img/projects/1-civil-mechanical-1000.jpg"
+                                                                alt    = "concrete dam">
                     <div class="lightbox__arrow lightbox__arrow--left">&#10094;</div> <!--/lightbox__arrow lightbox__arrow--left-->
                     <div class="lightbox__arrow lightbox__arrow--right">&#10095;</div> <!--/lightbox__arrow lightbox__arrow--right-->
                 </div> <!--/lightbox__img-wrapper-->
@@ -308,7 +312,7 @@
                     <div class="lightbox__thumbnail civil mechanical">
                         <img class="img-responsive" src="dist/img/projects/1-civil-mechanical-thumb.jpg" width="240" height="180" alt="concrete dam">
                     </div> <!--/lightbox__thumbnail-->
-                    <div class="lightbox__thumbnail architecture landscape lightbox__thumbnail--selected">
+                    <div class="lightbox__thumbnail architecture landscape">
                         <img class="img-responsive" src="dist/img/projects/2-architecture-landscape-thumb.jpg" width="240" height="180" alt="bungalow with nice paving">
                     </div> <!--/lightbox__thumbnail-->
                     <div class="lightbox__thumbnail architecture landscape">
