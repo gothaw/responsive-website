@@ -1781,16 +1781,16 @@ a {
 .lightbox__img-wrapper {
   position: relative; }
 
+.lightbox__images {
+  margin: 0 auto;
+  position: relative; }
+
 .lightbox__thumbnail {
   cursor: pointer;
   opacity: 0.5;
   transition: all 0.4s; }
   .lightbox__thumbnail--selected {
     opacity: 1.0; }
-
-.lightbox__images {
-  margin: 0 auto;
-  position: relative; }
 
 .lightbox__description {
   color: #e9e6ed;
@@ -1893,5 +1893,3 @@ a {
   .lightbox__arrow {
     font-size: 1.9em;
     padding: 15px; } }
-
-/* ---------------- >1025px SECTION -------------- */

@@ -187,6 +187,10 @@
 .lightbox__img-wrapper{
   position: relative;
 }
+.lightbox__images{
+  margin: 0 auto;
+  position: relative;
+}
 .lightbox__thumbnail{
   cursor: pointer;
   opacity: 0.5;
@@ -194,10 +198,6 @@
   &--selected{
     opacity: 1.0;
   }
-}
-.lightbox__images{
-  margin: 0 auto;
-  position: relative;
 }
 .lightbox__description{
   @include text-medium;
@@ -310,8 +310,4 @@
     font-size: 1.9em;
     padding: 15px;
   }
-}
-/* ---------------- >1025px SECTION -------------- */
-@media only screen and (min-width: 1025px) {
-
 }
