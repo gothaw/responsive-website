@@ -429,10 +429,8 @@
     height: 150px;
   }
   &__select{
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
-    background: url("../../../dist/img/icons/drop-down-grey.png") no-repeat calc(100% - 10px);
+    background: url("../../dist/img/icons/drop-down-grey.png") no-repeat calc(100% - 10px);
     cursor: pointer;
     option{
       color: #000;

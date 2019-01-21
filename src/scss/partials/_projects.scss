@@ -224,9 +224,6 @@
   font-weight: bold;
   font-family: 'Source Sans Pro', sans-serif;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   &:hover{
     color: darken($bg-color,20%);
@@ -237,9 +234,6 @@
   position: absolute;
   top: 50%;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   transform: translateY(-50%);
   transition: all 0.4s;

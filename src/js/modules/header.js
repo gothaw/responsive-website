@@ -74,7 +74,7 @@ import enquire from '../lib/enquire.js'
         enquire.register("screen and (max-width: 767px)", {
             match: function () {
                 $menu.hide();
-                $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon.png");
+                $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon.png");
                 toggleMenuActive=false;
             },
             unmatch: function () {
@@ -90,11 +90,11 @@ import enquire from '../lib/enquire.js'
     function toggleMenu() {
         $menu.slideToggle();
         if(toggleMenuActive){
-            $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon.png");
+            $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon.png");
             toggleMenuActive=false;
         }
         else {
-            $toggleMenuIconImg.attr("src","../../../dist/img/icons/toggle-icon-red.png");
+            $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon-red.png");
             toggleMenuActive=true;
         }
     }
@@ -141,7 +141,6 @@ import enquire from '../lib/enquire.js'
 
     function eventHandler() {
         $carouselArrows.on("click", showNextImage);
-        $carouselItems.on("touchmove",showNextImage);
         $toggleMenuIcon.on("click",toggleMenu);
         $menuItem.on("click",function (e) {
           menuScroll(e)

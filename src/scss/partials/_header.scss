@@ -34,9 +34,6 @@ $carousel__arrow-color: #fff;
 .carousel{
   position: relative;
   &__arrow{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     color: $carousel__arrow-color;
     opacity: 0.65;
