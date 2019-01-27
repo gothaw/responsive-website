@@ -94,7 +94,7 @@ import enquire from '../lib/enquire.js'
             toggleMenuActive=false;
         }
         else {
-            $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon-red.png");
+            $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon-active.png");
             toggleMenuActive=true;
         }
     }
