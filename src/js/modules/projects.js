@@ -75,6 +75,20 @@
             projectIndex                = $(targetThumbnail).index();
             $(projectThumbnails).removeClass("lightbox__thumbnail--selected");
             $(targetThumbnail).addClass("lightbox__thumbnail--selected");
+            switch (projectDiscipline) {
+                case "architecture":
+                    imageIndex = $(targetThumbnail).index(".lightbox__thumbnail.architecture");
+                    break;
+                case "structural":
+                    imageIndex = $(targetThumbnail).index(".lightbox__thumbnail.structural");
+                    break;
+                case "mechanical":
+                    imageIndex = $(targetThumbnail).index(".lightbox__thumbnail.mechanical");
+                    break;
+                case "landscape":
+                    imageIndex = $(targetThumbnail).index(".lightbox__thumbnail.landscape");
+                    break;
+            }
             $(projectDescriptions).hide();
             $(projectDescriptions[projectIndex]).show();
             showLightboxMainImg(projectIndex);
