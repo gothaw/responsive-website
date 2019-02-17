@@ -130,7 +130,8 @@ import enquire from '../lib/enquire.js'
      * @name    homeScroll
      * @desc    Scrolls to the top of the page when logo is clicked (works only on home page).
      */
-    function homeScroll() {
+    function homeScroll(e) {
+        e.preventDefault();
         $("html, body").animate(
             {
                 "scrollTop" : 0
@@ -145,8 +146,10 @@ import enquire from '../lib/enquire.js'
         $menuItem.on("click",function (e) {
           menuScroll(e)
         });
-        if($('#home').length){
-            $(menuLogo).on("click",homeScroll);
+        if($('#home-page').length){
+            $(menuLogo).on("click",function (e){
+                homeScroll(e)
+            });
         }
     }
 
