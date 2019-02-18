@@ -182,7 +182,6 @@
 .lightbox__wrapper{
   position: relative;
   max-width: 1600px;
-  margin: 0 auto;
 }
 .lightbox__img-wrapper{
   position: relative;
@@ -218,9 +217,6 @@
 }
 .lightbox__close{
   color: $bg-color;
-  position: absolute;
-  top: 25px;
-  right: -15px;
   font-weight: bold;
   font-family: 'Source Sans Pro', sans-serif;
   cursor: pointer;
